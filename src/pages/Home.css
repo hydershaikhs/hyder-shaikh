@@ -1,11 +1,9 @@
 /* ============ HERO ============ */
 .hero-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 90px 0 60px;
+  padding-top: 140px;
+  padding-bottom: 70px;
 }
 
 .abstract-waves {
@@ -455,19 +453,14 @@
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 1024px) {
+  .hero-section {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-actions,
-  .hero-tools {
-    justify-content: center;
+    gap: 40px;
   }
 
   .hero-visual {
@@ -475,13 +468,13 @@
   }
 
   .hero-ring {
-    width: 420px;
-    height: 420px;
+    width: 400px;
+    height: 400px;
   }
 
   .hero-portrait-wrap {
-    width: 340px;
-    height: 340px;
+    width: 320px;
+    height: 320px;
   }
 
   .split-grid {
@@ -492,42 +485,65 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 85px 0 40px;
-    min-height: auto;
+    padding-top: 125px;
+    padding-bottom: 45px;
+  }
+
+  .hero-label {
+    font-size: 0.76rem;
+    padding: 6px 14px;
+    margin-bottom: 20px;
   }
 
   .hero-title {
-    font-size: 2.3rem;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 18px;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 26px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .hero-actions .btn {
+    padding: 12px 22px;
+    font-size: 0.92rem;
+  }
+
+  .hero-visual {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-ring {
-    width: 300px;
-    height: 300px;
+    display: none;
   }
 
   .hero-portrait-wrap {
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 16px;
   }
 
   .hero-badge {
-    font-size: 0.75rem;
-    padding: 8px 12px;
-  }
-
-  .hero-badge.badge-1 {
-    top: 15px;
-    left: 0;
-  }
-
-  .hero-badge.badge-2 {
-    top: 130px;
-    right: 0;
-  }
-
-  .hero-badge.badge-3 {
-    bottom: 15px;
-    left: 10px;
+    position: static;
+    margin: 4px;
+    font-size: 0.76rem;
+    padding: 7px 14px;
+    animation: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 
   .quick-stats-grid {
@@ -543,10 +559,7 @@
     display: none;
   }
 
-  .section-title-large {
-    font-size: 2.1rem;
-  }
-
+  .section-title-large,
   .section-title-left {
     font-size: 2.1rem;
   }
@@ -564,71 +577,53 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .hero-section {
-    padding: 75px 0 30px;
+    padding-top: 115px;
+    padding-bottom: 35px;
   }
 
   .hero-title {
-    font-size: 1.95rem;
-    letter-spacing: -0.5px;
+    font-size: 1.9rem;
+    line-height: 1.22;
+    letter-spacing: -0.4px;
+    margin-bottom: 16px;
   }
 
   .hero-description {
-    font-size: 0.98rem;
-    line-height: 1.7;
-    margin-bottom: 28px;
+    font-size: 0.94rem;
+    line-height: 1.65;
+    margin-bottom: 24px;
   }
 
   .hero-actions {
-    gap: 12px;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 32px;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 28px;
   }
 
   .hero-actions .btn {
     width: 100%;
     justify-content: center;
-  }
-
-  .hero-visual {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 24px;
-  }
-
-  .hero-ring {
-    width: 240px;
-    height: 240px;
+    padding: 13px 20px;
+    font-size: 0.95rem;
   }
 
   .hero-portrait-wrap {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     margin-bottom: 12px;
   }
 
-  .hero-badge {
-    position: static;
-    margin: 4px auto;
-    width: fit-content;
-    animation: none;
-    font-size: 0.78rem;
-    padding: 8px 16px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-  }
-
   .hero-tools {
-    gap: 8px;
-    justify-content: center;
+    gap: 7px;
   }
 
   .hero-tool-chip {
-    font-size: 0.75rem;
-    padding: 6px 12px;
+    font-size: 0.74rem;
+    padding: 5px 11px;
   }
 
   .quick-stats-grid {
@@ -649,7 +644,7 @@
   }
 
   .quote-card {
-    padding: 28px 20px;
+    padding: 26px 18px;
   }
 
   .quote-text {
