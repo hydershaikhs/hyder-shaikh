@@ -1,5 +1,6 @@
-﻿import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
 import { InstagramIcon, LinkedInIcon, FacebookIcon } from './SocialIcons';
+import logoImg from '../assets/logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -45,7 +46,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="footer-brand">
             <a href="#home" className="footer-logo" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>
-              <img src="/logo.png" alt="Hyder Shaikh Logo" className="footer-logo-img" />
+              <img src={logoImg} alt="Hyder Shaikh Logo" className="footer-logo-img" />
               <span>Hyder <span className="text-accent">Shaikh</span></span>
             </a>
             <p className="footer-tagline">
