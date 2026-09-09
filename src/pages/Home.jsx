@@ -25,7 +25,6 @@ const Home = () => {
           <div className="hero-grid">
             <div className="hero-content">
               <span className="hero-label">
-                <span className="status-dot"></span>
                 Available For Remote &amp; Full-Time Roles
               </span>
 
