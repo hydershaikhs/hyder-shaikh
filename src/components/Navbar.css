@@ -1,4 +1,4 @@
-﻿/* ==================== NAVBAR ==================== */
+/* ==================== NAVBAR ==================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -337,17 +337,17 @@
 }
 
 /* ==================== RESPONSIVE BREAKPOINTS ==================== */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .navbar {
     height: 72px;
   }
 
   .nav-links {
-    display: none;
+    display: none !important;
   }
 
   .btn-call {
-    display: none;
+    display: none !important;
   }
 
   .btn-cv {
@@ -357,11 +357,11 @@
   }
 
   .nav-toggle {
-    display: inline-flex;
+    display: inline-flex !important;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .navbar {
     height: 64px;
   }
@@ -372,7 +372,7 @@
 
   .nav-logo {
     gap: 8px;
-    font-size: 1.1rem;
+    font-size: 1.08rem;
   }
 
   .logo-img {
@@ -385,13 +385,13 @@
   }
 
   .btn-cv {
-    padding: 6px 12px;
-    font-size: 0.78rem;
+    display: none !important;
   }
 
   .nav-toggle {
-    width: 40px;
-    height: 40px;
+    display: inline-flex !important;
+    width: 42px;
+    height: 42px;
     border-radius: 10px;
   }
 }

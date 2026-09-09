@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react';
-import { InstagramIcon, LinkedInIcon, FacebookIcon } from './SocialIcons';
+import { InstagramIcon, LinkedInIcon, FacebookIcon, WhatsAppIcon } from './SocialIcons';
 import logoImg from '../assets/logo.png';
 import './Footer.css';
 
@@ -16,14 +16,15 @@ const Footer = () => {
 
   const services = [
     { label: 'Meta Ads Campaigns', id: 'experience' },
-    { label: 'Search Engine Optimization', id: 'experience' },
-    { label: 'Content Writing & Copywriting', id: 'experience' },
-    { label: 'Short-Form Video Editing', id: 'experience' },
+    { label: 'Search Engine Optimization (SEO)', id: 'experience' },
+    { label: 'Content Writing & Ad Copy', id: 'experience' },
+    { label: 'Short & Long-Form Video Editing', id: 'experience' },
     { label: 'Social Media Management', id: 'experience' },
-    { label: 'Social Media Design', id: 'experience' },
+    { label: 'Social Media Post Design', id: 'experience' },
   ];
 
   const socials = [
+    { href: 'https://wa.me/923266739989', label: 'WhatsApp', Icon: WhatsAppIcon },
     { href: 'https://www.linkedin.com/in/hydershaikhofficial', label: 'LinkedIn', Icon: LinkedInIcon },
     { href: 'https://www.instagram.com/hafizhydershaikh', label: 'Instagram', Icon: InstagramIcon },
     { href: 'https://www.facebook.com/profile.php?id=61577739728113', label: 'Facebook', Icon: FacebookIcon },

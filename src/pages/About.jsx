@@ -1,14 +1,7 @@
-﻿import { Briefcase, GraduationCap, BookOpen, Heart, CheckCircle2, ArrowRight } from 'lucide-react';
+﻿import { Briefcase, GraduationCap, BookOpen, Heart } from 'lucide-react';
 import Reveal from '../components/Reveal';
 
 const About = () => {
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="about" className="section about-section">
       <div className="container">
@@ -17,7 +10,7 @@ const About = () => {
             <span className="section-tag">ABOUT HYDER SHAIKH</span>
             <h2 className="page-title">Digital Marketing With<br />Strategy, Creativity &amp; Precision.</h2>
             <p className="text-muted">
-              Combining data-driven analytical rigor with high-impact creative storytelling to help brands thrive in today's competitive digital landscape.
+              Results-driven Digital Marketer currently working at FR Software Solution, blending analytical campaign math with high-converting creative execution.
             </p>
           </div>
         </Reveal>
@@ -27,13 +20,13 @@ const About = () => {
           <div className="about-narrative-card">
             <div className="about-text-content">
               <p className="about-p-lead">
-                I'm <strong className="text-accent">Hyder Shaikh</strong>, a growth-oriented Digital Marketer with specialized, hands-on experience in paid Meta Ads campaigns, search engine optimization (SEO), direct-response content writing, video editing, and complete social media management.
+                I'm <strong className="text-accent">Hyder Shaikh</strong>, a dedicated Digital Marketer currently working at <strong>FR Software Solution</strong>, with hands-on experience in Meta Ads, SEO, content writing, video editing, and social media management.
               </p>
               <p className="about-p">
-                During my internship at <strong>Israin Solution</strong>, I took active ownership of full-funnel Meta Ads campaigns, audience segmentation, multi-variant ad creative testing, performance data analysis, client SEO evaluations, and brand content production.
+                I specialize in planning, launching, and optimizing high-converting Facebook and Instagram advertising campaigns to help businesses achieve measurable marketing goals — from laser-focused audience targeting and budget allocation to creative production and deep analytics reporting (CPM, CPC, CTR, ROAS, and frequency).
               </p>
               <p className="about-p">
-                My approach bridges creative execution with measurable metrics â€” focusing on lowering customer acquisition costs (CAC) and maximizing Return on Ad Spend (ROAS) rather than relying on vanity metrics.
+                With a background that includes an intensive internship at <strong>Israin Solutions</strong> and formal training through a <strong>Digital Marketing Certificate from Saylani Mass IT Training</strong>, I bring a structured, ROI-focused methodology to every campaign I touch.
               </p>
             </div>
           </div>
@@ -45,8 +38,8 @@ const About = () => {
             <div className="card about-card">
               <div className="about-card-icon"><Briefcase size={26} /></div>
               <h3 className="about-card-title">Experience</h3>
-              <h4 className="about-card-subtitle">Meta Ads Specialist &amp; Content Creator</h4>
-              <p className="text-muted">Israin Solution Â· 2 Months Internship</p>
+              <h4 className="about-card-subtitle">Digital Marketer</h4>
+              <p className="text-muted">FR Software Solution (Present)</p>
             </div>
           </Reveal>
 
@@ -54,7 +47,7 @@ const About = () => {
             <div className="card about-card">
               <div className="about-card-icon"><GraduationCap size={26} /></div>
               <h3 className="about-card-title">Certification</h3>
-              <h4 className="about-card-subtitle">Digital Marketing Certified</h4>
+              <h4 className="about-card-subtitle">Digital Marketing Certificate</h4>
               <p className="text-muted">Saylani Mass IT Training</p>
             </div>
           </Reveal>
@@ -63,8 +56,8 @@ const About = () => {
             <div className="card about-card">
               <div className="about-card-icon"><BookOpen size={26} /></div>
               <h3 className="about-card-title">Education</h3>
-              <h4 className="about-card-subtitle">Secondary School Certificate</h4>
-              <p className="text-muted">Currently Completing Matric</p>
+              <h4 className="about-card-subtitle">Secondary School Certificate (Matric)</h4>
+              <p className="text-muted">In Progress</p>
             </div>
           </Reveal>
         </div>
@@ -77,7 +70,7 @@ const About = () => {
               <div className="about-hifz-badge">Personal Discipline &amp; Values</div>
               <h3 className="about-card-title" style={{ fontSize: '1.4rem', margin: '4px 0 8px' }}>Hafiz-e-Quran</h3>
               <p className="text-muted" style={{ fontSize: '1rem', lineHeight: '1.75' }}>
-                Completed the memorization of the complete Holy Quran (Hifz) â€” a profound journey that cultivated deep personal discipline, razor-sharp focus, memory retention, and an unshakeable commitment to excellence that I bring into every client campaign and project.
+                Completed the memorization of the complete Holy Quran (Hifz) — reflecting strong personal discipline, focus, and unwavering dedication that I bring to every marketing campaign and client partnership.
               </p>
             </div>
           </div>

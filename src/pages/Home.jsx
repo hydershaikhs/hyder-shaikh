@@ -24,30 +24,33 @@ const Home = () => {
         <div className="container">
           <div className="hero-grid">
             <div className="hero-content">
-              <span className="hero-label">Performance Digital Marketer</span>
+              <span className="hero-label">
+                <span className="status-dot"></span>
+                Available For Remote &amp; Full-Time Roles
+              </span>
 
               <h1 className="hero-title">
                 I Build <span className="gradient-text">Data-Driven</span> Marketing That Scales Real Growth.
               </h1>
 
               <p className="hero-description">
-                I'm <strong>Hyder Shaikh</strong>, a dedicated Digital Marketer with proven, hands-on experience in high-ROI Meta Ads, organic SEO, strategic copywriting, video editing, and complete social media management.
+                I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer at <strong>FR Software Solution</strong> specializing in high-ROI Meta Ads, SEO ranking, compelling ad copy, short-form video editing, and complete social media growth.
               </p>
 
               <div className="hero-actions">
                 <a 
                   href="#projects" 
-                  className="btn btn-primary-glow btn-pill"
+                  className="btn btn-primary-glow btn-pill hero-btn-main"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollTo('projects');
                   }}
                 >
-                  View Projects <ArrowRight size={18} />
+                  View Projects <ArrowRight size={16} />
                 </a>
                 <a 
                   href="#contact" 
-                  className="btn btn-outline btn-pill"
+                  className="btn btn-outline btn-pill hero-btn-sub"
                   onClick={(e) => {
                     e.preventDefault();
                     scrollTo('contact');
@@ -94,23 +97,23 @@ const Home = () => {
           <Reveal>
             <div className="quick-stats-grid">
               <div className="quick-stat">
-                <div className="quick-stat-value">2+</div>
-                <div className="quick-stat-label">Months<br />Internship at Israin Solution</div>
+                <div className="quick-stat-value">FR</div>
+                <div className="quick-stat-label">Software Solution<br />Digital Marketer (Present)</div>
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">
-                <div className="quick-stat-value">6</div>
-                <div className="quick-stat-label">Core<br />Marketing Competencies</div>
+                <div className="quick-stat-value">SMIT</div>
+                <div className="quick-stat-label">Saylani Mass IT<br />Certified Digital Marketer</div>
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">
-                <div className="quick-stat-value">3+</div>
-                <div className="quick-stat-label">Client SEO &amp;<br />Web Optimization Projects</div>
+                <div className="quick-stat-value">ROAS</div>
+                <div className="quick-stat-label">Data-Driven<br />Meta Ads &amp; Performance SEO</div>
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">
                 <div className="quick-stat-value">100%</div>
-                <div className="quick-stat-label">Dedication to<br />Measurable ROI &amp; Results</div>
+                <div className="quick-stat-label">Dedication to<br />Measurable Growth &amp; ROI</div>
               </div>
             </div>
           </Reveal>

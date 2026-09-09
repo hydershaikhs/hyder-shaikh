@@ -1,6 +1,6 @@
-﻿import { useState } from "react";
-import { Mail, Phone, Send, CheckCircle2 } from "lucide-react";
-import { InstagramIcon, LinkedInIcon, FacebookIcon } from "../components/SocialIcons";
+import { useState } from "react";
+import { Send, CheckCircle2 } from "lucide-react";
+import { InstagramIcon, LinkedInIcon, FacebookIcon, WhatsAppIcon } from "../components/SocialIcons";
 import "./Contact.css";
 import Reveal from "../components/Reveal";
 
@@ -52,8 +52,8 @@ const Contact = () => {
               </p>
 
               <div className="contact-social-row">
-                <a href="mailto:hydershaikhsahab875@gmail.com" className="contact-icon-btn" title="Email" aria-label="Email">
-                  <Mail size={20} />
+                <a href="https://wa.me/923266739989" target="_blank" rel="noreferrer" className="contact-icon-btn" title="WhatsApp" aria-label="WhatsApp">
+                  <WhatsAppIcon size={20} />
                 </a>
                 <a href="https://www.linkedin.com/in/hydershaikhofficial" target="_blank" rel="noreferrer" className="contact-icon-btn" title="LinkedIn" aria-label="LinkedIn">
                   <LinkedInIcon size={20} />
@@ -63,9 +63,6 @@ const Contact = () => {
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61577739728113" target="_blank" rel="noreferrer" className="contact-icon-btn" title="Facebook" aria-label="Facebook">
                   <FacebookIcon size={20} />
-                </a>
-                <a href="https://wa.me/923266739989" target="_blank" rel="noreferrer" className="contact-icon-btn" title="WhatsApp" aria-label="WhatsApp">
-                  <Phone size={20} />
                 </a>
               </div>
             </div>

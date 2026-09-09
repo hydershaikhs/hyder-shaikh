@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Download, Menu, X, ArrowRight, Home, User, Briefcase, Layers, Mail, Phone } from 'lucide-react';
-import { InstagramIcon, LinkedInIcon, FacebookIcon } from './SocialIcons';
+import { InstagramIcon, LinkedInIcon, FacebookIcon, WhatsAppIcon } from './SocialIcons';
 import logoImg from '../assets/logo.png';
 import './Navbar.css';
 
@@ -250,7 +250,7 @@ const Navbar = () => {
             className="mobile-social-icon"
             aria-label="WhatsApp"
           >
-            <Phone size={18} />
+            <WhatsAppIcon size={18} />
           </a>
         </div>
       </aside>

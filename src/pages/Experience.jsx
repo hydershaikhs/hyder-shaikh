@@ -1,37 +1,43 @@
-import { Check, Briefcase, Calendar } from 'lucide-react';
-import './Experience.css';
-import Reveal from '../components/Reveal';
+﻿import { Check, Briefcase, Calendar } from "lucide-react";
+import "./Experience.css";
+import Reveal from "../components/Reveal";
 
 const experiences = [
   {
-    role: 'Meta Ads Specialist & Content Creator',
-    company: 'Israin Solution',
-    period: '2 Months Internship',
-    type: 'Internship',
+    role: "Digital Marketer",
+    company: "FR Software Solution",
+    period: "September 2026 – Present",
+    type: "Current Role",
     highlight: true,
-    description: 'Executed high-ROI paid ad campaigns on Facebook & Instagram, crafted persuasive ad creatives, conducted audience research, and optimized CPM, CPC, and ROAS while assisting with technical SEO activities.',
+    description: "Planning, launching, and managing end-to-end Meta Ads campaigns (Facebook & Instagram) and SEO visibility strategies to achieve measurable client and organizational growth.",
     achievements: [
-      'Structured conversion-focused Meta Ads campaigns targeting targeted demographics',
-      'Tested multi-variant creatives (visuals, headlines, copy) to lower cost-per-click',
-      'Conducted on-page and off-page SEO evaluations for client web properties',
-      'Developed high-retention social media content and short-form video reels'
+      "Plan, launch, and manage conversion-focused Meta Ads campaigns covering audience targeting, budget setting, and creative production",
+      "Analyze key Meta Ads metrics (CPM, CPC, CTR, ROAS, frequency) to continuously optimize campaigns and maximize ad spend efficiency",
+      "Apply structured SEO principles to improve website content visibility and organic search rankings across platforms",
+      "Write persuasive ad copy, hooks, social captions, and marketing collateral engineered for high CTR",
+      "Create high-retention short-form and long-form video content (Reels, TikTok, promo videos) tailored for modern social feeds",
+      "Design brand-aligned social media post creatives that build brand authority and trust",
+      "Execute proactive social media management and community engagement, responding to DMs and comments in brand voice",
+      "Deliver regular performance reports with clear, actionable insights on campaign ROAS and growth trajectory"
     ]
   },
   {
-    role: 'Social Media Growth Manager',
-    company: 'Marketing Insight',
-    period: 'Active Project',
-    type: 'Client & Community Project',
+    role: "Digital Marketing Intern",
+    company: "Israin Solutions",
+    period: "July 2026 – August 2026",
+    type: "Internship",
     highlight: false,
-    description: 'Managing end-to-end digital presence across Instagram and Facebook: publishing schedule, audience engagement, custom brand creatives, and video content production.',
+    description: "Assisted in managing paid advertising funnels on Facebook & Instagram, executing organic SEO improvements, and producing brand-aligned marketing creatives.",
     achievements: [
-      'Established cohesive visual brand identity across feed posts and stories',
-      'Maintained consistent content calendar and direct community messaging',
-      'Tracked engagement analytics to iterate on top-performing post themes'
+      "Assisted in structuring and managing Meta Ads campaigns for multiple client accounts, covering audience segmentation and budget tracking",
+      "Conducted on-page and keyword SEO audits to improve client web property search rankings",
+      "Wrote engaging ad copy, captions, and creative headlines for social media and marketing campaigns",
+      "Created custom social media post designs and short-form video content aligned with client brand guidelines",
+      "Supported active community management across client pages, handling inquiries and boosting audience loyalty",
+      "Collaborated with clients to translate concrete business goals into high-impact digital marketing actions"
     ]
   }
 ];
-
 
 const Experience = () => {
   return (
@@ -42,7 +48,7 @@ const Experience = () => {
             <span className="section-tag">HANDS-ON BACKGROUND</span>
             <h2 className="page-title">Experience &amp; Expertise</h2>
             <p className="text-muted">
-              Practical digital marketing experience combining analytical ad strategy, technical SEO execution, and high-impact creative production.
+              Professional digital marketing background with proven results in conversion Meta Ads, search engine optimization, and creative content.
             </p>
           </div>
         </Reveal>
@@ -50,7 +56,7 @@ const Experience = () => {
         {/* Work Timeline / Highlights */}
         <div className="exp-timeline">
           {experiences.map((exp, idx) => (
-            <Reveal key={exp.role} delay={idx * 120}>
+            <Reveal key={exp.company} delay={idx * 120}>
               <div className={`exp-card ${exp.highlight ? 'exp-card-featured' : ''}`}>
                 <div className="exp-card-header">
                   <div className="exp-card-title-group">
@@ -60,7 +66,7 @@ const Experience = () => {
                     <h3 className="exp-role">{exp.role}</h3>
                     <div className="exp-company-meta">
                       <span className="exp-company">{exp.company}</span>
-                      <span className="exp-divider">â€¢</span>
+                      <span className="exp-divider">•</span>
                       <span className="exp-period"><Calendar size={13} /> {exp.period}</span>
                     </div>
                   </div>
@@ -83,7 +89,6 @@ const Experience = () => {
             </Reveal>
           ))}
         </div>
-
       </div>
     </section>
   );
