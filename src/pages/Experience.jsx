@@ -1,4 +1,4 @@
-﻿import { Target, Search, PenTool, Clapperboard, Palette, Share2, Check, Briefcase, TrendingUp, Calendar, Award } from 'lucide-react';
+import { Check, Briefcase, Calendar } from 'lucide-react';
 import './Experience.css';
 import Reveal from '../components/Reveal';
 
@@ -32,88 +32,6 @@ const experiences = [
   }
 ];
 
-const expertiseDomains = [
-  {
-    icon: <Target size={26} />,
-    title: 'Meta Ads Campaigns',
-    desc: 'Plan, launch, and optimize high-converting Facebook & Instagram ad funnels engineered for maximum ROAS.',
-    items: [
-      'Campaign Structure & Strategy',
-      'Sales & Lead Generation Goals',
-      'Laser-Focused Audience Targeting',
-      'High-CTR Ad Creative Creation',
-      'Continuous Split-Testing (A/B)',
-      'CPM, CPC, CTR & ROAS Analysis',
-    ],
-    tools: ['Meta Ads Manager', 'Meta Business Suite', 'Meta Ads Library'],
-  },
-  {
-    icon: <Search size={26} />,
-    title: 'Search Engine Optimization',
-    desc: 'Improve website search visibility and rankings through structured technical, on-page, and off-page SEO.',
-    items: [
-      'Comprehensive Keyword Research',
-      'Search Intent & Gap Analysis',
-      'On-Page SEO & Meta Architecture',
-      'Backlink Analysis & Link Building',
-      'Technical SEO & Speed Auditing',
-      'Actionable SEO Performance Reports',
-    ],
-    tools: ['Semrush', 'Google Search Console', 'Ubersuggest', 'Google Keyword Planner', 'PageSpeed Insights'],
-  },
-  {
-    icon: <PenTool size={26} />,
-    title: 'Content & Copywriting',
-    desc: 'Craft clear, persuasive words that rank on Google, stop the scroll, and compel readers into paying customers.',
-    items: [
-      'Persuasive Ad Copywriting',
-      'SEO-Optimized Blog Writing',
-      'Scroll-Stopping Social Captions',
-      'High-Converting Headlines & CTAs',
-      'Brand Messaging & Positioning',
-    ],
-    tools: ['Claude', 'Copy.ai', 'QuillBot', 'Grammarly'],
-  },
-  {
-    icon: <Clapperboard size={26} />,
-    title: 'Video Editing & Reels',
-    desc: 'Edit fast-paced, high-retention short-form video content tailored to modern social algorithms and feeds.',
-    items: [
-      'Viral Instagram Reels Editing',
-      'Engaging Product & Review Videos',
-      'Short-Form TikTok & Shorts Cuts',
-      'Pacing, Sound Design & Subtitles',
-      'Promotional Video Production',
-    ],
-    tools: ['CapCut', 'Adobe Premiere Pro'],
-  },
-  {
-    icon: <Palette size={26} />,
-    title: 'Social Media Design',
-    desc: 'Design scroll-stopping, brand-aligned visual assets for every platform â€” from carousel graphics to logos.',
-    items: [
-      'Instagram Post & Story Design',
-      'Facebook & LinkedIn Banner Creatives',
-      'High-Converting Ad Graphics',
-      'Minimalist Logo & Identity Design',
-      'Consistent Visual Aesthetics',
-    ],
-    tools: ['Canva', 'Adobe Photoshop'],
-  },
-  {
-    icon: <Share2 size={26} />,
-    title: 'Social Media Management',
-    desc: 'Manage social channels end-to-end: strategic scheduling, community interaction, and growth metrics.',
-    items: [
-      'Content Calendar & Planning',
-      'Multi-Platform Publishing',
-      'Active Community Management',
-      'DM & Comment Response Flow',
-      'Follower Growth & Reach Analysis',
-    ],
-    tools: ['Meta Business Suite', 'Canva'],
-  },
-];
 
 const Experience = () => {
   return (
@@ -166,41 +84,6 @@ const Experience = () => {
           ))}
         </div>
 
-        {/* Core Competencies Grid */}
-        <Reveal>
-          <div className="exp-subhead">
-            <span className="section-tag">CORE COMPETENCIES</span>
-            <h3 className="section-title">What I Bring to the Table</h3>
-            <p className="text-muted">
-              Deep expertise across the key pillars of modern digital growth.
-            </p>
-          </div>
-        </Reveal>
-
-        <div className="skills-grid">
-          {expertiseDomains.map((skill, i) => (
-            <Reveal key={skill.title} delay={(i % 3) * 90}>
-              <div className="skill-card">
-                <div className="skill-card-icon">{skill.icon}</div>
-                <h3>{skill.title}</h3>
-                <p className="skill-card-desc">{skill.desc}</p>
-
-                <div className="skill-list-title">Core Skills</div>
-                <ul className="skill-list">
-                  {skill.items.map((it) => (
-                    <li key={it}><Check size={15} /> {it}</li>
-                  ))}
-                </ul>
-
-                <div className="skill-tools">
-                  {skill.tools.map((t) => (
-                    <span className="skill-tool-chip" key={t}>{t}</span>
-                  ))}
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
       </div>
     </section>
   );

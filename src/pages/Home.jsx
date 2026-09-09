@@ -1,4 +1,4 @@
-﻿import { ArrowRight, Target, Search, PenTool, TrendingUp, Users, Zap, Award, Sparkles } from 'lucide-react';
+import { ArrowRight, Target, Search, PenTool, TrendingUp, Users, Zap, Award, Sparkles } from 'lucide-react';
 import './Home.css';
 import heroImg from '../assets/hero.png';
 import Reveal from '../components/Reveal';
@@ -24,11 +24,6 @@ const Home = () => {
         <div className="container">
           <div className="hero-grid">
             <div className="hero-content">
-              <div className="hero-status-badge">
-                <span className="status-dot"></span>
-                <span>Available for Freelance &amp; Full-Time Roles</span>
-              </div>
-
               <span className="hero-label">Performance Digital Marketer</span>
 
               <h1 className="hero-title">
