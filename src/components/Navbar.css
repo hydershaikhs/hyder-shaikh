@@ -49,12 +49,11 @@
   height: 38px;
   object-fit: contain;
   border-radius: 8px;
-  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.45));
-  transition: transform 0.3s ease;
+  transition: none;
 }
 
 .nav-logo:hover .logo-img {
-  transform: rotate(5deg) scale(1.06);
+  transform: none;
 }
 
 .logo-accent {
@@ -349,21 +348,18 @@
   .nav-actions {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+  }
+
+  .btn-call {
+    display: none !important;
   }
 
   .btn-cv {
     display: inline-flex !important;
-    padding: 7px 12px;
-    font-size: 0.8rem;
-    gap: 4px;
-    border-radius: 20px;
-  }
-
-  .btn-call {
-    display: inline-flex !important;
     padding: 7px 14px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    gap: 6px;
     border-radius: 20px;
   }
 
@@ -395,27 +391,24 @@
   }
 
   .nav-actions {
-    gap: 6px;
+    gap: 8px;
+  }
+
+  .btn-call {
+    display: none !important;
   }
 
   .btn-cv {
     display: inline-flex !important;
-    padding: 6px 9px;
-    font-size: 0.74rem;
-    gap: 4px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    gap: 5px;
     border-radius: 18px;
   }
 
   .btn-cv svg {
-    width: 13px;
-    height: 13px;
-  }
-
-  .btn-call {
-    display: inline-flex !important;
-    padding: 6px 11px;
-    font-size: 0.74rem;
-    border-radius: 18px;
+    width: 14px;
+    height: 14px;
   }
 
   .nav-toggle {
@@ -438,17 +431,16 @@
   }
 
   .nav-actions {
-    gap: 4px;
-  }
-
-  .btn-cv {
-    padding: 5px 7px;
-    font-size: 0.7rem;
+    gap: 6px;
   }
 
   .btn-call {
-    padding: 5px 8px;
-    font-size: 0.7rem;
+    display: none !important;
+  }
+
+  .btn-cv {
+    padding: 5px 10px;
+    font-size: 0.75rem;
   }
 
   .nav-toggle {
