@@ -1,6 +1,6 @@
-﻿import { Mail, Phone } from 'lucide-react';
+﻿import { Mail } from 'lucide-react';
 import { InstagramIcon, LinkedInIcon, FacebookIcon, WhatsAppIcon } from './SocialIcons';
-import logoImg from '../assets/logo.png';
+import footerLogoImg from '../assets/footer-logo.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Left — Logo + Name + Title */}
           <div className="footer-left">
             <div className="footer-brand-box">
-              <img src={logoImg} alt="Hyder Shaikh Logo" className="footer-logo-img" />
+              <img src={footerLogoImg} alt="Hyder Shaikh Logo" className="footer-logo-img" />
             </div>
             <div className="footer-brand-info">
               <p className="footer-name">Hyder Shaikh</p>
