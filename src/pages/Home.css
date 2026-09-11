@@ -480,17 +480,36 @@
   }
 
   .hero-visual {
-    margin-top: 20px;
+    margin: 24px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
   }
 
   .hero-ring {
-    width: 400px;
-    height: 400px;
+    display: none;
   }
 
   .hero-portrait-wrap {
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto 16px;
+  }
+
+  .hero-badge {
+    position: static;
+    margin: 5px auto;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    animation: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
   }
 
   .split-grid {
@@ -503,6 +522,11 @@
   .hero-section {
     padding-top: 125px;
     padding-bottom: 45px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .hero-label {
@@ -537,10 +561,13 @@
   }
 
   .hero-visual {
-    margin-top: 16px;
+    margin: 20px auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
   }
 
   .hero-ring {
@@ -555,11 +582,15 @@
 
   .hero-badge {
     position: static;
-    margin: 4px;
+    margin: 4px auto;
     font-size: 0.76rem;
     padding: 7px 14px;
     animation: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
   }
 
   .quick-stats-grid {
@@ -634,10 +665,32 @@
     border-radius: 20px !important;
   }
 
+  .hero-visual {
+    margin: 18px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
   .hero-portrait-wrap {
     width: 200px;
     height: 200px;
-    margin-bottom: 12px;
+    margin: 0 auto 14px !important;
+  }
+
+  .hero-badge {
+    position: static !important;
+    margin: 4px auto !important;
+    font-size: 0.74rem !important;
+    padding: 6px 13px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: fit-content !important;
+    animation: none !important;
   }
 
   .hero-tools {
