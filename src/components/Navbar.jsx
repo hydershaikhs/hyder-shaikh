@@ -115,8 +115,8 @@ const Navbar = () => {
           {/* Action Buttons & Hamburger Toggle */}
           <div className="nav-actions">
             <a
-              href="./cv/Hyder-Shaikh-CV.pdf"
-              download
+              href="./cv/Hyder_Shaikh_CV.pdf"
+              download="Hyder_Shaikh_CV.pdf"
               className="btn btn-outline btn-cv"
               title="Download Hyder Shaikh CV"
             >
@@ -196,8 +196,8 @@ const Navbar = () => {
 
         <div className="mobile-actions">
           <a
-            href="./cv/Hyder-Shaikh-CV.pdf"
-            download
+            href="./cv/Hyder_Shaikh_CV.pdf"
+            download="Hyder_Shaikh_CV.pdf"
             className="btn btn-outline btn-full"
             onClick={() => setOpen(false)}
           >
