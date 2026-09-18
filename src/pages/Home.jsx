@@ -33,7 +33,7 @@ const Home = () => {
               </h1>
 
               <p className="hero-description">
-                I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer with hands-on experience in Meta Ads, SEO, content writing, video editing, and social media management — specializing in high-ROI campaigns that drive measurable growth.
+                I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer currently working at <strong>FR Software Solution</strong>, with hands-on experience in Meta Ads, SEO, content writing, video editing, and social media management.
               </p>
 
               <div className="hero-actions">
@@ -96,13 +96,13 @@ const Home = () => {
           <Reveal>
             <div className="quick-stats-grid">
               <div className="quick-stat">
-                <div className="quick-stat-value">Meta Ads</div>
-                <div className="quick-stat-label">Facebook &amp; Instagram<br />Campaign Specialist</div>
+                <div className="quick-stat-value">FR</div>
+                <div className="quick-stat-label">Software Solution<br />Digital Marketer (Present)</div>
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">
                 <div className="quick-stat-value">SMIT</div>
-                <div className="quick-stat-label">Saylani Mass IT<br />Certified (2025)</div>
+                <div className="quick-stat-label">Saylani Mass IT<br />Certified Digital Marketer</div>
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">

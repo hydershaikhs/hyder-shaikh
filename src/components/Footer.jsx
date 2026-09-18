@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
             <div className="footer-brand-info">
               <p className="footer-name">Hyder Shaikh</p>
-              <p className="footer-title">Digital Marketer Specialist</p>
+              <p className="footer-title">Digital Marketer</p>
             </div>
           </div>
 
