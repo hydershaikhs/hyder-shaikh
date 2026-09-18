@@ -1,42 +1,34 @@
-﻿import { Check, Briefcase, Calendar } from "lucide-react";
+﻿import { Check, Briefcase, Calendar, Sparkles } from "lucide-react";
 import "./Experience.css";
 import Reveal from "../components/Reveal";
 
 const experiences = [
   {
-    role: "Digital Marketer",
-    company: "FR Software Solution",
-    period: "September 2026 – Present",
-    type: "Current Role",
+    role: "Meta Ads Specialist & Content Creator",
+    company: "Israin Solution",
+    period: "July – August 2026",
+    type: "Work Experience",
     highlight: true,
-    description: "Planning, launching, and managing end-to-end Meta Ads campaigns (Facebook & Instagram) and SEO visibility strategies to achieve measurable client and organizational growth.",
+    description: "Planned, launched, and managed end-to-end Meta Ads campaigns for multiple clients, optimizing campaign spend and creating high-converting creative assets.",
     achievements: [
-      "Plan, launch, and manage conversion-focused Meta Ads campaigns covering audience targeting, budget setting, and creative production",
-      "Analyze key Meta Ads metrics (CPM, CPC, CTR, ROAS, frequency) to continuously optimize campaigns and maximize ad spend efficiency",
-      "Apply structured SEO principles to improve website content visibility and organic search rankings across platforms",
-      "Write persuasive ad copy, hooks, social captions, and marketing collateral engineered for high CTR",
-      "Create high-retention short-form and long-form video content (Reels, TikTok, promo videos) tailored for modern social feeds",
-      "Design brand-aligned social media post creatives that build brand authority and trust",
-      "Execute proactive social media management and community engagement, responding to DMs and comments in brand voice",
-      "Deliver regular performance reports with clear, actionable insights on campaign ROAS and growth trajectory"
-    ]
-  },
-  {
-    role: "Digital Marketing Intern",
-    company: "Israin Solutions",
-    period: "July 2026 – August 2026",
-    type: "Internship",
-    highlight: false,
-    description: "Assisted in managing paid advertising funnels on Facebook & Instagram, executing organic SEO improvements, and producing brand-aligned marketing creatives.",
-    achievements: [
-      "Assisted in structuring and managing Meta Ads campaigns for multiple client accounts, covering audience segmentation and budget tracking",
-      "Conducted on-page and keyword SEO audits to improve client web property search rankings",
-      "Wrote engaging ad copy, captions, and creative headlines for social media and marketing campaigns",
-      "Created custom social media post designs and short-form video content aligned with client brand guidelines",
-      "Supported active community management across client pages, handling inquiries and boosting audience loyalty",
-      "Collaborated with clients to translate concrete business goals into high-impact digital marketing actions"
+      "Planned, launched, and managed Meta Ads campaigns for multiple clients — audience targeting, budgeting, creatives, and performance tracking.",
+      "Analyzed CPM, CPC, CTR, ROAS metrics to continuously optimize campaigns and improve ad spend efficiency.",
+      "Wrote high-converting ad copy, captions, and social media content; designed post creatives aligned with brand guidelines.",
+      "Produced short-form videos (Reels, promos) and managed community engagement across client pages.",
+      "Delivered regular performance reports with actionable insights to clients."
     ]
   }
+];
+
+const coreSkills = [
+  "Meta Ads — Facebook & Instagram Campaigns",
+  "Search Engine Optimization (SEO)",
+  "Content Writing — Ad Copy, Captions, Blog Content",
+  "Social Media Management & Community Engagement",
+  "Video Editing — Adobe Premiere Pro & After Effects",
+  "Social Media Post Design",
+  "Meta Ads Analytics — CPM, CPC, CTR, ROAS",
+  "Audience Targeting & Budget Optimization"
 ];
 
 const Experience = () => {
@@ -53,7 +45,7 @@ const Experience = () => {
           </div>
         </Reveal>
 
-        {/* Work Timeline / Highlights */}
+        {/* Work Experience Card */}
         <div className="exp-timeline">
           {experiences.map((exp, idx) => (
             <Reveal key={exp.company} delay={idx * 120}>
@@ -89,6 +81,29 @@ const Experience = () => {
             </Reveal>
           ))}
         </div>
+
+        {/* Core Skills Grid directly from CV */}
+        <Reveal delay={200}>
+          <div className="exp-skills-card">
+            <div className="exp-skills-header">
+              <span className="exp-badge">
+                <Sparkles size={14} /> Core Competencies
+              </span>
+              <h3 className="exp-skills-title">Core Skills</h3>
+              <p className="text-muted" style={{ fontSize: '0.95rem' }}>
+                Key technical and strategic capabilities applied across all client projects and marketing campaigns.
+              </p>
+            </div>
+            <div className="exp-skills-grid">
+              {coreSkills.map((skill, index) => (
+                <div key={index} className="exp-skill-pill">
+                  <span className="exp-skill-dot"></span>
+                  <span>{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

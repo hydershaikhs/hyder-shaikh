@@ -33,7 +33,7 @@ const Home = () => {
               </h1>
 
               <p className="hero-description">
-                I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer at <strong>FR Software Solution</strong> specializing in high-ROI Meta Ads, SEO ranking, compelling ad copy, short-form video editing, and complete social media growth.
+                I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer with hands-on experience in Meta Ads, SEO, content writing, video editing, and social media management — specializing in high-ROI campaigns that drive measurable growth.
               </p>
 
               <div className="hero-actions">
@@ -96,23 +96,23 @@ const Home = () => {
           <Reveal>
             <div className="quick-stats-grid">
               <div className="quick-stat">
-                <div className="quick-stat-value">FR</div>
-                <div className="quick-stat-label">Software Solution<br />Digital Marketer (Present)</div>
+                <div className="quick-stat-value">Meta Ads</div>
+                <div className="quick-stat-label">Facebook &amp; Instagram<br />Campaign Specialist</div>
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">
                 <div className="quick-stat-value">SMIT</div>
-                <div className="quick-stat-label">Saylani Mass IT<br />Certified Digital Marketer</div>
+                <div className="quick-stat-label">Saylani Mass IT<br />Certified (2025)</div>
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">
                 <div className="quick-stat-value">ROAS</div>
-                <div className="quick-stat-label">Data-Driven<br />Meta Ads &amp; Performance SEO</div>
+                <div className="quick-stat-label">Data-Driven Metrics<br />CPM, CPC, CTR &amp; ROI</div>
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">
                 <div className="quick-stat-value">100%</div>
-                <div className="quick-stat-label">Dedication to<br />Measurable Growth &amp; ROI</div>
+                <div className="quick-stat-label">Dedication to<br />Measurable Marketing Results</div>
               </div>
             </div>
           </Reveal>
@@ -172,7 +172,7 @@ const Home = () => {
                   <div className="quote-avatar">IS</div>
                   <div>
                     <h5 className="quote-name">Israin Solution</h5>
-                    <p className="quote-role">Internship Experience Endorsement</p>
+                    <p className="quote-role">Work Experience Endorsement</p>
                   </div>
                 </div>
               </div>
