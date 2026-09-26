@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, BookOpen, Heart, Globe } from 'lucide-react';
+import { Briefcase, GraduationCap, BookOpen, Heart } from 'lucide-react';
 import Reveal from '../components/Reveal';
 
 const About = () => {
@@ -58,15 +58,6 @@ const About = () => {
               <h3 className="about-card-title">Education</h3>
               <h4 className="about-card-subtitle">Secondary School Certificate (Matric)</h4>
               <p className="text-muted">In Progress • Building Strong Foundation</p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={300}>
-            <div className="card about-card">
-              <div className="about-card-icon"><Globe size={26} /></div>
-              <h3 className="about-card-title">Languages</h3>
-              <h4 className="about-card-subtitle">English &amp; Urdu</h4>
-              <p className="text-muted">Professional Communication</p>
             </div>
           </Reveal>
         </div>
