@@ -10,7 +10,7 @@ const About = () => {
             <span className="section-tag">ABOUT HYDER SHAIKH</span>
             <h2 className="page-title">Digital Marketing With<br />Strategy, Creativity &amp; Precision.</h2>
             <p className="text-muted">
-              Results-driven Digital Marketer currently working at FR Software Solution, with hands-on experience in Meta Ads, SEO, content writing, video editing, and social media management.
+              Results-driven Digital Marketer currently working at FR Software Solution, with hands-on experience in Meta Ads, Video editing, and Social Media Management.
             </p>
           </div>
         </Reveal>
@@ -20,7 +20,7 @@ const About = () => {
           <div className="about-narrative-card">
             <div className="about-text-content">
               <p className="about-p-lead">
-                I'm <strong className="text-accent">Hyder Shaikh</strong>, a results-driven Digital Marketer currently working at <strong>FR Software Solution</strong>, with hands-on experience in Meta Ads, SEO, content writing, video editing, and social media management.
+                I'm <strong className="text-accent">Hyder Shaikh</strong>, a results-driven Digital Marketer currently working at <strong>FR Software Solution</strong>, with hands-on experience in Meta Ads, Video editing, and Social Media Management.
               </p>
               <p className="about-p">
                 I specialize in planning, launching, and optimizing Facebook and Instagram advertising campaigns to help businesses achieve measurable marketing goals — from audience targeting and budget allocation to creative production and deep performance reporting (CPM, CPC, CTR, ROAS, and frequency).

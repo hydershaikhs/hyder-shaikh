@@ -33,7 +33,7 @@ const Home = () => {
               </h1>
 
               <p className="hero-description">
-                I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer currently working at <strong>FR Software Solution</strong>, with hands-on experience in Meta Ads, SEO, content writing, video editing, and social media management.
+                I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer currently working at <strong>FR Software Solution</strong>, with hands-on experience in Meta Ads, Video editing, and Social Media Management.
               </p>
 
               <div className="hero-actions">
@@ -64,7 +64,6 @@ const Home = () => {
                 <span className="hero-tool-chip">Meta Ads &amp; UGC</span>
                 <span className="hero-tool-chip">Social Media Growth</span>
                 <span className="hero-tool-chip">Reels &amp; YouTube Editing</span>
-                <span className="hero-tool-chip">SEO &amp; Ranking</span>
                 <span className="hero-tool-chip">Ad Copywriting</span>
               </div>
             </div>
