@@ -146,7 +146,7 @@ const Home = () => {
                     </div>
                     <div>
                       <h4>Audience-Centric Targeting</h4>
-                      <p>I don't just chase empty vanity clicks â€” I identify and target high-intent buyers most likely to convert.</p>
+                      <p>I do not just chase vanity clicks — I identify and target high-intent buyers most likely to convert.</p>
                     </div>
                   </li>
                   <li className="why-item">
@@ -155,7 +155,7 @@ const Home = () => {
                     </div>
                     <div>
                       <h4>Creative + Analytical Synergy</h4>
-                      <p>Copy, visual design, and video editing built around a proven strategy â€” so your brand looks premium and sells.</p>
+                      <p>Copy, visual design, and video editing built around a proven strategy — so your brand looks premium and sells.</p>
                     </div>
                   </li>
                 </ul>

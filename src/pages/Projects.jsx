@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import {
   Megaphone, Search, PenTool, Clapperboard, Palette, Share2,
   Check, Target, BarChart3, LineChart,
@@ -10,121 +10,66 @@ import Reveal from "../components/Reveal";
 
 const projects = [
   {
-    id: "pepvial-seo",
-    title: "PepVial - SEO Audit & Search Optimization",
-    category: "SEO",
-    categoryLabel: "SEO Case Study",
-    client: "PepVial",
-    icon: <Search size={24} className="text-accent" />,
-    role: "SEO Specialist & Analyst",
-    description: "Comprehensive SEO analysis and website optimization for PepVial. Conducted structured keyword discovery, audited technical performance, refined meta architecture, and formulated an organic growth roadmap.",
-    deliverables: [
-      "Targeted commercial and informational keyword research",
-      "On-page content optimization and meta tags restructuring",
-      "Technical site audit and Core Web Vitals evaluation",
-      "Competitor backlink profile analysis"
-    ],
-    tags: ["Keyword Research", "On-Page SEO", "Technical SEO", "Performance Audit"],
-    tools: ["Semrush", "Google Search Console", "PageSpeed Insights"],
-  },
-  {
-    id: "planetcert-seo",
-    title: "PlanetCert - Competitive SEO & Visibility Strategy",
-    category: "SEO",
-    categoryLabel: "SEO Case Study",
-    client: "PlanetCert",
-    icon: <Target size={24} className="text-accent" />,
-    role: "SEO Specialist & Auditor",
-    description: "Competitive SEO benchmarking and organic reach enhancement for PlanetCert. Evaluated ranking opportunities, internal linking hierarchy, competitor keyword positioning, and backlink health.",
-    deliverables: [
-      "In-depth competitor keyword gap analysis",
-      "Website architecture and internal linking optimization",
-      "Search intent mapping for key landing pages",
-      "Backlink profile quality assessment"
-    ],
-    tags: ["Competitor Analysis", "Backlink Audit", "SEO Architecture", "Organic Traffic"],
-    tools: ["Semrush", "Google Keyword Planner", "Ubersuggest"],
-  },
-  {
-    id: "meta-ads-campaigns",
-    title: "Conversion-Driven Meta Ads Campaigns",
-    category: "Meta Ads",
-    categoryLabel: "Paid Advertising",
-    client: "Israin Solution / Client Accounts",
-    icon: <Megaphone size={24} className="text-accent" />,
-    role: "Meta Ads Specialist",
-    description: "Full-funnel Facebook & Instagram paid advertising campaigns focused on conversions, lead generation, and maximizing return on ad spend (ROAS).",
-    deliverables: [
-      "Laser-targeted audience segmentation and demographic research",
-      "Scroll-stopping visual ad creatives and primary copy hooks",
-      "Continuous A/B split-testing of creative angles and headlines",
-      "In-depth CPM, CPC, CTR, frequency, and ROAS reporting"
-    ],
-    tags: ["Audience Targeting", "Creative Testing", "ROAS Optimization", "Performance Analytics"],
-    tools: ["Meta Ads Manager", "Meta Business Suite", "Meta Ads Library"],
-  },
-  {
-    id: "marketing-insight-smm",
-    title: "Marketing Insight - Brand Growth & Community Management",
-    category: "Social",
+    id: "social-media-management",
+    title: "Multi-Brand Social Media Management & Growth Strategy",
+    category: "Social Media",
     categoryLabel: "Social Media Management",
-    client: "Marketing Insight",
+    client: "FR Software Solution & Saadgi (E-Commerce Brand)",
     icon: <Share2 size={24} className="text-accent" />,
-    role: "Social Media Manager & Strategist",
-    description: "Actively running complete social presence across Instagram and Facebook. Crafting cohesive aesthetic visuals, scheduling regular value-driven posts, and driving community engagement.",
+    role: "Social Media Manager & Content Strategist",
+    description: "Managing full-funnel multi-platform social media operations for FR Software Solution (Facebook, Instagram, LinkedIn) and Saadgi, an e-commerce brand (TikTok, YouTube, Instagram, Pinterest, Facebook). Developing monthly content calendars, executing high-converting content strategies, designing branded social posts, and conducting deep performance analytics.",
     deliverables: [
-      "Strategic monthly content calendar and story planning",
-      "Custom branded feed graphics and carousel infographics",
-      "Proactive DM handling, comment moderation, and outreach",
-      "Weekly engagement analytics and content iteration"
+      "Strategic content calendar planning & multi-channel content strategy",
+      "Active management across TikTok, YouTube, Instagram, Facebook, LinkedIn & Pinterest",
+      "High-engagement social media post design & brand identity curation",
+      "Community management, DM/comment interaction, and reach & engagement analysis"
     ],
-    tags: ["Instagram Growth", "Facebook Strategy", "Community Management", "Content Scheduling"],
-    tools: ["Meta Business Suite", "Canva", "Social Analytics"],
+    tags: ["Content Calendar", "Content Strategy", "Post Design", "FR Software & Saadgi", "Multi-Platform Growth"],
+    tools: ["Meta Business Suite", "Canva", "TikTok", "Pinterest", "YouTube Studio", "LinkedIn"],
   },
   {
-    id: "video-editing-reels",
-    title: "High-Retention Video Editing & Short-Form Reels",
-    category: "Creative",
-    categoryLabel: "Video Production",
-    client: "Social Brands & Creators",
+    id: "video-editing-production",
+    title: "High-Retention Short-Form Reels & YouTube Video Editing",
+    category: "Video Editing",
+    categoryLabel: "Video Production & Editing",
+    client: "Saadgi (E-Commerce), FR Software Solution & YouTube",
     icon: <Clapperboard size={24} className="text-accent" />,
-    role: "Video Editor & Motion Creator",
-    description: "Fast-paced, hook-driven short-form video editing for Instagram Reels, TikTok, and YouTube Shorts. Optimized for maximum watch time, engagement, and virality.",
+    role: "Video Editor & Motion Designer",
+    description: "Producing and editing scroll-stopping video content for Saadgi e-commerce brand, FR Software Solution corporate channels, and YouTube creators. Crafting dynamic short-form Reels and TikToks along with engaging long-form and short-form YouTube videos featuring smooth pacing, kinetic subtitles, and immersive sound design.",
     deliverables: [
-      "First 3-second hook curation to stop the scroll",
-      "Dynamic jump-cuts, speed ramps, and smooth transitions",
-      "Animated subtitles, kinetic text, and trending sound design",
-      "Product review edits, showcase reels, and promo snippets"
+      "High-converting product showcase Reels & TikToks for Saadgi e-commerce brand",
+      "Professional promotional and corporate video editing for FR Software Solution",
+      "Long-form & short-form YouTube video editing with retention-driven hooks and pacing",
+      "Kinetic typography, animated captions, visual effects, and dynamic sound design"
     ],
-    tags: ["Instagram Reels", "TikTok / Shorts", "Sound Design", "Hook Curation"],
-    tools: ["CapCut", "Adobe Premiere Pro"],
+    tags: ["Reels & TikToks", "E-Commerce Video", "YouTube Long & Short", "Premiere Pro", "After Effects"],
+    tools: ["Adobe Premiere Pro", "Adobe After Effects", "CapCut"],
   },
   {
-    id: "social-design-branding",
-    title: "Brand Creatives & Social Media Post Design",
-    category: "Creative",
-    categoryLabel: "Visual Design",
-    client: "Various Clients",
-    icon: <Palette size={24} className="text-accent" />,
-    role: "Visual Designer",
-    description: "Eye-catching, brand-aligned graphic design assets crafted for Instagram, Facebook, and LinkedIn to build authority and convert audience into leads.",
+    id: "meta-ads-ecommerce",
+    title: "Art Painting E-Commerce & UGC Meta Ads Campaigns",
+    category: "Meta Ads",
+    categoryLabel: "Paid Advertising & Meta Ads",
+    client: "Art Painting E-Commerce Store / FR Software Solution",
+    icon: <Megaphone size={24} className="text-accent" />,
+    role: "Meta Ads Specialist & Media Buyer",
+    description: "Planned, launched, and optimized high-converting Facebook and Instagram ad campaigns to drive direct sales for art paintings. Produced high-retention UGC (User-Generated Content) video and image ad creatives, structured precision audience targeting, and continuously improved CPM, CPC, CTR, Frequency, and ROAS to deliver proven sales volume.",
     deliverables: [
-      "Multi-slide educational carousel designs",
-      "High-CTR promotional ad banners and story graphics",
-      "Minimalist, recognizable logo and vector assets",
-      "Consistent color palettes and typography hierarchies"
+      "Targeted Meta Ads campaign setup (Facebook & Instagram) specifically driving art painting sales",
+      "High-converting UGC (User-Generated Content) video & image ad creative creation",
+      "Precision demographic targeting, lookalike audiences, and retargeting funnels",
+      "Real-time analytics optimization for CPM, CPC, CTR, Frequency, and ROAS reporting"
     ],
-    tags: ["Carousel Posts", "Ad Creatives", "Visual Identity", "Social Banners"],
-    tools: ["Adobe Photoshop", "Canva"],
+    tags: ["Meta Ads (FB/IG)", "Art Painting Sales", "UGC Ads Creation", "ROAS Optimization", "Conversion Tracking"],
+    tools: ["Meta Ads Manager", "Meta Business Suite", "Meta Pixel & Events", "Canva"],
   },
 ];
 
 const categories = [
   { key: "All", label: "All Projects" },
+  { key: "Social Media", label: "Social Media" },
+  { key: "Video Editing", label: "Video Editing" },
   { key: "Meta Ads", label: "Meta Ads" },
-  { key: "SEO", label: "SEO Case Studies" },
-  { key: "Social", label: "Social Media" },
-  { key: "Creative", label: "Video & Design" },
 ];
 
 const metaAdsFramework = [
@@ -154,7 +99,7 @@ const Projects = () => {
             <span className="section-tag">PORTFOLIO & DELIVERABLES</span>
             <h2 className="page-title">Featured Projects & Case Studies</h2>
             <p className="text-muted">
-              A detailed look at real-world projects, organic SEO case studies, high-performing Meta ad funnels, and creative campaigns I have delivered.
+              A detailed look at real-world multi-platform social media growth, high-retention video editing, and conversion-focused Meta Ads campaigns I manage and deliver.
             </p>
           </div>
         </Reveal>
