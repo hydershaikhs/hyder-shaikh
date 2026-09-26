@@ -77,7 +77,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="hero-badge badge-1">
-                <Target size={18} /> Meta Ads &amp; UGC Specialist
+                <Target size={18} /> Meta Ads Specialist
               </div>
               <div className="hero-badge badge-2">
                 <Users size={18} /> Social Media Manager
@@ -171,7 +171,7 @@ const Home = () => {
                 <div className="quote-author">
                   <div className="quote-avatar">FR</div>
                   <div>
-                    <h5 className="quote-name">FR Software Solution &amp; Saadgi</h5>
+                    <h5 className="quote-name">FR Software Solutions</h5>
                     <p className="quote-role">Active Digital Marketer &amp; Content Strategist</p>
                   </div>
                 </div>
