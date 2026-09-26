@@ -64,7 +64,6 @@ const Home = () => {
                 <span className="hero-tool-chip">Meta Ads &amp; UGC</span>
                 <span className="hero-tool-chip">Social Media Growth</span>
                 <span className="hero-tool-chip">Reels &amp; YouTube Editing</span>
-                <span className="hero-tool-chip">Ad Copywriting</span>
               </div>
             </div>
 
