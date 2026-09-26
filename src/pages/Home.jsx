@@ -61,11 +61,11 @@ const Home = () => {
 
               <div className="hero-tools">
                 <span className="hero-tools-label">Expertise:</span>
-                <span className="hero-tool-chip">Meta Ads (FB/IG)</span>
+                <span className="hero-tool-chip">Meta Ads &amp; UGC</span>
+                <span className="hero-tool-chip">Social Media Growth</span>
+                <span className="hero-tool-chip">Reels &amp; YouTube Editing</span>
                 <span className="hero-tool-chip">SEO &amp; Ranking</span>
                 <span className="hero-tool-chip">Ad Copywriting</span>
-                <span className="hero-tool-chip">Reels Editing</span>
-                <span className="hero-tool-chip">Social Growth</span>
               </div>
             </div>
 
@@ -77,13 +77,13 @@ const Home = () => {
                 </div>
               </div>
               <div className="hero-badge badge-1">
-                <Target size={18} /> Meta Ads Specialist
+                <Target size={18} /> Meta Ads &amp; UGC Specialist
               </div>
               <div className="hero-badge badge-2">
-                <Search size={18} /> SEO &amp; Organic Reach
+                <Users size={18} /> Social Media Manager
               </div>
               <div className="hero-badge badge-3">
-                <PenTool size={18} /> Creative &amp; Video
+                <PenTool size={18} /> Video Editing &amp; Reels
               </div>
             </div>
           </div>
@@ -101,6 +101,11 @@ const Home = () => {
               </div>
               <div className="quick-stat-divider"></div>
               <div className="quick-stat">
+                <div className="quick-stat-value">Saadgi</div>
+                <div className="quick-stat-label">E-Commerce Brand<br />Social Media &amp; Content</div>
+              </div>
+              <div className="quick-stat-divider"></div>
+              <div className="quick-stat">
                 <div className="quick-stat-value">SMIT</div>
                 <div className="quick-stat-label">Saylani Mass IT<br />Certified Digital Marketer</div>
               </div>
@@ -108,11 +113,6 @@ const Home = () => {
               <div className="quick-stat">
                 <div className="quick-stat-value">ROAS</div>
                 <div className="quick-stat-label">Data-Driven Metrics<br />CPM, CPC, CTR &amp; ROI</div>
-              </div>
-              <div className="quick-stat-divider"></div>
-              <div className="quick-stat">
-                <div className="quick-stat-value">100%</div>
-                <div className="quick-stat-label">Dedication to<br />Measurable Marketing Results</div>
               </div>
             </div>
           </Reveal>
@@ -128,16 +128,16 @@ const Home = () => {
                 <span className="section-tag">THE COMPETITIVE EDGE</span>
                 <h2 className="section-title-left">Why Work<br />With Me?</h2>
                 <p className="text-muted" style={{ fontSize: '1.08rem', marginBottom: '32px', lineHeight: '1.8' }}>
-                  In a saturated digital space, generic marketing burns ad budgets without generating returns. I blend analytical campaign math with emotional creative hooks to craft marketing that actually converts.
+                  In a crowded digital space, generic posts and poorly targeted ads waste valuable budget. I combine analytical ad metrics with scroll-stopping UGC creatives, strategic content calendars, and high-retention video editing to deliver measurable marketing results.
                 </p>
                 <ul className="why-list">
                   <li className="why-item">
                     <div className="why-icon-box">
-                      <TrendingUp size={22} className="text-accent" />
+                      <Target size={22} className="text-accent" />
                     </div>
                     <div>
-                      <h4>Data-Backed Performance</h4>
-                      <p>Every decision is grounded in real-time tracking of CPM, CPC, CTR, and ROAS to prevent wasted ad spend.</p>
+                      <h4>High-Converting Meta Ads &amp; UGC</h4>
+                      <p>Full-funnel Facebook and Instagram ad campaigns, direct-response UGC creative testing, and continuous optimization of CPM, CPC, CTR, and ROAS.</p>
                     </div>
                   </li>
                   <li className="why-item">
@@ -145,8 +145,8 @@ const Home = () => {
                       <Users size={22} className="text-accent" />
                     </div>
                     <div>
-                      <h4>Audience-Centric Targeting</h4>
-                      <p>I do not just chase vanity clicks — I identify and target high-intent buyers most likely to convert.</p>
+                      <h4>Multi-Platform Social Media Strategy</h4>
+                      <p>End-to-end management across Facebook, Instagram, LinkedIn, TikTok, YouTube &amp; Pinterest with structured content calendars and branded post designs.</p>
                     </div>
                   </li>
                   <li className="why-item">
@@ -154,8 +154,8 @@ const Home = () => {
                       <Zap size={22} className="text-accent" />
                     </div>
                     <div>
-                      <h4>Creative + Analytical Synergy</h4>
-                      <p>Copy, visual design, and video editing built around a proven strategy — so your brand looks premium and sells.</p>
+                      <h4>High-Retention Video Editing</h4>
+                      <p>Dynamic Reels, TikToks, and YouTube video editing with kinetic subtitles, retention hooks, and sound design built to engage and convert.</p>
                     </div>
                   </li>
                 </ul>
@@ -166,13 +166,13 @@ const Home = () => {
               <div className="quote-card">
                 <div className="quote-mark">"</div>
                 <p className="quote-text">
-                  "Hyder blends analytical Meta Ads strategies with creative video editing and compelling copy to deliver measurable marketing goals and client satisfaction."
+                  "Hyder manages multi-platform social media operations, crafts high-converting UGC video creatives, and executes Meta Ads campaigns that drive tangible business reach and sales."
                 </p>
                 <div className="quote-author">
-                  <div className="quote-avatar">IS</div>
+                  <div className="quote-avatar">FR</div>
                   <div>
-                    <h5 className="quote-name">Israin Solution</h5>
-                    <p className="quote-role">Work Experience Endorsement</p>
+                    <h5 className="quote-name">FR Software Solution &amp; Saadgi</h5>
+                    <p className="quote-role">Active Digital Marketer &amp; Content Strategist</p>
                   </div>
                 </div>
               </div>
