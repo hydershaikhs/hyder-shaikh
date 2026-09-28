@@ -8,20 +8,39 @@ const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (errorMsg) setErrorMsg("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const trimmedName = form.name.trim();
+    const trimmedEmail = form.email.trim();
+    const trimmedSubject = form.subject.trim();
+    const trimmedMessage = form.message.trim();
+
+    if (!trimmedName || !trimmedEmail || !trimmedSubject || !trimmedMessage) {
+      setErrorMsg("Please fill out all required fields.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedEmail)) {
+      setErrorMsg("Please enter a valid email address.");
+      return;
+    }
+
+    setErrorMsg("");
     setSending(true);
     const data = new FormData();
-    data.append("name", form.name);
-    data.append("email", form.email);
-    data.append("_subject", `Portfolio Inquiry - ${form.subject} (${form.name})`);
-    data.append("Subject", form.subject);
-    data.append("message", form.message);
+    data.append("name", trimmedName);
+    data.append("email", trimmedEmail);
+    data.append("_subject", `Portfolio Inquiry - ${trimmedSubject} (${trimmedName})`);
+    data.append("Subject", trimmedSubject);
+    data.append("message", trimmedMessage);
     data.append("_captcha", "false");
     data.append("_template", "table");
     try {
@@ -48,7 +67,7 @@ const Contact = () => {
                 Let us work <span className="contact-heading-accent">together</span>
               </h2>
               <p className="contact-subtext">
-                Open to freelance projects and collaborations. Whether it is Meta Ads, SEO, or social media growth, tell me what you need and I will get back to you within 24 hours.
+                Open to freelance projects and collaborations. Whether it is Meta Ads, Video Editing, or Social Media Management, tell me what you need and I will get back to you within 24 hours.
               </p>
 
               <div className="contact-social-row">
@@ -76,23 +95,24 @@ const Contact = () => {
                   <div className="contact-success-icon"><CheckCircle2 size={48} /></div>
                   <h3>Message Sent!</h3>
                   <p>Thank you, <strong>{form.name}</strong>. I will get back to you shortly.</p>
-                  <button className="contact-submit-btn" onClick={() => { setSent(false); setForm({ name: "", email: "", subject: "", message: "" }); }}>
+                  <button className="contact-submit-btn" onClick={() => { setSent(false); setForm({ name: "", email: "", subject: "", message: "" }); setErrorMsg(""); }}>
                     Send Another Message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="contact-form" noValidate>
+                <form onSubmit={handleSubmit} className="contact-form">
+                  {errorMsg && <div className="cf-error">{errorMsg}</div>}
                   <div className="cf-field">
-                    <input type="text" name="name" placeholder="Your name" required value={form.name} onChange={handleChange} />
+                    <input type="text" name="name" placeholder="Your name *" required value={form.name} onChange={handleChange} />
                   </div>
                   <div className="cf-field">
-                    <input type="email" name="email" placeholder="you@company.com" required value={form.email} onChange={handleChange} />
+                    <input type="email" name="email" placeholder="you@company.com *" required value={form.email} onChange={handleChange} />
                   </div>
                   <div className="cf-field">
-                    <input type="text" name="subject" placeholder="Subject" required value={form.subject} onChange={handleChange} />
+                    <input type="text" name="subject" placeholder="Subject *" required value={form.subject} onChange={handleChange} />
                   </div>
                   <div className="cf-field">
-                    <textarea name="message" rows="5" placeholder="Your message" required value={form.message} onChange={handleChange} />
+                    <textarea name="message" rows="5" placeholder="Your message *" required value={form.message} onChange={handleChange} />
                   </div>
                   <button type="submit" className="contact-submit-btn" disabled={sending}>
                     {sending ? <span>Sending...</span> : <><span>Send via Email</span><Send size={16} /></>}
