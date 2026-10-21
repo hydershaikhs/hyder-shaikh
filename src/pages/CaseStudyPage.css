@@ -1,0 +1,559 @@
+/* ==================== DEDICATED CASE STUDY PAGE ==================== */
+.case-study-page {
+  min-height: 100vh;
+  background-color: var(--bg-dark, #080c16);
+  color: var(--text-main, #f0f4f8);
+  padding-bottom: 100px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Ambient Glows */
+.case-study-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sticky Navigation Bar */
+.case-page-nav-bar {
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+  background: rgba(8, 12, 22, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 14px 0;
+}
+
+.case-page-nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.case-page-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 24px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.case-page-back-btn:hover {
+  background: rgba(0, 240, 255, 0.12);
+  border-color: var(--accent, #00f0ff);
+  color: var(--accent, #00f0ff);
+  transform: translateX(-3px);
+}
+
+.case-page-nav-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.case-page-tag-cat {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent, #00f0ff);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.case-page-tag-client {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: var(--text-muted, #94a3b8);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Page Hero */
+.case-page-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 40px;
+}
+
+.case-page-hero {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 44px;
+}
+
+.case-page-badges {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-pill-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent, #00f0ff);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  padding: 6px 14px;
+  border-radius: 30px;
+}
+
+.hero-pill-badge.objective {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.case-page-main-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.case-page-main-headline {
+  font-size: 1.15rem;
+  color: var(--accent, #00f0ff);
+  font-weight: 500;
+}
+
+/* ==================== CREATIVE VIDEO SHOWCASE (MOBILE STORY DECK) ==================== */
+.creative-showcase-section {
+  background: linear-gradient(180deg, rgba(14, 21, 38, 0.8) 0%, rgba(10, 16, 28, 0.95) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 24px;
+  padding: 36px 28px 44px;
+  margin-bottom: 54px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 240, 255, 0.06);
+}
+
+.showcase-header-ribbon {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.ribbon-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent, #00f0ff);
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.showcase-section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.showcase-section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted, #94a3b8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Mobile Story Deck Grid: 4 Vertical Phones */
+.mobile-story-deck {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 1100px) {
+  .mobile-story-deck {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .mobile-story-deck {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Smartphone Mockup Frame */
+.story-frame-card {
+  position: relative;
+  background: #090e1a;
+  border-radius: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  padding: 14px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.story-frame-card.premiere {
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.08);
+}
+
+.story-frame-card.ai {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.1);
+}
+
+.story-frame-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent, #00f0ff);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(0, 240, 255, 0.2);
+}
+
+/* Phone Speaker Grill Notch */
+.story-frame-speaker {
+  width: 44px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 0 auto 10px;
+}
+
+/* Top bar inside phone */
+.story-frame-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 4px;
+}
+
+.story-source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent, #00f0ff);
+  background: rgba(0, 240, 255, 0.12);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.story-source-badge.ai-badge {
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.15);
+}
+
+.story-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00f0ff;
+  box-shadow: 0 0 8px #00f0ff;
+}
+
+.story-dot.live-ai {
+  background: #c084fc;
+  box-shadow: 0 0 8px #c084fc;
+}
+
+/* Video Player in Phone Frame */
+.story-video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+/* Bottom Ribbon inside phone */
+.story-frame-bottom-ribbon {
+  margin-top: 12px;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 12px;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.story-frame-bottom-ribbon.ai-ribbon {
+  background: rgba(168, 85, 247, 0.08);
+  border-color: rgba(168, 85, 247, 0.25);
+}
+
+.ribbon-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.ribbon-desc {
+  font-size: 0.72rem;
+  color: var(--text-muted, #94a3b8);
+  margin-top: 2px;
+}
+
+/* ==================== DETAILS SECTION (NEECHE KI DETAILS) ==================== */
+.case-details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* KPI Stats Deck */
+.case-stats-deck {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .case-stats-deck {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.case-stat-box {
+  background: rgba(14, 21, 38, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 22px 18px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.case-stat-box:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.stat-box-value {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent, #00f0ff);
+  line-height: 1.1;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.stat-box-label {
+  font-size: 0.85rem;
+  color: var(--text-muted, #94a3b8);
+  font-weight: 500;
+}
+
+/* Case Blocks Grid */
+.case-blocks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+@media (max-width: 800px) {
+  .case-blocks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-detail-block {
+  background: rgba(14, 21, 38, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.case-detail-block.full-width {
+  grid-column: 1 / -1;
+}
+
+.block-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.block-text {
+  font-size: 0.96rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* Tools Card */
+.case-tools-card {
+  background: rgba(14, 21, 38, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px 24px;
+}
+
+.tools-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.tools-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-pill-item {
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Services Breakdown */
+.case-services-container {
+  background: rgba(14, 21, 38, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 32px 28px;
+}
+
+.services-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 22px;
+}
+
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 768px) {
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-card-item {
+  background: rgba(8, 12, 22, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.service-card-header h4 {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.service-card-item p {
+  font-size: 0.88rem;
+  color: var(--text-muted, #94a3b8);
+  line-height: 1.6;
+}
+
+/* CTA Card */
+.case-page-cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.12) 0%, rgba(14, 21, 38, 0.9) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .case-page-cta-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.cta-left h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.cta-left p {
+  font-size: 0.95rem;
+  color: var(--text-muted, #94a3b8);
+}
+
+.cta-right {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
