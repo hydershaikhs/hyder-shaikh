@@ -23,9 +23,6 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    if (pageRef.current) {
-      pageRef.current.scrollIntoView({ behavior: "instant", block: "start" });
-    }
     if (project) {
       document.title = `${project.title} | Hyder Shaikh Portfolio Case Study`;
     }
