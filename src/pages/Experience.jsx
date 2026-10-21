@@ -4,19 +4,18 @@ import Reveal from "../components/Reveal";
 
 const experiences = [
   {
-    role: "Digital Marketer & Performance Specialist",
+    role: "Digital Marketer & Media Buyer",
     company: "FR Software Solution",
     period: "SEP 2026 – PRESENT",
     type: "FULL-TIME",
     isCurrent: true,
-    description: "Leading full-funnel Meta Ads campaigns, high-retention video production, and multi-platform organic social growth to drive verifiable client acquisition and scalable revenue.",
-    keyContributions: [
-      "Plan, launch, and scale conversion-driven Meta Ads (Facebook & Instagram) covering custom audience targeting, budget allocation, and ROAS optimization.",
-      "Analyze full-funnel ad metrics (CPM, CPC, CTR, ROAS, Frequency) to continuously refine ad spend efficiency and maximize conversion volume.",
-      "Produce scroll-stopping UGC video and image ad creatives tailored for direct-response paid campaigns.",
-      "Manage multi-channel social media operations (Facebook, Instagram, LinkedIn) with monthly content calendars, post designs, and community engagement."
+    description: "Managing full-funnel Meta Ads campaigns, high-retention video production, and multi-platform organic social growth to drive qualified leads, direct sales, and brand reach.",
+    highlights: [
+      "Manage end-to-end Meta Ads campaigns (FB & IG) optimized for ROAS, lower CPA, and qualified lead acquisition.",
+      "Produce scroll-stopping UGC video and image creatives tailored for high-converting direct-response advertising.",
+      "Execute monthly multi-channel content strategies across Facebook, Instagram, and LinkedIn with branded post designs."
     ],
-    tools: ["Meta Ads Manager", "Meta Pixel & CAPI", "Canva", "CapCut", "Premiere Pro", "Meta Business Suite"]
+    tools: ["Meta Ads Manager", "Meta Pixel", "Canva", "CapCut", "Meta Business Suite"]
   },
   {
     role: "Digital Marketing Intern",
@@ -24,12 +23,11 @@ const experiences = [
     period: "JULY 2026 – AUGUST 2026",
     type: "INTERNSHIP",
     isCurrent: false,
-    description: "Assisted senior media buyers in structuring paid advertising funnels on Facebook & Instagram, and producing brand-aligned marketing creatives for diverse client niches.",
-    keyContributions: [
-      "Supported campaign setup, custom audience segmentation, and budget allocation for multi-client Meta Ads accounts.",
-      "Designed high-engagement social media post creatives and dynamic short-form Reels following client brand guidelines.",
-      "Wrote direct-response ad copy, compelling hook headlines, and persuasive captions for paid and organic campaigns.",
-      "Assisted community management workflows and monitored daily campaign deliverability metrics."
+    description: "Assisted senior marketing teams in structuring paid advertising funnels, audience segmentation, and producing brand-aligned marketing creatives for diverse client niches.",
+    highlights: [
+      "Assisted in setting up client Meta Ads campaigns, testing audience clusters, and monitoring daily delivery metrics.",
+      "Created dynamic short-form Reels and aesthetic graphic post designs aligned with client brand guides.",
+      "Crafted direct-response ad copywriting, hook headlines, and persuasive captions for paid and organic campaigns."
     ],
     tools: ["Facebook Ads", "Instagram Ads", "Ad Copywriting", "Audience Research", "Canva"]
   }
@@ -78,7 +76,7 @@ const Experience = () => {
                       {exp.isCurrent && (
                         <span className="exp-current-pill">
                           <span className="pulse-dot"></span>
-                          <span>Present Role</span>
+                          <span>Present</span>
                         </span>
                       )}
                     </div>
@@ -90,32 +88,24 @@ const Experience = () => {
                   </div>
                 </div>
 
-                <div className="exp-divider-line"></div>
-
                 {/* Role Description */}
                 <p className="exp-description">{exp.description}</p>
 
-                {/* Key Contributions & Impact */}
-                <div className="exp-contributions-box">
-                  <div className="exp-contributions-title">
-                    <Sparkles size={14} className="text-accent" />
-                    <span>Key Contributions &amp; Impact:</span>
-                  </div>
-                  <ul className="exp-contributions-list">
-                    {exp.keyContributions.map((item, i) => (
-                      <li key={i}>
-                        <Check size={14} className="text-accent exp-check-icon" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {/* Key Highlights List (Compact & Clean) */}
+                <ul className="exp-highlights-list">
+                  {exp.highlights.map((item, i) => (
+                    <li key={i}>
+                      <Check size={14} className="text-accent exp-check-icon" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-                {/* Tools Applied */}
-                <div className="exp-tools-footer">
+                {/* Compact Tools Row */}
+                <div className="exp-tools-row">
                   <span className="exp-tools-label">
-                    <Wrench size={13} />
-                    <span>Applied Tools:</span>
+                    <Wrench size={12} />
+                    <span>Tools:</span>
                   </span>
                   <div className="exp-tools-chips">
                     {exp.tools.map((tool, i) => (
