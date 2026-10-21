@@ -69,8 +69,13 @@ const Navbar = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-    } else if (id === 'home') {
+    } else {
+      window.location.hash = '#' + id;
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(() => {
+        const target = document.getElementById(id);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }, 80);
     }
   };
 

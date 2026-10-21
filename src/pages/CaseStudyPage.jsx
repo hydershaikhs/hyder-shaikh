@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import {
-  ArrowLeft, Target, Building2, FileText,
+  ArrowLeft, Target, FileText,
   TrendingUp, ShieldCheck, CheckCircle2,
   Wrench, Clapperboard, Sparkles, Film, ArrowRight,
   Play, Volume2
@@ -50,28 +50,6 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
 
   return (
     <div className="case-study-page" ref={pageRef}>
-      {/* Top Sticky Navigation */}
-      <div className="case-page-nav-bar">
-        <div className="container case-page-nav-content">
-          <button type="button" onClick={onBack} className="case-page-back-btn">
-            <ArrowLeft size={18} />
-            <span>Back to All Projects</span>
-          </button>
-
-          <div className="case-page-nav-tags">
-            <span className="case-page-tag-cat">
-              {caseStudy.category || project.categoryLabel}
-            </span>
-            {project.client && (
-              <span className="case-page-tag-client">
-                <Building2 size={13} />
-                <span>{project.client}</span>
-              </span>
-            )}
-          </div>
-        </div>
-      </div>
-
       <div className="container case-page-content">
         {/* Page Hero Header */}
         <header className="case-page-hero anim-fade-in">
