@@ -9,11 +9,11 @@ const experiences = [
     period: "SEP 2026 – PRESENT",
     type: "FULL-TIME",
     isCurrent: true,
-    description: "Managing full-funnel Meta Ads campaigns, high-retention video production, and multi-platform organic social growth to drive qualified leads, direct sales, and brand reach.",
+    description: "Managing full-funnel Meta Ads, video production, and organic social growth to drive leads and sales.",
     highlights: [
-      "Manage end-to-end Meta Ads campaigns (FB & IG) optimized for ROAS, lower CPA, and qualified lead acquisition.",
-      "Produce scroll-stopping UGC video and image creatives tailored for high-converting direct-response advertising.",
-      "Execute monthly multi-channel content strategies across Facebook, Instagram, and LinkedIn with branded post designs."
+      "Manage Meta Ads (FB & IG) optimized for ROAS, lower CPA, and qualified leads.",
+      "Produce scroll-stopping UGC video and image creatives for direct-response ads.",
+      "Execute monthly multi-channel content strategies across Facebook, Instagram, and LinkedIn."
     ],
     tools: ["Meta Ads Manager", "Meta Pixel", "Canva", "CapCut", "Meta Business Suite"]
   },
@@ -23,11 +23,11 @@ const experiences = [
     period: "JULY 2026 – AUGUST 2026",
     type: "INTERNSHIP",
     isCurrent: false,
-    description: "Assisted senior marketing teams in structuring paid advertising funnels, audience segmentation, and producing brand-aligned marketing creatives for diverse client niches.",
+    description: "Assisted in paid advertising funnels, audience segmentation, and brand marketing creatives.",
     highlights: [
-      "Assisted in setting up client Meta Ads campaigns, testing audience clusters, and monitoring daily delivery metrics.",
-      "Created dynamic short-form Reels and aesthetic graphic post designs aligned with client brand guides.",
-      "Crafted direct-response ad copywriting, hook headlines, and persuasive captions for paid and organic campaigns."
+      "Assisted in setting up Meta Ads, audience testing, and delivery KPI tracking.",
+      "Created short-form Reels and aesthetic graphic post designs for clients.",
+      "Crafted direct-response ad copywriting, hook headlines, and persuasive captions."
     ],
     tools: ["Facebook Ads", "Instagram Ads", "Ad Copywriting", "Audience Research", "Canva"]
   }

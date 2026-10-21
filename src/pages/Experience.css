@@ -45,17 +45,17 @@
 /* ==================== VERTICAL TIMELINE LAYOUT ==================== */
 .exp-timeline-wrapper {
   position: relative;
-  max-width: 860px;
-  margin: 0 auto 56px;
-  padding-left: 56px;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  padding-left: 50px;
 }
 
 /* Continuous Vertical Timeline Line on Left */
 .exp-timeline-line {
   position: absolute;
-  top: 24px;
-  bottom: 24px;
-  left: 17px;
+  top: 20px;
+  bottom: 20px;
+  left: 15px;
   width: 2px;
   background: linear-gradient(
     180deg,
@@ -69,7 +69,7 @@
 .exp-timeline-list {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 18px;
 }
 
 .exp-timeline-item {
@@ -80,10 +80,10 @@
 /* Glowing Circular Timeline Node */
 .exp-timeline-node {
   position: absolute;
-  left: -56px;
-  top: 24px;
-  width: 36px;
-  height: 36px;
+  left: -50px;
+  top: 18px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,12 +91,12 @@
 }
 
 .node-glow-ring {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  border: 2.5px solid var(--accent, #00f0ff);
+  border: 2px solid var(--accent, #00f0ff);
   background: #080c16;
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.55);
+  box-shadow: 0 0 14px rgba(0, 240, 255, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,26 +104,26 @@
 }
 
 .node-center-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--accent, #00f0ff);
 }
 
 .item-current .node-glow-ring {
   border-color: #00f0ff;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.75);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.75);
   animation: nodePulse 2.4s infinite;
 }
 
 @keyframes nodePulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 16px rgba(0, 240, 255, 0.55);
+    box-shadow: 0 0 14px rgba(0, 240, 255, 0.55);
   }
   50% {
     transform: scale(1.15);
-    box-shadow: 0 0 24px rgba(0, 240, 255, 0.85);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.85);
   }
 }
 
@@ -131,25 +131,25 @@
 .exp-card {
   background: linear-gradient(155deg, rgba(14, 21, 35, 0.88) 0%, rgba(9, 13, 22, 0.98) 100%);
   border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 16px;
-  padding: 16px 20px;
+  border-radius: 14px;
+  padding: 13px 18px;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
 .exp-card:hover {
   border-color: rgba(0, 240, 255, 0.38);
-  transform: translateY(-3px);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.55), 0 0 24px rgba(0, 240, 255, 0.09);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.09);
 }
 
 .exp-card-current {
   border-color: rgba(0, 240, 255, 0.28);
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45), 0 0 22px rgba(0, 240, 255, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(0, 240, 255, 0.06);
 }
 
 .exp-card-current::before {
@@ -157,7 +157,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 3px;
   height: 100%;
   background: linear-gradient(180deg, var(--accent, #00f0ff), transparent);
 }
@@ -167,13 +167,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 8px;
+  gap: 10px;
+  margin-bottom: 4px;
   flex-wrap: wrap;
 }
 
 .exp-role-title {
-  font-size: 1.08rem;
+  font-size: 0.98rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.01em;
@@ -184,16 +184,16 @@
 .exp-date-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.76rem;
+  gap: 5px;
+  font-size: 0.69rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #ffffff;
   background: rgba(0, 240, 255, 0.08);
   border: 1px solid rgba(0, 240, 255, 0.26);
-  padding: 5px 13px;
-  border-radius: 20px;
+  padding: 3px 10px;
+  border-radius: 16px;
   white-space: nowrap;
 }
 
@@ -201,27 +201,27 @@
 .exp-company-meta {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .exp-company-name {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.92rem;
+  gap: 5px;
+  font-size: 0.84rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
 }
 
 .exp-type-badge {
-  font-size: 0.68rem;
+  font-size: 0.63rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 3px 8px;
-  border-radius: 6px;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 5px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.8);
@@ -230,22 +230,22 @@
 .exp-live-badge {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 0.7rem;
+  gap: 4px;
+  font-size: 0.65rem;
   font-weight: 600;
-  padding: 3px 9px;
-  border-radius: 16px;
+  padding: 2px 8px;
+  border-radius: 14px;
   background: rgba(34, 197, 94, 0.12);
   border: 1px solid rgba(34, 197, 94, 0.35);
   color: #4ade80;
 }
 
 .live-pulse-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: #4ade80;
-  box-shadow: 0 0 6px #4ade80;
+  box-shadow: 0 0 5px #4ade80;
   animation: livePulse 2s infinite;
 }
 
@@ -260,74 +260,74 @@
   height: 1px;
   width: 100%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-  margin: 6px 0 10px;
+  margin: 4px 0 6px;
 }
 
 /* Description Text */
 .exp-description {
-  font-size: 0.86rem;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.55;
-  margin-bottom: 10px;
+  font-size: 0.81rem;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.45;
+  margin-bottom: 6px;
 }
 
 /* Highlights List */
 .exp-highlights-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 12px 0;
+  margin: 0 0 8px 0;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 3px;
 }
 
 .exp-highlights-list li {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 0.82rem;
+  gap: 6px;
+  font-size: 0.77rem;
   color: rgba(255, 255, 255, 0.72);
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 .exp-check-icon {
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 /* Tools Row */
 .exp-tools-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   flex-wrap: wrap;
-  padding-top: 8px;
+  padding-top: 6px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .exp-tools-label {
-  font-size: 0.76rem;
+  font-size: 0.71rem;
   font-weight: 600;
   color: var(--accent, #00f0ff);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .exp-tools-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
 }
 
 .exp-tool-badge {
-  font-size: 0.73rem;
+  font-size: 0.67rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.82);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 3px 9px;
-  border-radius: 12px;
+  padding: 2px 7px;
+  border-radius: 10px;
 }
 
 /* ==================== CORE SKILLS MATRIX ==================== */
