@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Target, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import "./Projects.css";
 import Reveal from "../components/Reveal";
 import { projects, categories } from "../data/projectsData";
@@ -48,13 +48,13 @@ const Projects = ({ onOpenCaseStudy }) => {
           </div>
         </Reveal>
 
-        {/* Projects Grid (Sized & Styled to match reference mockup) */}
+        {/* Projects Grid */}
         <div className="projects-grid">
           {filteredProjects.map((proj, idx) => (
             <Reveal key={proj.id} delay={idx * 80}>
               <div className="project-card">
-                {/* Top Banner with Icon & Tech Tag Pills (Like Reference) */}
-                <div className="project-card-banner">
+                {/* Top Row: Icon left, tags right */}
+                <div className="project-card-top">
                   <div className="project-banner-icon">{proj.icon}</div>
                   <div className="project-banner-tags">
                     {proj.tags.slice(0, 3).map((t) => (
@@ -63,25 +63,16 @@ const Projects = ({ onOpenCaseStudy }) => {
                   </div>
                 </div>
 
-                {/* Card Content Body */}
+                {/* Card Body */}
                 <div className="project-card-body">
-                  <div className="project-cat-row">
-                    <span className="project-cat-label">{proj.categoryLabel || proj.category}</span>
-                    {proj.objective && (
-                      <span className="project-obj-label">
-                        <Target size={11} />
-                        <span>{proj.objective}</span>
-                      </span>
-                    )}
-                  </div>
-
+                  <span className="project-cat-label">{proj.categoryLabel || proj.category}</span>
                   <h3 className="project-title">{proj.title}</h3>
-                  <div className="project-headline">{proj.headline || proj.role}</div>
                   <p className="project-desc">{proj.description}</p>
                 </div>
 
-                {/* Card Footer with View Case Study Action */}
+                {/* Card Footer */}
                 <div className="project-card-footer">
+                  <span className="project-cat-row">{proj.client || proj.role || ""}</span>
                   <a
                     href={`#/case-study/${proj.id}`}
                     className="btn-case-study"
@@ -91,7 +82,7 @@ const Projects = ({ onOpenCaseStudy }) => {
                     }}
                   >
                     <span>{proj.buttonText || "View Case Study"}</span>
-                    <ArrowRight size={15} />
+                    <ArrowRight size={14} />
                   </a>
                 </div>
               </div>
