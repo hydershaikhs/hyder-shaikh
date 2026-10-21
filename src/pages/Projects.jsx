@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Target, Wrench, ArrowRight } from "lucide-react";
+import { Target, ArrowRight } from "lucide-react";
 import "./Projects.css";
 import Reveal from "../components/Reveal";
 import { projects, categories } from "../data/projectsData";
@@ -48,56 +48,39 @@ const Projects = ({ onOpenCaseStudy }) => {
           </div>
         </Reveal>
 
-        {/* Projects Grid */}
+        {/* Projects Grid (Sized & Styled to match reference mockup) */}
         <div className="projects-grid">
           {filteredProjects.map((proj, idx) => (
             <Reveal key={proj.id} delay={idx * 80}>
               <div className="project-card">
-                <div className="project-card-top">
-                  <div className="project-badges-row">
-                    <div className="project-category-badge">{proj.categoryLabel}</div>
+                {/* Top Banner with Icon & Tech Tag Pills (Like Reference) */}
+                <div className="project-card-banner">
+                  <div className="project-banner-icon">{proj.icon}</div>
+                  <div className="project-banner-tags">
+                    {proj.tags.slice(0, 3).map((t) => (
+                      <span key={t} className="banner-tag-pill">{t}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Card Content Body */}
+                <div className="project-card-body">
+                  <div className="project-cat-row">
+                    <span className="project-cat-label">{proj.categoryLabel || proj.category}</span>
                     {proj.objective && (
-                      <div className="project-objective-badge">
+                      <span className="project-obj-label">
                         <Target size={11} />
                         <span>{proj.objective}</span>
-                      </div>
+                      </span>
                     )}
                   </div>
-                  <div className="project-icon-box">{proj.icon}</div>
+
+                  <h3 className="project-title">{proj.title}</h3>
+                  <div className="project-headline">{proj.headline || proj.role}</div>
+                  <p className="project-desc">{proj.description}</p>
                 </div>
 
-                <div className="project-client-name">{proj.client}</div>
-                <h3 className="project-title">{proj.title}</h3>
-                <div className="project-headline">{proj.headline || proj.role}</div>
-
-                <p className="project-desc">{proj.description}</p>
-
-                <div className="project-deliverables">
-                  <div className="project-deliverables-title">{proj.servicesLabel || "Key Services"}:</div>
-                  <ul>
-                    {proj.deliverables.map((d, i) => (
-                      <li key={i}>
-                        <Check size={14} className="text-accent" />
-                        <span>{d}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="project-tags">
-                  {proj.tags.map((t) => (
-                    <span key={t} className="project-tag-chip">{t}</span>
-                  ))}
-                </div>
-
-                <div className="project-tools">
-                  <span className="project-tools-label"><Wrench size={13} /> Tools:</span>
-                  {proj.tools.map((tl) => (
-                    <span key={tl} className="project-tool-badge">{tl}</span>
-                  ))}
-                </div>
-
-                {/* View Case Study Button -> Opens Dedicated Page */}
+                {/* Card Footer with View Case Study Action */}
                 <div className="project-card-footer">
                   <a
                     href={`#/case-study/${proj.id}`}
@@ -108,7 +91,7 @@ const Projects = ({ onOpenCaseStudy }) => {
                     }}
                   >
                     <span>{proj.buttonText || "View Case Study"}</span>
-                    <ArrowRight size={16} />
+                    <ArrowRight size={15} />
                   </a>
                 </div>
               </div>
