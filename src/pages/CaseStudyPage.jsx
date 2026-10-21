@@ -26,6 +26,12 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
     if (pageRef.current) {
       pageRef.current.scrollIntoView({ behavior: "instant", block: "start" });
     }
+    if (project) {
+      document.title = `${project.title} | Hyder Shaikh Portfolio Case Study`;
+    }
+    return () => {
+      document.title = "Hyder Shaikh | Digital Marketer & Video Editor";
+    };
   }, [project]);
 
   if (!project || !project.caseStudy) {

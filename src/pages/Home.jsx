@@ -29,7 +29,7 @@ const Home = () => {
               </span>
 
               <h1 className="hero-title">
-                I Build <span className="gradient-text">Data-Driven</span> Marketing That Scales Real Growth.
+                Hi, I'm <span className="gradient-text">Hyder Shaikh</span> — Digital Marketer &amp; Video Editor
               </h1>
 
               <p className="hero-description">
