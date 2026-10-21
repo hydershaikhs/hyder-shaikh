@@ -191,45 +191,54 @@ const projects = [
   },
   {
     id: "video-editing-production",
-    title: "High-Retention Short-Form Reels & YouTube Video Editing",
+    title: "Video Editing & AI Video Production",
     category: "Video Editing",
-    categoryLabel: "VIDEO PRODUCTION & EDITING",
-    headline: "Engaging Visual Hooks & Kinetic Pacing for Maximum Retention",
-    client: "Saadgi & YouTube Creators",
-    objective: "Audience Retention & Engagement",
+    categoryLabel: "VIDEO EDITING & AI CONTENT CREATION",
+    headline: "Creative Video Editing & AI-Powered Visual Storytelling",
+    client: "Brands & Digital Creators",
+    objective: "Content Creation & Visual Branding",
     icon: <Clapperboard size={24} className="text-accent" />,
-    role: "Video Editor & Motion Designer",
-    description: "Producing and editing scroll-stopping video content for Saadgi e-commerce brand, FR Software Solution corporate channels, and YouTube creators. Crafting dynamic short-form Reels and TikToks along with engaging long-form and short-form YouTube videos featuring smooth pacing, kinetic subtitles, and immersive sound design.",
-    servicesLabel: "Key Services",
+    role: "Video Editor & AI Content Creator",
+    description: "I create engaging video content for brands and businesses using professional editing tools and AI-powered video generation. My workflow combines creative storytelling, smooth transitions, sound design, color grading, and AI-generated visuals to produce high-quality content for social media, marketing campaigns, and digital platforms.",
+    servicesLabel: "Tools & Skills",
     deliverables: [
-      "Product Showcase Reels & TikToks",
-      "Corporate Promo & Software Videos",
-      "Retention-Driven YouTube Editing",
-      "Kinetic Subtitles & Motion Graphics",
-      "Dynamic Sound Design & Audio Pacing"
+      "Adobe Premiere Pro",
+      "CapCut",
+      "AI Video Generation",
+      "Video Editing & Post-Production",
+      "Transitions, Sound Design & Color Grading",
+      "Social Media Video Content"
     ],
     buttonText: "View Case Study",
-    tags: ["Reels & TikToks", "E-Commerce Video", "YouTube Long & Short", "Premiere Pro", "After Effects"],
-    tools: ["Adobe Premiere Pro", "Adobe After Effects", "CapCut", "Audition"],
+    tags: ["Adobe Premiere Pro", "CapCut", "AI Video", "Color Grading", "Social Media Content"],
+    tools: ["Adobe Premiere Pro", "CapCut", "AI Video Tools", "Sound Design"],
     caseStudy: {
-      client: "Saadgi & YouTube Creators",
-      category: "VIDEO PRODUCTION & EDITING",
-      headline: "Engaging Visual Hooks & Kinetic Pacing for Maximum Retention",
-      objective: "Audience Retention & Engagement",
+      client: "Brands & Digital Creators",
+      category: "VIDEO EDITING & AI CONTENT CREATION",
+      headline: "Creative Video Editing & AI-Powered Visual Storytelling",
+      objective: "Content Creation & Visual Branding",
       stats: [
-        { label: "Avg. Watch Time", value: "85%+" },
-        { label: "Videos Edited", value: "60+" },
-        { label: "3-Sec Retention", value: "+45%" },
-        { label: "Engagement Lift", value: "3.2x" }
+        { label: "Editing Software", value: "Pr + Cap" },
+        { label: "AI Video Tools", value: "3+" },
+        { label: "Output Quality", value: "4K" },
+        { label: "Platforms", value: "5+" }
       ],
-      overview: "Crafting modern short-form and long-form video edits designed to stop scrolling in the first 3 seconds and keep viewers engaged through kinetic pacing and immersive soundscapes.",
-      challenge: "Social media attention spans are under 3 seconds. The goal was to hook viewers instantly and maximize retention rates to trigger social algorithm distribution.",
-      solution: "Implemented dynamic visual pattern interrupts, synchronized sound design (SFX), bold kinetic subtitles, and rapid narrative pacing.",
+      overview: "I create engaging video content for brands and businesses using professional editing tools and AI-powered video generation. My workflow combines creative storytelling, smooth transitions, sound design, color grading, and AI-generated visuals to produce high-quality content for social media, marketing campaigns, and digital platforms.",
+      challenge: "Brands need high-quality, engaging video content consistently — but professional production is expensive and time-consuming. The challenge is delivering premium output efficiently at scale.",
+      solution: "Combined professional editing workflows (Adobe Premiere Pro, CapCut) with AI video generation tools to create diverse, high-quality video content faster — enabling brands to stay consistent across all digital platforms.",
+      editedVideos: [
+        { src: "/videos/edited-first.mp4", label: "Edited Video 1" },
+        { src: "/videos/edited-second.mp4", label: "Edited Video 2" }
+      ],
+      aiVideos: [
+        { src: "/videos/ai-first.mp4", label: "AI Video 1" },
+        { src: "/videos/ai-second.mp4", label: "AI Video 2" }
+      ],
       keyServices: [
-        { title: "E-Commerce Showcase Reels & TikToks", desc: "High-energy short-form videos highlighting product features, aesthetic fabric flows, and model fittings." },
-        { title: "Corporate Promo & Tech Videos", desc: "Clean, professional corporate promotional video edits for FR Software Solution's tech products." },
-        { title: "Retention-Driven YouTube Editing", desc: "Long-form editing with chapter transitions, graphic overlays, and narrative retention hooks." },
-        { title: "Kinetic Typography & Sound Design", desc: "Custom animated subtitle styling and layered audio effects to elevate production quality." }
+        { title: "Adobe Premiere Pro Editing", desc: "Professional video editing with smooth cuts, cinematic color grading, motion graphics, and precise audio mixing." },
+        { title: "CapCut Content Creation", desc: "Fast-paced, trend-driven short-form video creation for social media platforms including Reels, TikTok, and YouTube Shorts." },
+        { title: "AI Video Generation", desc: "Leveraging cutting-edge AI tools to generate stunning visual sequences, product showcases, and creative brand stories." },
+        { title: "Post-Production & Sound Design", desc: "Transitions, SFX layering, music selection, color grading, and final export optimization for all platforms." }
       ]
     }
   }
@@ -488,6 +497,52 @@ const Projects = () => {
                 </h4>
                 <p className="case-study-text">{selectedCaseStudy.caseStudy.solution}</p>
               </div>
+
+              {/* Edited Videos Section */}
+              {selectedCaseStudy.caseStudy.editedVideos && (
+                <div className="case-study-block">
+                  <h4 className="case-study-section-title">
+                    <Clapperboard size={16} className="text-accent" /> Edited Videos (Premiere Pro)
+                  </h4>
+                  <div className="case-study-video-grid">
+                    {selectedCaseStudy.caseStudy.editedVideos.map((v, i) => (
+                      <div key={i} className="case-study-video-item">
+                        <video
+                          src={v.src}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          className="case-study-video"
+                        />
+                        <div className="case-study-video-label">{v.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* AI Videos Section */}
+              {selectedCaseStudy.caseStudy.aiVideos && (
+                <div className="case-study-block">
+                  <h4 className="case-study-section-title">
+                    <Sparkles size={16} className="text-accent" /> AI Generated Videos
+                  </h4>
+                  <div className="case-study-video-grid">
+                    {selectedCaseStudy.caseStudy.aiVideos.map((v, i) => (
+                      <div key={i} className="case-study-video-item">
+                        <video
+                          src={v.src}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          className="case-study-video"
+                        />
+                        <div className="case-study-video-label">{v.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Key Services Breakdown */}
               <div className="case-study-block">
