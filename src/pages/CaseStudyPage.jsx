@@ -46,7 +46,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
   const isVideoProject = project.id === "video-editing-production";
 
   return (
-    <div className="case-study-page" ref={pageRef}>
+    <div className="case-study-page" ref={pageRef} style={{ paddingTop: 'clamp(120px, 16vh, 160px)' }}>
       <div className="container case-page-content">
         {/* Page Hero Header */}
         <header className="case-page-hero anim-fade-in">

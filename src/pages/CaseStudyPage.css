@@ -3,7 +3,7 @@
   min-height: 100vh;
   background-color: var(--bg-dark, #080c16);
   color: var(--text-main, #f0f4f8);
-  padding-top: 140px;
+  padding-top: 150px !important;
   padding-bottom: 100px;
   position: relative;
   overflow-x: hidden;
