@@ -14,7 +14,7 @@ const projects = [
     id: "art-b-meta-ads",
     title: "Art.b — Meta Ads Campaign",
     category: "Meta Ads",
-    categoryLabel: "META ADS & PERFORMANCE MARKETING",
+    categoryLabel: "META ADS & PERFORMANCE",
     headline: "Driving Purchases for an Art & Painting Brand",
     client: "Art.b",
     objective: "Sales (Direct Purchases)",
@@ -24,13 +24,14 @@ const projects = [
     servicesLabel: "Key Services",
     deliverables: [
       "Meta Ads Campaign Setup",
-      "Audience Targeting",
+      "Precision Audience Targeting",
       "Ad Creative & Campaign Optimization",
-      "Purchase-Focused Advertising"
+      "Purchase-Focused Advertising",
+      "ROAS & Conversion Tracking"
     ],
     buttonText: "View Case Study",
-    tags: ["Meta Ads (FB/IG)", "Objective: Sales", "E-Commerce Purchases", "Creative Optimization", "Audience Targeting", "ROAS Scaling"],
-    tools: ["Meta Ads Manager", "Meta Business Suite", "Meta Pixel & Events", "Canva"],
+    tags: ["Meta Ads (FB/IG)", "Objective: Sales", "Art Painting Sales", "Creative Optimization", "ROAS Scaling"],
+    tools: ["Meta Ads Manager", "Meta Business Suite", "Meta Pixel", "Canva"],
     caseStudy: {
       client: "Art.b",
       category: "META ADS & PERFORMANCE MARKETING",
@@ -68,13 +69,13 @@ const projects = [
     deliverables: [
       "Meta Ads Campaign Setup",
       "Lead Generation Strategy",
-      "Audience Targeting",
+      "Precision Audience Targeting",
       "Campaign Monitoring & Optimization",
       "Business Lead Acquisition"
     ],
     buttonText: "View Case Study",
-    tags: ["Meta Ads (FB/IG)", "Objective: Lead Gen", "B2B Lead Generation", "POS & Inventory Software", "Instant Forms", "Cost Per Lead (CPL)"],
-    tools: ["Meta Ads Manager", "Meta Instant Forms", "CRM Integration", "Canva", "Meta Pixel"],
+    tags: ["Meta Ads (FB/IG)", "Objective: Lead Gen", "B2B Lead Generation", "POS Software", "Cost Per Lead (CPL)"],
+    tools: ["Meta Ads Manager", "Meta Instant Forms", "CRM Integration", "Canva"],
     caseStudy: {
       client: "FR Software Solutions",
       category: "META ADS & LEAD GENERATION",
@@ -102,7 +103,7 @@ const projects = [
     id: "fr-software-social-media",
     title: "FR Software Solutions — Social Media Management",
     category: "Social Media",
-    categoryLabel: "SOCIAL MEDIA MANAGEMENT & CONTENT STRATEGY",
+    categoryLabel: "SOCIAL MEDIA & CONTENT STRATEGY",
     headline: "Building a Consistent Brand Presence Across Social Media",
     client: "FR Software Solutions",
     objective: "Brand Presence & B2B Growth",
@@ -118,8 +119,8 @@ const projects = [
       "Multi-Platform Content Management"
     ],
     buttonText: "View Case Study",
-    tags: ["Social Media Management", "Content Strategy", "Post Design", "B2B Tech Brand", "LinkedIn, FB & IG", "Organic Growth"],
-    tools: ["Meta Business Suite", "LinkedIn Page Manager", "Canva", "Buffer", "Photoshop"],
+    tags: ["Social Media Management", "Organic Content Strategy", "Post Design", "LinkedIn, FB & IG", "B2B Brand Growth"],
+    tools: ["Meta Business Suite", "LinkedIn Page Manager", "Canva", "Buffer"],
     caseStudy: {
       client: "FR Software Solutions",
       category: "SOCIAL MEDIA MANAGEMENT & CONTENT STRATEGY",
@@ -147,7 +148,7 @@ const projects = [
     id: "saadgi-wear-social-media",
     title: "Saadgi Wear — Social Media Management",
     category: "Social Media",
-    categoryLabel: "SOCIAL MEDIA MANAGEMENT & ORGANIC MARKETING",
+    categoryLabel: "SOCIAL MEDIA & ORGANIC MARKETING",
     headline: "Driving Organic Orders for an E-commerce Hijab Brand",
     client: "Saadgi Wear",
     objective: "Organic Order Generation",
@@ -163,8 +164,8 @@ const projects = [
       "Organic Order Generation"
     ],
     buttonText: "View Case Study",
-    tags: ["Organic Orders", "E-Commerce Hijab Brand", "Instagram & TikTok", "Product Showcases", "Organic Marketing", "Viral Growth"],
-    tools: ["Instagram", "TikTok Studio", "YouTube Studio", "Meta Business Suite", "CapCut", "Canva"],
+    tags: ["Organic Orders", "E-Commerce Hijab Brand", "Instagram & TikTok", "Product Showcases", "Organic Marketing"],
+    tools: ["Instagram", "TikTok Studio", "YouTube Studio", "CapCut"],
     caseStudy: {
       client: "Saadgi Wear",
       category: "SOCIAL MEDIA MANAGEMENT & ORGANIC MARKETING",
@@ -201,14 +202,15 @@ const projects = [
     description: "Producing and editing scroll-stopping video content for Saadgi e-commerce brand, FR Software Solution corporate channels, and YouTube creators. Crafting dynamic short-form Reels and TikToks along with engaging long-form and short-form YouTube videos featuring smooth pacing, kinetic subtitles, and immersive sound design.",
     servicesLabel: "Key Services",
     deliverables: [
-      "High-converting product showcase Reels & TikToks for Saadgi e-commerce brand",
-      "Professional promotional and corporate video editing for FR Software Solution",
-      "Long-form & short-form YouTube video editing with retention-driven hooks and pacing",
-      "Kinetic typography, animated captions, visual effects, and dynamic sound design"
+      "Product Showcase Reels & TikToks",
+      "Corporate Promo & Software Videos",
+      "Retention-Driven YouTube Editing",
+      "Kinetic Subtitles & Motion Graphics",
+      "Dynamic Sound Design & Audio Pacing"
     ],
     buttonText: "View Case Study",
     tags: ["Reels & TikToks", "E-Commerce Video", "YouTube Long & Short", "Premiere Pro", "After Effects"],
-    tools: ["Adobe Premiere Pro", "Adobe After Effects", "CapCut"],
+    tools: ["Adobe Premiere Pro", "Adobe After Effects", "CapCut", "Audition"],
     caseStudy: {
       client: "Saadgi & YouTube Creators",
       category: "VIDEO PRODUCTION & EDITING",
