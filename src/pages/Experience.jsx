@@ -1,4 +1,4 @@
-import { Briefcase, Calendar, Check, Sparkles, Wrench } from "lucide-react";
+import { Briefcase, Calendar, Check, Wrench } from "lucide-react";
 import "./Experience.css";
 import Reveal from "../components/Reveal";
 
@@ -33,17 +33,6 @@ const experiences = [
   }
 ];
 
-const coreSkills = [
-  "Meta Ads (Facebook & Instagram Advertising, Campaign Management, Audience Targeting)",
-  "UGC Ads Creation & Creative Strategy",
-  "Video Editing (Adobe Premiere Pro, Adobe After Effects, CapCut)",
-  "Short-Form Reels, TikToks & YouTube Video Editing",
-  "Social Media Management & Community Engagement (Multi-Platform)",
-  "Content Strategy & Monthly Content Calendar Planning",
-  "Social Media Post Design (Branded Creatives & Visual Identity)",
-  "Meta Ads Analytics: CPM, CPC, CTR, ROAS, Frequency, Conversion Tracking"
-];
-
 const Experience = () => {
   return (
     <section id="experience" className="section experience-section">
@@ -76,7 +65,7 @@ const Experience = () => {
                     <span className="node-center-dot"></span>
                   </div>
 
-                  {/* Sleek Modern Card (Slightly larger than reference as requested) */}
+                  {/* Sleek Modern Card */}
                   <div className={`exp-card ${exp.isCurrent ? "exp-card-current" : ""}`}>
                     {/* Header Row: Role on Left, Date Pill on Right */}
                     <div className="exp-card-header">
@@ -138,30 +127,6 @@ const Experience = () => {
             ))}
           </div>
         </div>
-
-        {/* Core Skills Matrix */}
-        <Reveal delay={200}>
-          <div className="exp-skills-card">
-            <div className="exp-skills-header">
-              <span className="exp-skills-badge">
-                <Sparkles size={13} />
-                <span>Core Competencies</span>
-              </span>
-              <h3 className="exp-skills-title">Technical &amp; Strategic Skills</h3>
-              <p className="text-muted" style={{ fontSize: "0.93rem" }}>
-                Key technical capabilities applied across all client projects, ad sets, and marketing funnels.
-              </p>
-            </div>
-            <div className="exp-skills-grid">
-              {coreSkills.map((skill, index) => (
-                <div key={index} className="exp-skill-pill">
-                  <span className="exp-skill-dot"></span>
-                  <span>{skill}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

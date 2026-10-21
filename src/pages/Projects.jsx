@@ -1,23 +1,8 @@
 import { useState } from "react";
-import {
-  Check, Target, BarChart3, LineChart,
-  Layers, Sparkles, FileText, ShieldCheck,
-  Users, Wrench, ArrowRight
-} from "lucide-react";
+import { Check, Target, Wrench, ArrowRight } from "lucide-react";
 import "./Projects.css";
 import Reveal from "../components/Reveal";
 import { projects, categories } from "../data/projectsData";
-
-const metaAdsFramework = [
-  { icon: <Target size={18} />, title: "Objective Selection", desc: "Choosing precise conversion goals aligned with bottom-line business outcomes." },
-  { icon: <Users size={18} />, title: "Audience Segmentation", desc: "Finding high-intent prospects via demographics, behaviors, and custom audiences." },
-  { icon: <Sparkles size={18} />, title: "Ad Creative Strategy", desc: "Visual hooks and dynamic creatives built specifically to stop scroll fatigue." },
-  { icon: <FileText size={18} />, title: "Direct Response Copy", desc: "Persuasive headlines, benefits-focused copy, and friction-free CTAs." },
-  { icon: <Layers size={18} />, title: "Campaign Architecture", desc: "Clean, scaleable campaign structure with organized ad sets and naming." },
-  { icon: <LineChart size={18} />, title: "Performance Monitoring", desc: "Continuous tracking of live metric fluctuations and ad delivery health." },
-  { icon: <BarChart3 size={18} />, title: "ROAS Optimization", desc: "Reallocating budgets to winning ad variants and pruning underperforming sets." },
-  { icon: <ShieldCheck size={18} />, title: "Efficiency Analysis", desc: "Systematic analysis of CPM, CPC, CTR, Frequency, and Customer Acquisition Cost." },
-];
 
 const Projects = ({ onOpenCaseStudy }) => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -130,35 +115,6 @@ const Projects = ({ onOpenCaseStudy }) => {
             </Reveal>
           ))}
         </div>
-
-        {/* Meta Ads Strategy Blueprint */}
-        <Reveal>
-          <div className="meta-blueprint-card">
-            <div className="meta-blueprint-header">
-              <div className="meta-blueprint-icon">
-                <Target size={28} />
-              </div>
-              <div>
-                <span className="section-tag">METHODOLOGY</span>
-                <h3 className="meta-blueprint-title">My Meta Ads Execution Framework</h3>
-                <p className="text-muted">
-                  How I systematically turn ad spend into profitable conversions and measurable business returns.
-                </p>
-              </div>
-            </div>
-
-            <div className="meta-framework-grid">
-              {metaAdsFramework.map((step, i) => (
-                <div key={i} className="meta-step-card">
-                  <div className="meta-step-num">0{i + 1}</div>
-                  <div className="meta-step-icon">{step.icon}</div>
-                  <h4>{step.title}</h4>
-                  <p>{step.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
