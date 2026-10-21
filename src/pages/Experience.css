@@ -8,22 +8,35 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 960px;
-  margin: 0 auto 64px;
+  max-width: 920px;
+  margin: 0 auto 56px;
 }
 
+/* ==================== EXPERIENCE CARD ==================== */
 .exp-card {
-  background: linear-gradient(135deg, rgba(16, 20, 30, 0.75), rgba(10, 12, 18, 0.85));
+  background: linear-gradient(155deg, rgba(14, 18, 28, 0.85), rgba(9, 12, 19, 0.98));
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-lg);
-  padding: 32px;
+  border-radius: var(--radius-lg, 16px);
+  padding: 30px 28px;
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(14px);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.exp-card::before {
+.exp-card:hover {
+  border-color: rgba(0, 240, 255, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(0, 240, 255, 0.08);
+}
+
+.exp-card-current {
+  border-color: rgba(0, 240, 255, 0.28);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 28px rgba(0, 240, 255, 0.07);
+}
+
+.exp-card-current::before {
   content: '';
   position: absolute;
   top: 0;
@@ -31,293 +44,203 @@
   width: 4px;
   height: 100%;
   background: linear-gradient(180deg, var(--accent), transparent);
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
-.exp-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 240, 255, 0.08);
-}
-
-.exp-card:hover::before {
-  opacity: 1;
-}
-
-.exp-card-featured {
-  border-color: rgba(0, 240, 255, 0.25);
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.04), rgba(14, 18, 28, 0.9));
-}
-
+/* Header Row: Role on Left, Date Pill on Right */
 .exp-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 16px;
+  gap: 16px;
   flex-wrap: wrap;
-  gap: 12px;
 }
 
-.exp-card-title-group {
+.exp-role-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.exp-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--accent);
-  font-weight: 600;
-  background: rgba(0, 240, 255, 0.1);
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 240, 255, 0.2);
-  width: fit-content;
-}
-
-.exp-role {
-  font-size: 1.45rem;
+.exp-role-title {
+  font-size: 1.35rem;
   font-weight: 700;
-  color: var(--text-main);
-  margin-top: 4px;
+  color: #ffffff;
+  line-height: 1.3;
+  margin: 0;
 }
 
 .exp-company-meta {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 2px;
 }
 
-.exp-company {
-  color: var(--text-main);
-  font-weight: 600;
-}
-
-.exp-divider {
-  color: rgba(255, 255, 255, 0.2);
-}
-
-.exp-period {
+.exp-company-name {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  color: var(--accent);
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ffffff;
 }
 
-.exp-desc {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 1.02rem;
-  line-height: 1.75;
-  margin-bottom: 20px;
+.exp-type-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.exp-achievements {
+.exp-current-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+}
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Date Pill */
+.exp-date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.exp-divider-line {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  margin: 16px 0 16px;
+}
+
+.exp-description {
+  font-size: 0.94rem;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.65;
+  margin: 0 0 18px;
+}
+
+/* Key Contributions Box */
+.exp-contributions-box {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-md);
-  padding: 20px 24px;
+  border-radius: var(--radius-md, 12px);
+  padding: 18px 20px;
+  margin-bottom: 18px;
 }
 
-.exp-achievements-title {
-  display: block;
-  font-size: 0.85rem;
+.exp-contributions-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 600;
   color: var(--accent);
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
-.exp-achievements-list {
+.exp-contributions-list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
 }
 
-.exp-achievements-list li {
+.exp-contributions-list li {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  font-size: 0.94rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.55;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.5;
 }
 
-.exp-achievements-list li svg {
+.exp-check-icon {
   flex-shrink: 0;
   margin-top: 3px;
 }
 
-.exp-subhead {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-/* Skills grid styling preserved & enhanced */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-}
-
-.skill-card {
-  background: linear-gradient(180deg, rgba(14, 18, 26, 0.8), rgba(9, 11, 16, 0.95));
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: var(--radius-lg);
-  padding: 32px 26px;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.35s ease;
-  backdrop-filter: blur(10px);
-  position: relative;
-}
-
-.skill-card:hover {
-  border-color: var(--border-accent);
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 24px rgba(0, 240, 255, 0.08);
-}
-
-.skill-card-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
-  background: rgba(0, 240, 255, 0.08);
-  border: 1px solid rgba(0, 240, 255, 0.2);
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-
-.skill-card:hover .skill-card-icon {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
-}
-
-.skill-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: var(--text-main);
-}
-
-.skill-card-desc {
-  font-size: 0.93rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex: 1;
-}
-
-.skill-list-title {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--accent);
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.skill-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.skill-list li {
+/* Tools Applied Footer */
+.exp-tools-footer {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.85);
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.skill-list li svg {
-  color: var(--accent);
-  flex-shrink: 0;
+.exp-tools-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
-.skill-tools {
+.exp-tools-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  margin-top: auto;
+  gap: 6px;
 }
 
-.skill-tool-chip {
-  font-size: 0.76rem;
-  padding: 5px 12px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.2s ease;
-}
-
-.skill-tool-chip:hover {
-  background: rgba(0, 240, 255, 0.1);
+.exp-tool-badge {
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 12px;
+  background: rgba(0, 240, 255, 0.06);
+  border: 1px solid rgba(0, 240, 255, 0.16);
   color: var(--accent);
-  border-color: rgba(0, 240, 255, 0.3);
 }
 
-@media (max-width: 768px) {
-  .experience-section {
-    padding: 40px 0 60px;
-  }
-
-  .exp-timeline {
-    margin-bottom: 40px;
-  }
-
-  .exp-card {
-    padding: 24px 20px;
-  }
-  
-  .exp-role {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .exp-card {
-    padding: 20px 16px;
-  }
-
-  .exp-achievements {
-    padding: 16px 14px;
-  }
-
-  .exp-achievements-list li {
-    font-size: 0.88rem;
-  }
-}
-
-/* Core Skills Card */
+/* ==================== CORE SKILLS MATRIX ==================== */
 .exp-skills-card {
-  max-width: 960px;
+  max-width: 920px;
   margin: 0 auto;
-  background: linear-gradient(135deg, rgba(16, 20, 30, 0.75), rgba(10, 12, 18, 0.85));
+  background: linear-gradient(155deg, rgba(14, 18, 28, 0.85), rgba(9, 12, 19, 0.98));
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-lg, 16px);
   padding: 32px;
   backdrop-filter: blur(12px);
   position: relative;
@@ -336,14 +259,30 @@
 }
 
 .exp-skills-header {
-  margin-bottom: 24px;
+  margin-bottom: 22px;
+}
+
+.exp-skills-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  font-weight: 700;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
 }
 
 .exp-skills-title {
   font-size: 1.45rem;
   font-weight: 700;
   color: var(--text-main);
-  margin: 8px 0 6px;
+  margin: 6px 0 6px;
 }
 
 .exp-skills-grid {
@@ -359,39 +298,78 @@
   padding: 12px 16px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-md);
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.88);
   transition: all 0.25s ease;
 }
 
 .exp-skill-pill:hover {
-  background: rgba(0, 240, 255, 0.08);
+  background: rgba(0, 240, 255, 0.06);
   border-color: rgba(0, 240, 255, 0.3);
   transform: translateX(4px);
-  color: #fff;
+  color: #ffffff;
 }
 
 .exp-skill-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 8px var(--accent);
   flex-shrink: 0;
 }
 
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
-  .exp-skills-card {
+  .experience-section {
+    padding: 40px 0 60px;
+  }
+
+  .exp-timeline {
+    margin-bottom: 36px;
+  }
+
+  .exp-card {
     padding: 24px 20px;
   }
-  
-  .exp-skills-title {
+
+  .exp-card-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .exp-role-title {
     font-size: 1.25rem;
+  }
+
+  .exp-date-pill {
+    align-self: flex-start;
+  }
+
+  .exp-skills-card {
+    padding: 24px 20px;
   }
 
   .exp-skills-grid {
     grid-template-columns: 1fr;
-    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-card {
+    padding: 20px 16px;
+  }
+
+  .exp-contributions-box {
+    padding: 16px 14px;
+  }
+
+  .exp-contributions-list li {
+    font-size: 0.85rem;
+  }
+
+  .exp-tools-footer {
+    gap: 6px;
   }
 }

@@ -1,40 +1,37 @@
-import { Check, Briefcase, Calendar, Sparkles } from "lucide-react";
+import { Briefcase, Calendar, Check, Sparkles, Wrench } from "lucide-react";
 import "./Experience.css";
 import Reveal from "../components/Reveal";
 
 const experiences = [
   {
-    role: "Digital Marketer",
+    role: "Digital Marketer & Performance Specialist",
     company: "FR Software Solution",
-    period: "September 2026 – Present",
-    type: "Current Role",
-    highlight: true,
-    description: "Plan, launch, and manage conversion-focused Meta Ads campaigns (Facebook & Instagram), high-retention video editing, and multi-platform social media growth to drive organizational success.",
-    achievements: [
-      "Plan, launch, and manage Meta Ads campaigns (Facebook and Instagram) for the organization, covering audience targeting, budget setting, ad creative, and performance tracking.",
-      "Analyze key Meta Ads metrics such as CPM, CPC, CTR, ROAS, and frequency to continuously optimize campaigns and improve return on ad spend.",
-      "Create high-converting UGC (User-Generated Content) video & image ad creatives tailored for paid campaigns.",
-      "Write engaging ad copy, captions, and direct-response hooks for social media and marketing campaigns.",
-      "Create short-form and long-form video content tailored for social media platforms, including Reels, TikToks, and YouTube promotional videos.",
-      "Design social media post creatives aligned with brand guidelines and campaign goals.",
-      "Handle social media management and community engagement across Facebook, Instagram, and LinkedIn, responding to comments and DMs.",
-      "Deliver regular performance reports with clear, actionable insights on campaign results and next steps."
-    ]
+    period: "SEP 2026 – PRESENT",
+    type: "FULL-TIME",
+    isCurrent: true,
+    description: "Leading full-funnel Meta Ads campaigns, high-retention video production, and multi-platform organic social growth to drive verifiable client acquisition and scalable revenue.",
+    keyContributions: [
+      "Plan, launch, and scale conversion-driven Meta Ads (Facebook & Instagram) covering custom audience targeting, budget allocation, and ROAS optimization.",
+      "Analyze full-funnel ad metrics (CPM, CPC, CTR, ROAS, Frequency) to continuously refine ad spend efficiency and maximize conversion volume.",
+      "Produce scroll-stopping UGC video and image ad creatives tailored for direct-response paid campaigns.",
+      "Manage multi-channel social media operations (Facebook, Instagram, LinkedIn) with monthly content calendars, post designs, and community engagement."
+    ],
+    tools: ["Meta Ads Manager", "Meta Pixel & CAPI", "Canva", "CapCut", "Premiere Pro", "Meta Business Suite"]
   },
   {
     role: "Digital Marketing Intern",
     company: "Israin Solutions",
-    period: "July 2026 – August 2026",
-    type: "Internship",
-    highlight: false,
-    description: "Assisted in structuring and managing paid advertising funnels on Facebook & Instagram, and producing brand-aligned marketing creatives.",
-    achievements: [
-      "Assisted in planning and managing Meta Ads campaigns (Facebook and Instagram) for multiple clients, covering audience targeting, budget setting, and performance tracking.",
-      "Created social media post designs and short-form video content aligned with client brand guidelines.",
-      "Wrote engaging ad copy, captions, and content for social media and marketing campaigns.",
-      "Supported community management for client pages, responding to comments and DMs to build audience trust and loyalty.",
-      "Collaborated with clients to understand business goals and translated them into effective digital marketing strategies."
-    ]
+    period: "JULY 2026 – AUGUST 2026",
+    type: "INTERNSHIP",
+    isCurrent: false,
+    description: "Assisted senior media buyers in structuring paid advertising funnels on Facebook & Instagram, and producing brand-aligned marketing creatives for diverse client niches.",
+    keyContributions: [
+      "Supported campaign setup, custom audience segmentation, and budget allocation for multi-client Meta Ads accounts.",
+      "Designed high-engagement social media post creatives and dynamic short-form Reels following client brand guidelines.",
+      "Wrote direct-response ad copy, compelling hook headlines, and persuasive captions for paid and organic campaigns.",
+      "Assisted community management workflows and monitored daily campaign deliverability metrics."
+    ],
+    tools: ["Facebook Ads", "Instagram Ads", "Ad Copywriting", "Audience Research", "Canva"]
   }
 ];
 
@@ -58,58 +55,92 @@ const Experience = () => {
             <span className="section-tag">HANDS-ON BACKGROUND</span>
             <h2 className="page-title">Experience &amp; Expertise</h2>
             <p className="text-muted">
-              Professional digital marketing background with proven results in conversion Meta Ads, high-retention video editing, and multi-platform social media management.
+              Professional digital marketing background with proven results in conversion Meta Ads, high-retention video editing, and multi-platform social media growth.
             </p>
           </div>
         </Reveal>
 
-        {/* Work Experience Timeline */}
+        {/* Work Experience Cards */}
         <div className="exp-timeline">
           {experiences.map((exp, idx) => (
-            <Reveal key={exp.company} delay={idx * 120}>
-              <div className={`exp-card ${exp.highlight ? 'exp-card-featured' : ''}`}>
+            <Reveal key={exp.company} delay={idx * 100}>
+              <div className={`exp-card ${exp.isCurrent ? "exp-card-current" : ""}`}>
+                {/* Header Row: Role on Left, Date Pill on Right */}
                 <div className="exp-card-header">
-                  <div className="exp-card-title-group">
-                    <span className="exp-badge">
-                      <Briefcase size={14} /> {exp.type}
-                    </span>
-                    <h3 className="exp-role">{exp.role}</h3>
+                  <div className="exp-role-group">
+                    <h3 className="exp-role-title">{exp.role}</h3>
                     <div className="exp-company-meta">
-                      <span className="exp-company">{exp.company}</span>
-                      <span className="exp-divider">•</span>
-                      <span className="exp-period"><Calendar size={13} /> {exp.period}</span>
+                      <span className="exp-company-name">
+                        <Briefcase size={14} className="text-accent" />
+                        <span>{exp.company}</span>
+                      </span>
+                      <span className="exp-type-tag">{exp.type}</span>
+                      {exp.isCurrent && (
+                        <span className="exp-current-pill">
+                          <span className="pulse-dot"></span>
+                          <span>Present Role</span>
+                        </span>
+                      )}
                     </div>
+                  </div>
+
+                  <div className="exp-date-pill">
+                    <Calendar size={13} className="text-accent" />
+                    <span>{exp.period}</span>
                   </div>
                 </div>
 
-                <p className="exp-desc">{exp.description}</p>
+                <div className="exp-divider-line"></div>
 
-                <div className="exp-achievements">
-                  <span className="exp-achievements-title">Key Responsibilities &amp; Impact:</span>
-                  <ul className="exp-achievements-list">
-                    {exp.achievements.map((item, i) => (
+                {/* Role Description */}
+                <p className="exp-description">{exp.description}</p>
+
+                {/* Key Contributions & Impact */}
+                <div className="exp-contributions-box">
+                  <div className="exp-contributions-title">
+                    <Sparkles size={14} className="text-accent" />
+                    <span>Key Contributions &amp; Impact:</span>
+                  </div>
+                  <ul className="exp-contributions-list">
+                    {exp.keyContributions.map((item, i) => (
                       <li key={i}>
-                        <Check size={15} className="text-accent" />
+                        <Check size={14} className="text-accent exp-check-icon" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                {/* Tools Applied */}
+                <div className="exp-tools-footer">
+                  <span className="exp-tools-label">
+                    <Wrench size={13} />
+                    <span>Applied Tools:</span>
+                  </span>
+                  <div className="exp-tools-chips">
+                    {exp.tools.map((tool, i) => (
+                      <span key={i} className="exp-tool-badge">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
 
-        {/* Core Skills Grid directly from CV */}
+        {/* Core Skills Matrix */}
         <Reveal delay={200}>
           <div className="exp-skills-card">
             <div className="exp-skills-header">
-              <span className="exp-badge">
-                <Sparkles size={14} /> Core Competencies
+              <span className="exp-skills-badge">
+                <Sparkles size={13} />
+                <span>Core Competencies</span>
               </span>
-              <h3 className="exp-skills-title">Core Skills</h3>
-              <p className="text-muted" style={{ fontSize: '0.95rem' }}>
-                Key technical and strategic capabilities applied across all client projects and marketing campaigns.
+              <h3 className="exp-skills-title">Technical &amp; Strategic Skills</h3>
+              <p className="text-muted" style={{ fontSize: "0.93rem" }}>
+                Key technical capabilities applied across all client projects, ad sets, and marketing funnels.
               </p>
             </div>
             <div className="exp-skills-grid">
