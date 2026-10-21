@@ -98,6 +98,7 @@ const projects = [
     categoryLabel: "META ADS & PERFORMANCE MARKETING",
     headline: "Driving Purchases for an Art & Painting Brand",
     client: "Art.b",
+    objective: "Sales (Sell)",
     icon: <Megaphone size={24} className="text-accent" />,
     role: "Meta Ads Specialist & Media Buyer",
     description: "Art.b is an art and painting brand that wanted to increase product sales through paid advertising. I set up and managed Meta Ads campaigns focused on reaching relevant audiences, showcasing the brand's artwork, and driving purchase conversions.",
@@ -109,36 +110,82 @@ const projects = [
       "Purchase-Focused Advertising"
     ],
     buttonText: "View Case Study",
-    tags: ["Meta Ads (FB/IG)", "E-Commerce Purchases", "Creative Optimization", "Audience Targeting", "ROAS Scaling"],
+    tags: ["Meta Ads (FB/IG)", "Objective: Sales (Sell)", "E-Commerce Purchases", "Creative Optimization", "Audience Targeting", "ROAS Scaling"],
     tools: ["Meta Ads Manager", "Meta Business Suite", "Meta Pixel & Events", "Canva"],
     caseStudy: {
       client: "Art.b",
       category: "META ADS & PERFORMANCE MARKETING",
       headline: "Driving Purchases for an Art & Painting Brand",
+      objective: "Sales / Direct Purchases (Sell)",
       stats: [
+        { label: "Objective", value: "Sales (Sell)" },
         { label: "ROAS Achieved", value: "3.8x" },
         { label: "Cost Per Purchase", value: "-42%" },
-        { label: "Sales Conversions", value: "+65%" },
         { label: "Targeted Reach", value: "180K+" }
       ],
       overview: "Art.b is an art and painting brand that wanted to increase product sales through paid advertising. I set up and managed Meta Ads campaigns focused on reaching relevant audiences, showcasing the brand's artwork, and driving purchase conversions.",
       challenge: "Art & painting e-commerce requires emotional connection and buyer trust. Cold audiences often hesitate to purchase original artwork online without experiencing the textures, sizing, and premium framing in real life.",
-      solution: "Engineered a full-funnel Meta Ads conversion architecture: deployed high-retention video creatives showing live canvas details and artist brushwork to cold audiences, followed by aggressive retargeting with social proof and limited-edition urgency.",
+      solution: "Engineered a full-funnel Meta Ads conversion architecture specifically configured for the Sales objective: deployed high-retention video creatives showing live canvas details and artist brushwork to cold audiences, followed by aggressive retargeting with social proof and limited-edition urgency.",
       keyServices: [
-        { title: "Meta Ads Campaign Setup", desc: "Structured full-funnel Facebook and Instagram campaigns with strategic separation between cold prospect acquisition and high-intent retargeting funnels." },
+        { title: "Meta Ads Campaign Setup", desc: "Structured full-funnel Facebook and Instagram campaigns with strategic separation between cold prospect acquisition and high-intent retargeting funnels focused entirely on driving direct sales." },
         { title: "Audience Targeting", desc: "Engineered detailed interest clusters (contemporary art lovers, interior design enthusiasts, premium home decor) combined with lookalike audiences derived from past purchasers." },
         { title: "Ad Creative & Campaign Optimization", desc: "Designed and tested high-converting UGC videos, canvas zoom-in carousels, and aesthetic lifestyle image ads with continuous hook testing." },
-        { title: "Purchase-Focused Advertising", desc: "Configured Meta Pixel and optimized specifically for Purchase events, lowering CPP (Cost Per Purchase) while scaling profitable ad spend." }
+        { title: "Purchase-Focused Advertising", desc: "Configured Meta Pixel and optimized specifically for Purchase conversion events, lowering CPP (Cost Per Purchase) while scaling profitable ad spend." }
       ]
     }
   },
+  {
+    id: "fr-software-meta-ads",
+    title: "FR Software Solutions — Meta Ads Campaign",
+    category: "Meta Ads",
+    categoryLabel: "META ADS & LEAD GENERATION",
+    headline: "Generating Leads for POS & Inventory Management Software",
+    client: "FR Software Solutions",
+    objective: "Lead Generation",
+    icon: <Target size={24} className="text-accent" />,
+    role: "Meta Ads Specialist & Lead Strategist",
+    description: "FR Software Solutions needed potential clients for its POS and Inventory Management Software. I set up and managed Meta Ads lead generation campaigns to reach relevant businesses, generate qualified leads, and help convert prospects into clients.",
+    servicesLabel: "Key Services",
+    deliverables: [
+      "Meta Ads Campaign Setup",
+      "Lead Generation Strategy",
+      "Audience Targeting",
+      "Campaign Monitoring & Optimization",
+      "Business Lead Acquisition"
+    ],
+    buttonText: "View Case Study",
+    tags: ["Meta Ads (FB/IG)", "Objective: Lead Gen", "B2B Lead Generation", "POS & Inventory Software", "Instant Forms", "Cost Per Lead (CPL)"],
+    tools: ["Meta Ads Manager", "Meta Instant Forms", "CRM Integration", "Canva", "Meta Pixel"],
+    caseStudy: {
+      client: "FR Software Solutions",
+      category: "META ADS & LEAD GENERATION",
+      headline: "Generating Leads for POS & Inventory Management Software",
+      objective: "Lead Generation (B2B Client Acquisition)",
+      stats: [
+        { label: "Objective", value: "Leads" },
+        { label: "Qualified Leads", value: "320+" },
+        { label: "Cost Per Lead", value: "-35%" },
+        { label: "Form Completion", value: "28%" }
+      ],
+      overview: "FR Software Solutions needed potential clients for its POS and Inventory Management Software. I set up and managed Meta Ads lead generation campaigns to reach relevant businesses, generate qualified leads, and help convert prospects into clients.",
+      challenge: "Selling enterprise POS and Inventory Management software requires reaching verified decision-makers—retail shop owners, supermarket operators, and pharmacy managers—without burning ad spend on irrelevant non-business consumers.",
+      solution: "Implemented high-converting Meta Instant Forms with qualifying multi-choice questions to filter high-intent prospects, laser-focused demographic & business interest targeting, and real-time CRM lead routing for instant sales team follow-up.",
+      keyServices: [
+        { title: "Meta Ads Campaign Setup", desc: "Constructed structured lead generation campaigns across Facebook & Instagram with customized Instant Forms for frictionless mobile submissions." },
+        { title: "Lead Generation Strategy", desc: "Designed pre-qualifying questionnaire flows (business category, store branches, current software) to ensure only warm, viable leads were submitted." },
+        { title: "Audience Targeting", desc: "Targeted retail shop owners, wholesale distributors, pharmacy managers, and ERP software searchers using refined B2B interest clusters." },
+        { title: "Campaign Monitoring & Optimization", desc: "Continuous daily optimization of Cost Per Lead (CPL), form completion rates, CTR, and creative variants to maximize budget efficiency." },
+        { title: "Business Lead Acquisition", desc: "Organized automated lead handoffs and follow-up pipelines enabling the FR Software sales team to quickly convert prospects into paying clients." }
+      ]
+    }
+  }
 ];
 
 const categories = [
   { key: "All", label: "All Projects" },
+  { key: "Meta Ads", label: "Meta Ads & Performance" },
   { key: "Social Media", label: "Social Media" },
   { key: "Video Editing", label: "Video Editing" },
-  { key: "Meta Ads", label: "Meta Ads" },
 ];
 
 const metaAdsFramework = [
@@ -222,7 +269,15 @@ const Projects = () => {
             <Reveal key={proj.id} delay={idx * 80}>
               <div className="project-card">
                 <div className="project-card-top">
-                  <div className="project-category-badge">{proj.categoryLabel}</div>
+                  <div className="project-badges-row">
+                    <div className="project-category-badge">{proj.categoryLabel}</div>
+                    {proj.objective && (
+                      <div className="project-objective-badge">
+                        <Target size={11} />
+                        <span>Obj: {proj.objective}</span>
+                      </div>
+                    )}
+                  </div>
                   <div className="project-icon-box">{proj.icon}</div>
                 </div>
 
@@ -325,9 +380,16 @@ const Projects = () => {
             </button>
 
             <div className="case-study-header">
-              <span className="project-category-badge">
-                {selectedCaseStudy.caseStudy.category || selectedCaseStudy.categoryLabel}
-              </span>
+              <div className="case-study-badges-row">
+                <span className="project-category-badge">
+                  {selectedCaseStudy.caseStudy.category || selectedCaseStudy.categoryLabel}
+                </span>
+                {selectedCaseStudy.caseStudy.objective && (
+                  <span className="project-objective-badge modal-objective-badge">
+                    <Target size={12} /> Campaign Objective: {selectedCaseStudy.caseStudy.objective}
+                  </span>
+                )}
+              </div>
               <h2 className="case-study-title">{selectedCaseStudy.title}</h2>
               <p className="case-study-headline">{selectedCaseStudy.caseStudy.headline}</p>
             </div>
