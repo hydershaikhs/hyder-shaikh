@@ -33,6 +33,7 @@ function App() {
   const handleOpenCaseStudy = (projId) => {
     setActiveCaseStudyId(projId);
     window.location.hash = `#/case-study/${projId}`;
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   };
 
   const handleBackToPortfolio = () => {

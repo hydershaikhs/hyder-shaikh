@@ -114,14 +114,17 @@ const Projects = ({ onOpenCaseStudy }) => {
 
                 {/* View Case Study Button -> Opens Dedicated Page */}
                 <div className="project-card-footer">
-                  <button
-                    type="button"
+                  <a
+                    href={`#/case-study/${proj.id}`}
                     className="btn-case-study"
-                    onClick={() => handleOpenCaseStudy(proj.id)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleOpenCaseStudy(proj.id);
+                    }}
                   >
                     <span>{proj.buttonText || "View Case Study"}</span>
                     <ArrowRight size={16} />
-                  </button>
+                  </a>
                 </div>
               </div>
             </Reveal>
