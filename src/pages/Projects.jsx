@@ -10,84 +10,88 @@ import Reveal from "../components/Reveal";
 
 const projects = [
   {
-    id: "social-media-management",
-    title: "Multi-Brand Social Media Management & Growth Strategy",
+    id: "fr-software-social-media",
+    title: "FR Software Solutions — Social Media Management",
     category: "Social Media",
-    categoryLabel: "Social Media Management",
-    headline: "Multi-Platform Growth, Content Strategy & Brand Presence",
-    client: "FR Software Solution & Saadgi (E-Commerce Brand)",
+    categoryLabel: "SOCIAL MEDIA MANAGEMENT & CONTENT STRATEGY",
+    headline: "Building a Consistent Brand Presence Across Social Media",
+    client: "FR Software Solutions",
     icon: <Share2 size={24} className="text-accent" />,
     role: "Social Media Manager & Content Strategist",
-    description: "Managing full-funnel multi-platform social media operations for FR Software Solution (Facebook, Instagram, LinkedIn) and Saadgi, an e-commerce brand (TikTok, YouTube, Instagram, Pinterest, Facebook). Developing monthly content calendars, executing high-converting content strategies, designing branded social posts, and conducting deep performance analytics.",
+    description: "FR Software Solutions needed a consistent social media presence to showcase its software solutions and connect with potential customers. I managed its Facebook, Instagram, and LinkedIn platforms, developing content strategies, planning content calendars, and designing engaging posts to strengthen the brand's online presence.",
     servicesLabel: "Key Services",
     deliverables: [
-      "Strategic content calendar planning & multi-channel content strategy",
-      "Active management across TikTok, YouTube, Instagram, Facebook, LinkedIn & Pinterest",
-      "High-engagement social media post design & brand identity curation",
-      "Community management, DM/comment interaction, and reach & engagement analysis"
+      "Social Media Management",
+      "Organic Content Strategy",
+      "Content Calendar Planning",
+      "Social Media Post Design",
+      "Multi-Platform Content Management"
     ],
     buttonText: "View Case Study",
-    tags: ["Content Calendar", "Content Strategy", "Post Design", "FR Software & Saadgi", "Multi-Platform Growth"],
-    tools: ["Meta Business Suite", "Canva", "TikTok", "Pinterest", "YouTube Studio", "LinkedIn"],
+    tags: ["Social Media Management", "Content Strategy", "Post Design", "B2B Tech Brand", "LinkedIn, FB & IG", "Organic Growth"],
+    tools: ["Meta Business Suite", "LinkedIn Page Manager", "Canva", "Buffer", "Photoshop"],
     caseStudy: {
-      client: "FR Software Solution & Saadgi",
-      category: "SOCIAL MEDIA MANAGEMENT",
-      headline: "Multi-Platform Growth, Content Strategy & Brand Presence",
+      client: "FR Software Solutions",
+      category: "SOCIAL MEDIA MANAGEMENT & CONTENT STRATEGY",
+      headline: "Building a Consistent Brand Presence Across Social Media",
       stats: [
-        { label: "Organic Reach", value: "+300%" },
-        { label: "Platforms Managed", value: "6 Channels" },
-        { label: "Monthly Creatives", value: "45+ Posts" },
-        { label: "Engagement Boost", value: "4.2x" }
+        { label: "Brand Reach", value: "+240%" },
+        { label: "Platforms Managed", value: "3 B2B Channels" },
+        { label: "Monthly Creatives", value: "24+ Posts" },
+        { label: "Profile Visits", value: "3.5x" }
       ],
-      overview: "Comprehensive social media brand growth management for both B2B tech (FR Software Solution) and direct-to-consumer e-commerce (Saadgi), ensuring cohesive brand identity and organic growth.",
-      challenge: "Saadgi and FR Software Solution required distinct brand voices across diverse channels—from high-energy TikTok and Instagram reels to corporate LinkedIn articles.",
-      solution: "Engineered platform-native content calendars, responsive community management, branded aesthetic design templates, and viral hook formulas tailored for each demographic.",
+      overview: "FR Software Solutions needed a consistent social media presence to showcase its software solutions and connect with potential customers. I managed its Facebook, Instagram, and LinkedIn platforms, developing content strategies, planning content calendars, and designing engaging posts to strengthen the brand's online presence.",
+      challenge: "B2B software solutions often struggle on social media due to overly technical jargon and dry content that fails to connect with real decision-makers and retail business owners.",
+      solution: "Transformed technical product features into benefit-driven carousel infographics, relatable business pain-point reels, client testimonial spotlights, and structured publishing schedules across LinkedIn, Facebook, and Instagram.",
       keyServices: [
-        { title: "Strategic Content Calendars", desc: "Monthly planned content schedules tailored specifically for TikTok, Instagram, YouTube, Facebook, Pinterest, and LinkedIn." },
-        { title: "Branded Social Media Design", desc: "Eye-catching post creatives, carousels, and stories matching exact brand style guides." },
-        { title: "Community & DM Management", desc: "Direct customer interaction, comment moderation, and active community building to convert followers into brand advocates." },
-        { title: "Performance Audits & Growth Tracking", desc: "Detailed monthly analytics on reach, impression share, engagement rates, and follower growth trends." }
+        { title: "Social Media Management", desc: "Day-to-day administrative management, scheduling, and consistent publishing across Facebook, Instagram, and LinkedIn." },
+        { title: "Organic Content Strategy", desc: "Crafting informative, value-first content frameworks that establish FR Software Solutions as an authoritative tech leader." },
+        { title: "Content Calendar Planning", desc: "Developing comprehensive monthly editorial calendars aligning with software feature launches and industry trends." },
+        { title: "Social Media Post Design", desc: "Designing sleek, branded graphics, typography-driven carousels, and visual assets following corporate brand guidelines." },
+        { title: "Multi-Platform Content Management", desc: "Adapting content tone for B2B professionals on LinkedIn while keeping Instagram and Facebook visually engaging and human." }
       ]
     }
   },
   {
-    id: "video-editing-production",
-    title: "High-Retention Short-Form Reels & YouTube Video Editing",
-    category: "Video Editing",
-    categoryLabel: "Video Production & Editing",
-    headline: "Engaging Visual Hooks & Kinetic Pacing for Maximum Retention",
-    client: "Saadgi (E-Commerce), FR Software Solution & YouTube",
-    icon: <Clapperboard size={24} className="text-accent" />,
-    role: "Video Editor & Motion Designer",
-    description: "Producing and editing scroll-stopping video content for Saadgi e-commerce brand, FR Software Solution corporate channels, and YouTube creators. Crafting dynamic short-form Reels and TikToks along with engaging long-form and short-form YouTube videos featuring smooth pacing, kinetic subtitles, and immersive sound design.",
+    id: "saadgi-wear-social-media",
+    title: "Saadgi Wear — Social Media Management",
+    category: "Social Media",
+    categoryLabel: "SOCIAL MEDIA MANAGEMENT & ORGANIC MARKETING",
+    headline: "Driving Organic Orders for an E-commerce Hijab Brand",
+    client: "Saadgi Wear",
+    icon: <Share2 size={24} className="text-accent" />,
+    role: "Social Media Manager & Organic Growth Specialist",
+    description: "Saadgi Wear is an e-commerce brand specializing in hijabs for women. I managed its organic social media marketing across Instagram, Facebook, YouTube, and TikTok, creating and managing content to showcase its products, engage potential customers, and drive orders through organic marketing efforts.",
     servicesLabel: "Key Services",
     deliverables: [
-      "High-converting product showcase Reels & TikToks for Saadgi e-commerce brand",
-      "Professional promotional and corporate video editing for FR Software Solution",
-      "Long-form & short-form YouTube video editing with retention-driven hooks and pacing",
-      "Kinetic typography, animated captions, visual effects, and dynamic sound design"
+      "Social Media Management",
+      "Organic Marketing Strategy",
+      "Multi-Platform Content Management",
+      "Product-Focused Content Planning",
+      "Organic Order Generation"
     ],
     buttonText: "View Case Study",
-    tags: ["Reels & TikToks", "E-Commerce Video", "YouTube Long & Short", "Premiere Pro", "After Effects"],
-    tools: ["Adobe Premiere Pro", "Adobe After Effects", "CapCut"],
+    tags: ["Organic Orders", "E-Commerce Hijab Brand", "Instagram & TikTok", "Product Showcases", "Organic Marketing", "Viral Growth"],
+    tools: ["Instagram", "TikTok Studio", "YouTube Studio", "Meta Business Suite", "CapCut", "Canva"],
     caseStudy: {
-      client: "Saadgi & FR Software Solution",
-      category: "VIDEO PRODUCTION & EDITING",
-      headline: "Engaging Visual Hooks & Kinetic Pacing for Maximum Retention",
+      client: "Saadgi Wear",
+      category: "SOCIAL MEDIA MANAGEMENT & ORGANIC MARKETING",
+      headline: "Driving Organic Orders for an E-commerce Hijab Brand",
       stats: [
-        { label: "Avg. Watch Duration", value: "85%+" },
-        { label: "Videos Edited", value: "60+ Reels" },
-        { label: "First 3s Retention", value: "+45%" },
-        { label: "Production Suite", value: "Premiere / AE" }
+        { label: "Organic Reach", value: "+380%" },
+        { label: "Platforms Managed", value: "4 Channels" },
+        { label: "Monthly Creatives", value: "35+ Posts/Reels" },
+        { label: "Organic Orders", value: "+52%" }
       ],
-      overview: "Crafting modern short-form and long-form video edits designed to stop scrolling in the first 3 seconds and keep viewers engaged through kinetic pacing and immersive soundscapes.",
-      challenge: "Social media attention spans are under 3 seconds. The goal was to hook viewers instantly and maximize retention rates to trigger social algorithm distribution.",
-      solution: "Implemented dynamic visual pattern interrupts, synchronized sound design (SFX), bold kinetic subtitles, and rapid narrative pacing.",
+      overview: "Saadgi Wear is an e-commerce brand specializing in hijabs for women. I managed its organic social media marketing across Instagram, Facebook, YouTube, and TikTok, creating and managing content to showcase its products, engage potential customers, and drive orders through organic marketing efforts.",
+      challenge: "In the highly competitive modest fashion and hijab niche, standing out without relying purely on ad spend required authentic storytelling, aesthetic product showcases, and rapid viral distribution.",
+      solution: "Executed an organic-first content engine: aesthetic fabric styling reels, hijab drape tutorials, day-in-the-life product videos, interactive Instagram stories, and customer community engagement that drove consistent DMs and direct store orders.",
       keyServices: [
-        { title: "E-Commerce Showcase Reels & TikToks", desc: "High-energy short-form videos highlighting product features, aesthetic fabric flows, and model fittings." },
-        { title: "Corporate Promo & Tech Videos", desc: "Clean, professional corporate promotional video edits for FR Software Solution's tech products." },
-        { title: "Retention-Driven YouTube Editing", desc: "Long-form editing with chapter transitions, graphic overlays, and narrative retention hooks." },
-        { title: "Kinetic Typography & Sound Design", desc: "Custom animated subtitle styling and layered audio effects to elevate production quality." }
+        { title: "Social Media Management", desc: "End-to-end multi-platform channel management across Instagram, TikTok, YouTube Shorts, and Facebook." },
+        { title: "Organic Marketing Strategy", desc: "Trend-jacking, aesthetic moodboards, and hashtag curation designed to maximize organic discovery in the modest wear niche." },
+        { title: "Multi-Platform Content Management", desc: "Synchronizing daily content across Instagram Reels, TikTok videos, and YouTube Shorts for unified brand reach." },
+        { title: "Product-Focused Content Planning", desc: "Highlighting premium fabric textures, color variety, and styling guides that answer customer questions before they buy." },
+        { title: "Organic Order Generation", desc: "Setting up frictionless DM-to-order pathways and bio link optimizations that converted organic video views into paying customers." }
       ]
     }
   },
@@ -178,14 +182,55 @@ const projects = [
         { title: "Business Lead Acquisition", desc: "Organized automated lead handoffs and follow-up pipelines enabling the FR Software sales team to quickly convert prospects into paying clients." }
       ]
     }
+  },
+  {
+    id: "video-editing-production",
+    title: "High-Retention Short-Form Reels & YouTube Video Editing",
+    category: "Video Editing",
+    categoryLabel: "VIDEO PRODUCTION & EDITING",
+    headline: "Engaging Visual Hooks & Kinetic Pacing for Maximum Retention",
+    client: "Saadgi (E-Commerce), FR Software Solution & YouTube",
+    icon: <Clapperboard size={24} className="text-accent" />,
+    role: "Video Editor & Motion Designer",
+    description: "Producing and editing scroll-stopping video content for Saadgi e-commerce brand, FR Software Solution corporate channels, and YouTube creators. Crafting dynamic short-form Reels and TikToks along with engaging long-form and short-form YouTube videos featuring smooth pacing, kinetic subtitles, and immersive sound design.",
+    servicesLabel: "Key Services",
+    deliverables: [
+      "High-converting product showcase Reels & TikToks for Saadgi e-commerce brand",
+      "Professional promotional and corporate video editing for FR Software Solution",
+      "Long-form & short-form YouTube video editing with retention-driven hooks and pacing",
+      "Kinetic typography, animated captions, visual effects, and dynamic sound design"
+    ],
+    buttonText: "View Case Study",
+    tags: ["Reels & TikToks", "E-Commerce Video", "YouTube Long & Short", "Premiere Pro", "After Effects"],
+    tools: ["Adobe Premiere Pro", "Adobe After Effects", "CapCut"],
+    caseStudy: {
+      client: "Saadgi & FR Software Solution",
+      category: "VIDEO PRODUCTION & EDITING",
+      headline: "Engaging Visual Hooks & Kinetic Pacing for Maximum Retention",
+      stats: [
+        { label: "Avg. Watch Duration", value: "85%+" },
+        { label: "Videos Edited", value: "60+ Reels" },
+        { label: "First 3s Retention", value: "+45%" },
+        { label: "Production Suite", value: "Premiere / AE" }
+      ],
+      overview: "Crafting modern short-form and long-form video edits designed to stop scrolling in the first 3 seconds and keep viewers engaged through kinetic pacing and immersive soundscapes.",
+      challenge: "Social media attention spans are under 3 seconds. The goal was to hook viewers instantly and maximize retention rates to trigger social algorithm distribution.",
+      solution: "Implemented dynamic visual pattern interrupts, synchronized sound design (SFX), bold kinetic subtitles, and rapid narrative pacing.",
+      keyServices: [
+        { title: "E-Commerce Showcase Reels & TikToks", desc: "High-energy short-form videos highlighting product features, aesthetic fabric flows, and model fittings." },
+        { title: "Corporate Promo & Tech Videos", desc: "Clean, professional corporate promotional video edits for FR Software Solution's tech products." },
+        { title: "Retention-Driven YouTube Editing", desc: "Long-form editing with chapter transitions, graphic overlays, and narrative retention hooks." },
+        { title: "Kinetic Typography & Sound Design", desc: "Custom animated subtitle styling and layered audio effects to elevate production quality." }
+      ]
+    }
   }
 ];
 
 const categories = [
   { key: "All", label: "All Projects" },
   { key: "Meta Ads", label: "Meta Ads & Performance" },
-  { key: "Social Media", label: "Social Media" },
-  { key: "Video Editing", label: "Video Editing" },
+  { key: "Social Media", label: "Social Media Management" },
+  { key: "Video Editing", label: "Video Production" },
 ];
 
 const metaAdsFramework = [
