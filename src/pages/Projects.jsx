@@ -1,17 +1,9 @@
-import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import "./Projects.css";
 import Reveal from "../components/Reveal";
-import { projects, categories } from "../data/projectsData";
+import { projects } from "../data/projectsData";
 
 const Projects = ({ onOpenCaseStudy }) => {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredProjects =
-    activeCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
-
   const handleOpenCaseStudy = (projId) => {
     if (onOpenCaseStudy) {
       onOpenCaseStudy(projId);
@@ -33,24 +25,9 @@ const Projects = ({ onOpenCaseStudy }) => {
           </div>
         </Reveal>
 
-        {/* Category Filter Pills */}
-        <Reveal>
-          <div className="projects-filter-bar">
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                className={`filter-btn ${activeCategory === cat.key ? "filter-btn-active" : ""}`}
-                onClick={() => setActiveCategory(cat.key)}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-        </Reveal>
-
         {/* Projects Grid */}
         <div className="projects-grid">
-          {filteredProjects.map((proj, idx) => (
+          {projects.map((proj, idx) => (
             <Reveal key={proj.id} delay={idx * 80}>
               <div className="project-card">
                 {/* Top Row: Icon left, tags right */}
