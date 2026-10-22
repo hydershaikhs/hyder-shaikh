@@ -1,184 +1,187 @@
-import { Briefcase, GraduationCap, BookOpen, Heart, Target, Palette, Film, CheckCircle2 } from 'lucide-react';
+import { Briefcase, GraduationCap, Heart, Target } from 'lucide-react';
 import Reveal from '../components/Reveal';
+import heroImg from '../assets/hero.png';
+import { FacebookIcon, InstagramIcon, LinkedInIcon, WhatsAppIcon } from '../components/SocialIcons';
 import './About.css';
 
 const About = () => {
   return (
     <section id="about" className="section about-section">
-      <div className="container">
-        {/* Page Hero Header */}
+      <div className="about-bg-ambient" aria-hidden="true"></div>
+
+      <div className="container about-container">
+        {/* ============ 3-COLUMN HERO COMPOSITION (REFERENCE-INSPIRED) ============ */}
         <Reveal>
-          <div className="about-hero-center">
-            <span className="section-tag">ABOUT HYDER SHAIKH</span>
-            <h2 className="page-title">
-              Bridging Strategic Marketing With <br />
-              <span className="gradient-text">Creative Production &amp; Real Results.</span>
-            </h2>
-            <p className="page-subtitle">
-              A hands-on Digital Marketer, Media Buyer, and Content Creator dedicated to transforming advertising spend into measurable business growth.
-            </p>
+          <div className="about-stage-grid">
+            {/* ---- LEFT COLUMN ---- */}
+            <div className="about-left-col">
+              <div className="about-greeting-block">
+                <span className="about-greeting-sub">Hy! I Am</span>
+                <h2 className="about-greeting-name">Hyder Shaikh.</h2>
+              </div>
+
+              {/* Dashed curved pointer arrow */}
+              <div className="about-arrow-wrap" aria-hidden="true">
+                <svg className="about-dashed-arrow" viewBox="0 0 160 80" fill="none">
+                  <path
+                    d="M10 65 C 50 70, 95 18, 146 30"
+                    stroke="var(--accent, #00f0ff)"
+                    strokeWidth="2.2"
+                    strokeDasharray="6 6"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M138 23 L 148 30 L 139 39"
+                    stroke="var(--accent, #00f0ff)"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              {/* Years Experience Stat */}
+              <div className="about-exp-highlight">
+                <span className="about-exp-number">01+</span>
+                <span className="about-exp-label">
+                  YEARS<br />EXPERIENCE
+                </span>
+              </div>
+
+              {/* Social Media Links */}
+              <div className="about-socials-row">
+                <a
+                  href="https://www.linkedin.com/in/hyder-shaikh-25a83a378/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about-social-btn"
+                  aria-label="LinkedIn Profile"
+                >
+                  <LinkedInIcon size={18} />
+                </a>
+                <a
+                  href="https://www.instagram.com/hydershaikh.875/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about-social-btn"
+                  aria-label="Instagram Profile"
+                >
+                  <InstagramIcon size={18} />
+                </a>
+                <a
+                  href="https://www.facebook.com/hydershaikh.875"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about-social-btn"
+                  aria-label="Facebook Profile"
+                >
+                  <FacebookIcon size={18} />
+                </a>
+                <a
+                  href="https://wa.me/923232115162"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about-social-btn"
+                  aria-label="WhatsApp Contact"
+                >
+                  <WhatsAppIcon size={18} />
+                </a>
+              </div>
+            </div>
+
+            {/* ---- CENTER COLUMN (RECTANGLE IMAGE) ---- */}
+            <div className="about-center-col">
+              <div className="about-photo-frame-rect">
+                <div className="about-photo-glow" aria-hidden="true"></div>
+                <div className="about-photo-border">
+                  <div className="about-rect-img-wrap">
+                    <img
+                      src={heroImg}
+                      alt="Hyder Shaikh — Performance Digital Marketer"
+                      className="about-rect-img"
+                    />
+                  </div>
+                </div>
+                <div className="about-center-badge">
+                  <span className="pulse-dot"></span>
+                  <span>Available for Full-Time &amp; Remote Roles</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ---- RIGHT COLUMN ---- */}
+            <div className="about-right-col">
+              <p className="about-pitch-text">
+                "I craft data-driven Meta Ads campaigns, high-converting ad creatives, and videos that turn viewers into paying clients."
+              </p>
+
+              {/* Floating Verified Performance Badge */}
+              <div className="about-review-badge">
+                <div className="about-review-header">
+                  <span className="about-review-title">Meta Ads Manager</span>
+                  <div className="about-stars" aria-label="5 out of 5 stars">
+                    <span className="star-icon">★</span>
+                    <span className="star-icon">★</span>
+                    <span className="star-icon">★</span>
+                    <span className="star-icon">★</span>
+                    <span className="star-icon">★</span>
+                  </div>
+                </div>
+                <div className="about-review-meta">
+                  <span className="about-review-rating">5.0</span>
+                  <span className="about-review-sub">Verified Campaign Strategy &amp; Setup</span>
+                </div>
+              </div>
+
+              {/* Stylized Signature (Reference-inspired) */}
+              <div className="about-signature-wrap">
+                <span className="about-sig-script">Digital</span>
+                <span className="about-sig-bold">Marketer.</span>
+              </div>
+            </div>
           </div>
         </Reveal>
 
-        {/* Main Narrative Card: Bio + Core Pillars */}
-        <Reveal>
-          <div className="about-main-card">
-            <div className="about-main-layout">
-              {/* Left Column: Authentic Bio */}
-              <div className="about-bio-col">
-                <p className="about-bio-lead">
-                  I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer currently leading paid campaigns, creative design, and social media operations at <strong>FR Software Solution</strong>.
-                </p>
-                <p className="about-bio-text">
-                  My approach bridges the gap between analytical media buying and compelling creative execution. I don't just set up ads — I develop the campaign angle, design the visual creatives, write persuasive copy, and configure end-to-end funnels in Meta Ads Manager to capture genuine audience demand.
-                </p>
-                <p className="about-bio-text">
-                  Certified in Digital Marketing from <strong>Saylani Mass IT Training (SMIT)</strong> and experienced with multiple brand engagements (including <strong>FR Software Solution</strong>, <strong>art.b Paintings</strong>, and <strong>Israin Solutions</strong>), I bring a commitment to transparent reporting and measurable outcomes.
-                </p>
+        {/* ============ BOTTOM CREDENTIALS STRIP ============ */}
+        <Reveal delay={150}>
+          <div className="about-credentials-strip">
+            {/* Card 1: Current Role */}
+            <div className="about-cred-card">
+              <div className="about-cred-icon">
+                <Briefcase size={22} />
               </div>
+              <div className="about-cred-body">
+                <h4>Digital Marketer</h4>
+                <span className="about-cred-sub">FR Software Solution (Present)</span>
+                <p>Leading Meta Ads lead generation, Urdu creative production, and social media brand growth.</p>
+              </div>
+            </div>
 
-              {/* Right Column: 4 Core Pillars */}
-              <div className="about-pillars-grid">
-                <div className="about-pillar-item">
-                  <div className="about-pillar-icon">
-                    <Target size={18} />
-                  </div>
-                  <div className="about-pillar-content">
-                    <h4>Meta Ads &amp; Paid Strategy</h4>
-                    <p>Structured campaigns configured for Leads and Sales with precise audience targeting.</p>
-                  </div>
-                </div>
+            {/* Card 2: Certification */}
+            <div className="about-cred-card">
+              <div className="about-cred-icon">
+                <GraduationCap size={22} />
+              </div>
+              <div className="about-cred-body">
+                <h4>Digital Marketing Certified</h4>
+                <span className="about-cred-sub">Saylani Mass IT Training (SMIT)</span>
+                <p>Practical training in paid advertising funnels, audience targeting, and ROI performance tracking.</p>
+              </div>
+            </div>
 
-                <div className="about-pillar-item">
-                  <div className="about-pillar-icon">
-                    <Palette size={18} />
-                  </div>
-                  <div className="about-pillar-content">
-                    <h4>Creative &amp; Ad Post Design</h4>
-                    <p>Eye-catching, high-converting ad visuals and bilingual (English &amp; Urdu) copy.</p>
-                  </div>
-                </div>
-
-                <div className="about-pillar-item">
-                  <div className="about-pillar-icon">
-                    <Film size={18} />
-                  </div>
-                  <div className="about-pillar-content">
-                    <h4>Video &amp; AI Production</h4>
-                    <p>Dynamic short-form video editing and AI-assisted visual storytelling.</p>
-                  </div>
-                </div>
-
-                <div className="about-pillar-item">
-                  <div className="about-pillar-icon">
-                    <CheckCircle2 size={18} />
-                  </div>
-                  <div className="about-pillar-content">
-                    <h4>Evidence-Based Reporting</h4>
-                    <p>Transparent analytics tracking verified CPM, CTR, conversations, and cost per lead.</p>
-                  </div>
-                </div>
+            {/* Card 3: Values & Discipline */}
+            <div className="about-cred-card">
+              <div className="about-cred-icon">
+                <Heart size={22} />
+              </div>
+              <div className="about-cred-body">
+                <h4>Hafiz-e-Quran</h4>
+                <span className="about-cred-sub">Discipline, Focus &amp; Ethics</span>
+                <p>Complete memorization of the Holy Quran — bringing deep mental focus and dedication to every project.</p>
               </div>
             </div>
           </div>
         </Reveal>
-
-        {/* Quick Highlights Bar */}
-        <Reveal>
-          <div className="about-highlights-bar">
-            <div className="about-highlight-box">
-              <div className="about-highlight-val">Meta Ads</div>
-              <div className="about-highlight-lbl">Campaign Strategy &amp; Setup</div>
-            </div>
-            <div className="about-highlight-box">
-              <div className="about-highlight-val">Bilingual</div>
-              <div className="about-highlight-lbl">English &amp; Urdu Creatives</div>
-            </div>
-            <div className="about-highlight-box">
-              <div className="about-highlight-val">Full-Funnel</div>
-              <div className="about-highlight-lbl">Lead Gen &amp; Direct Messaging</div>
-            </div>
-            <div className="about-highlight-box">
-              <div className="about-highlight-val">SMIT Certified</div>
-              <div className="about-highlight-lbl">Digital Marketing Professional</div>
-            </div>
-          </div>
-        </Reveal>
-
-        {/* 4 Credentials & Personal Foundation Cards */}
-        <div className="about-cards-row">
-          <Reveal delay={0}>
-            <div className="about-info-card">
-              <div className="about-info-header">
-                <div className="about-info-icon-badge">
-                  <Briefcase size={22} />
-                </div>
-                <div>
-                  <div className="about-info-tag">Current Role</div>
-                  <h3 className="about-info-title">Digital Marketer</h3>
-                </div>
-              </div>
-              <h4 className="about-info-subtitle">FR Software Solution</h4>
-              <p className="about-info-desc">
-                Managing Meta Ads lead generation, Urdu creative production, and social media brand growth for POS and business software.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={100}>
-            <div className="about-info-card">
-              <div className="about-info-header">
-                <div className="about-info-icon-badge">
-                  <GraduationCap size={22} />
-                </div>
-                <div>
-                  <div className="about-info-tag">Certification</div>
-                  <h3 className="about-info-title">Digital Marketing</h3>
-                </div>
-              </div>
-              <h4 className="about-info-subtitle">Saylani Mass IT Training (SMIT)</h4>
-              <p className="about-info-desc">
-                Completed hands-on practical training in paid advertising funnels, audience research, creative strategy, and performance metrics.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <div className="about-info-card">
-              <div className="about-info-header">
-                <div className="about-info-icon-badge">
-                  <BookOpen size={22} />
-                </div>
-                <div>
-                  <div className="about-info-tag">Academics</div>
-                  <h3 className="about-info-title">Secondary Education</h3>
-                </div>
-              </div>
-              <h4 className="about-info-subtitle">SSC (Matric) — In Progress</h4>
-              <p className="about-info-desc">
-                Building a strong, disciplined foundation while proactively mastering modern digital marketing and commerce technologies.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={300}>
-            <div className="about-info-card hifz-highlight">
-              <div className="about-info-header">
-                <div className="about-info-icon-badge">
-                  <Heart size={22} />
-                </div>
-                <div>
-                  <div className="about-info-tag">Values &amp; Discipline</div>
-                  <h3 className="about-info-title">Hafiz-e-Quran</h3>
-                </div>
-              </div>
-              <h4 className="about-info-subtitle">Discipline, Focus &amp; Integrity</h4>
-              <p className="about-info-desc">
-                Complete memorization of the Holy Quran (Hifz) — reflecting unwavering focus, patience, memory, and high ethical standards applied to every project.
-              </p>
-            </div>
-          </Reveal>
-        </div>
       </div>
     </section>
   );
