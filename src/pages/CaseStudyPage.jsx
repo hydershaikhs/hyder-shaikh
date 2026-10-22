@@ -1,9 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowLeft, Target, FileText,
   TrendingUp, ShieldCheck, CheckCircle2,
   Wrench, Clapperboard, Sparkles, Film, ArrowRight,
-  Play, Volume2, BarChart2, Camera, Lightbulb, AlertCircle, Palette
+  Volume2, BarChart2, Camera, Lightbulb, AlertCircle, Palette, Layers
 } from "lucide-react";
 import "./CaseStudyPage.css";
 
@@ -50,36 +50,49 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
 
   const { caseStudy } = project;
   const isVideoProject = project.id === "video-editing-production";
-  const isArtbProject = project.id === "art-b-meta-ads";
-  const isFrPosProject = project.id === "fr-pos-leadgen";
+  const isMetaAdsProject = project.category === "Meta Ads";
 
-  // Compute safe base URL for both Vercel and GitHub Pages
-  const rawBase2 = import.meta.env.BASE_URL || "/";
-  const imgBase = rawBase2.endsWith("/") ? rawBase2 : `${rawBase2}/`;
+  // Compute image base
+  const imgBase = baseUrl;
 
-  const artbScreenshots = [
-    { src: `${imgBase}images/artb-campaign-overview.png`, alt: "art.b Paintings — Meta Ads Manager Campaign Overview screenshot showing spend, impressions and reach", label: "Campaign Overview" },
-    { src: `${imgBase}images/artb-click-performance.png`, alt: "art.b Paintings — Meta Ads Manager Click Performance screenshot showing CTR, CPC and link clicks", label: "Click Performance" },
-    { src: `${imgBase}images/artb-messaging-results.png`, alt: "art.b Paintings — Meta Ads Manager Messaging Results screenshot showing 20 conversations at $0.21 each", label: "Messaging Results" },
-  ];
+  // Evidence items mapped per project
+  const evidenceMap = {
+    "art-b-meta-ads": [
+      { src: `${imgBase}images/artb-campaign-overview.png`, filename: "artb-campaign-overview.png", label: "Ads Manager Overview", desc: "Verified delivery: $4.26 spend, 5,295 impressions, 4,651 reach" },
+      { src: `${imgBase}images/artb-click-performance.png`, filename: "artb-click-performance.png", label: "Click & CTR Metrics", desc: "Breakdown: 35 link clicks, 0.66% link CTR, $0.12 cost per link click" },
+      { src: `${imgBase}images/artb-messaging-results.png`, filename: "artb-messaging-results.png", label: "Messaging Conversations", desc: "20 reported messaging conversations at $0.21 per conversation" },
+      { src: `${imgBase}images/artb-ad-creative-1.png`, filename: "artb-ad-creative-1.png", label: "Ad Creative Design", desc: "Custom-designed visual creative to showcase paintings and drive inquiries" },
+    ],
+    "fr-pos-leadgen": [
+      { src: `${imgBase}images/fr-pos-meta-ads-performance.png`, filename: "fr-pos-meta-ads-performance.png", label: "Ads Manager Performance", desc: "Verified record: 16 conversations at Rs 77.54 from Rs 1,240.69 spend" },
+      { src: `${imgBase}images/fr-urdu-creative.png`, filename: "fr-urdu-creative.png", label: "Urdu Advertising Creative", desc: "Designed-from-scratch Urdu post targeting local retail & store owners" },
+    ],
+    "fr-software-social-media": [
+      { src: `${imgBase}images/fr-social-content-grid.png`, filename: "fr-social-content-grid.png", label: "B2B Post & Carousel Designs", desc: "Branded corporate graphics and feature explainers published across platforms" },
+      { src: `${imgBase}images/fr-social-reach-overview.png`, filename: "fr-social-reach-overview.png", label: "Multi-Platform Growth", desc: "LinkedIn, Facebook, and Instagram engagement and profile visit metrics" },
+    ],
+    "saadgi-wear-social-media": [
+      { src: `${imgBase}images/saadgi-social-showcase.png`, filename: "saadgi-social-showcase.png", label: "Aesthetic Reels & Stories", desc: "Viral fabric drape tutorials, styling reels, and customer interaction stories" },
+      { src: `${imgBase}images/saadgi-organic-growth.png`, filename: "saadgi-organic-growth.png", label: "Organic Reach & DM Inquiries", desc: "Organic impressions surge and customer order inquiries via direct messages" },
+    ],
+  };
 
-  const artbCreatives = [
-    { src: `${imgBase}images/artb-ad-creative-1.png`, alt: "art.b Paintings — Custom advertising creative designed for Meta Ads campaign", label: "Ad Creative 01" },
-    { src: `${imgBase}images/artb-ad-creative-2.png`, alt: "art.b Paintings — Social post creative designed for Meta Ads campaign", label: "Ad Creative 02" },
-  ];
+  const evidenceItems = evidenceMap[project.id] || [];
 
-  const frPosScreenshots = [
-    { src: `${imgBase}images/fr-pos-meta-ads-performance.png`, alt: "FR Software Solutions — Meta Ads Manager Performance screenshot showing 16 conversations, Rs 1,240.69 spend", label: "Campaign Performance" },
-  ];
-
-  const frPosCreatives = [
-    { src: `${imgBase}images/fr-urdu-creative.png`, alt: "FR Software Solutions — Urdu advertising creative designed for the POS & Inventory Lead Generation campaign", label: "Urdu Ad Creative" },
-  ];
+  // Snapshot fallback
+  const snapshot = caseStudy.snapshot || {
+    client: caseStudy.client || project.client,
+    role: project.role,
+    objective: project.objective,
+    period: caseStudy.reportingPeriod || "Documented Period",
+    budget: isMetaAdsProject ? "Paid Ad Budget" : "Organic Execution",
+    scope: project.category
+  };
 
   return (
     <div className="case-study-page" ref={pageRef} style={{ paddingTop: 'clamp(120px, 16vh, 160px)' }}>
       <div className="container case-page-content">
-        {/* Page Hero Header */}
+        {/* ============ 1. PAGE HERO HEADER ============ */}
         <header className="case-page-hero anim-fade-in">
           <div className="case-page-badges">
             <span className="hero-pill-badge">{project.categoryLabel}</span>
@@ -94,382 +107,117 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
           <p className="case-page-main-headline">{caseStudy.headline || project.headline}</p>
         </header>
 
-        {/* ================= ART.B — DEDICATED CASE STUDY LAYOUT ================= */}
-        {isArtbProject && (
-          <>
-            {/* Project Snapshot */}
-            <section className="artb-snapshot-section anim-section-pop">
-              <div className="artb-snapshot-grid">
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Client Industry</span>
-                  <span className="artb-snapshot-value">Art & Paintings</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">My Role</span>
-                  <span className="artb-snapshot-value">Strategy · Creative Design · Campaign Setup</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Campaign Objective</span>
-                  <span className="artb-snapshot-value">Sales (Outcome: Conversations)</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Reporting Period</span>
-                  <span className="artb-snapshot-value">{caseStudy.reportingPeriod}</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Campaign Name</span>
-                  <span className="artb-snapshot-value artb-campaign-name">{caseStudy.campaignName}</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Budget Used</span>
-                  <span className="artb-snapshot-value">$4.26 (test budget)</span>
-                </div>
-              </div>
-            </section>
+        {/* ============ 2. UNIFIED PROJECT SNAPSHOT (6-CARD GRID) ============ */}
+        <section className="cs-unified-snapshot anim-section-pop">
+          <div className="cs-snapshot-grid">
+            <div className="cs-snapshot-item">
+              <span className="cs-snapshot-label">Client / Brand</span>
+              <span className="cs-snapshot-value">{snapshot.client}</span>
+            </div>
+            <div className="cs-snapshot-item">
+              <span className="cs-snapshot-label">My Verified Role</span>
+              <span className="cs-snapshot-value">{snapshot.role}</span>
+            </div>
+            <div className="cs-snapshot-item">
+              <span className="cs-snapshot-label">Primary Objective</span>
+              <span className="cs-snapshot-value">{snapshot.objective}</span>
+            </div>
+            <div className="cs-snapshot-item">
+              <span className="cs-snapshot-label">Project / Period</span>
+              <span className="cs-snapshot-value">{snapshot.period}</span>
+            </div>
+            <div className="cs-snapshot-item">
+              <span className="cs-snapshot-label">Budget / Model</span>
+              <span className="cs-snapshot-value">{snapshot.budget}</span>
+            </div>
+            <div className="cs-snapshot-item">
+              <span className="cs-snapshot-label">Channels &amp; Scope</span>
+              <span className="cs-snapshot-value">{snapshot.scope}</span>
+            </div>
+          </div>
+        </section>
 
-            {/* My Contribution */}
-            <section className="artb-contribution-section anim-details-in">
-              <h3 className="artb-section-heading">
-                <Palette size={20} className="text-accent" /> My Contribution
+        {/* ============ 3. MY HANDS-ON RESPONSIBILITIES ============ */}
+        {caseStudy.contribution && (
+          <section className="cs-unified-section anim-details-in">
+            <div className="cs-section-header">
+              <h3 className="cs-section-title">
+                <CheckCircle2 size={20} className="text-accent" /> My Responsibilities &amp; Hands-On Role
               </h3>
-              <p className="artb-contribution-intro">
-                I developed the marketing approach, designed the advertising creatives, and independently handled the Meta Ads campaign setup for art.b Paintings.
-              </p>
-              <div className="artb-contribution-grid">
-                {caseStudy.contribution && caseStudy.contribution.map((item, i) => (
-                  <div key={i} className="artb-contribution-card">
-                    <div className="artb-contribution-number">{String(i + 1).padStart(2, "0")}</div>
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Marketing Strategy & Planning Section */}
-            {caseStudy.strategySection && (
-              <section className="artb-evidence-section">
-                <h3 className="artb-section-heading">
-                  <TrendingUp size={20} className="text-accent" /> Marketing Strategy & Planning
-                </h3>
-                <div className="artb-interpretation-card">
-                  <div className="frpos-strategy-grid">
-                    <div className="frpos-strategy-item">
-                      <h4>Campaign Context</h4>
-                      <p>{caseStudy.strategySection.context}</p>
-                    </div>
-                    <div className="frpos-strategy-item">
-                      <h4>Marketing Objective</h4>
-                      <p>{caseStudy.strategySection.objective}</p>
-                    </div>
-                    <div className="frpos-strategy-item">
-                      <h4>Intended Customer Action</h4>
-                      <p>{caseStudy.strategySection.intendedAction}</p>
-                    </div>
-                    <div className="frpos-strategy-item">
-                      <h4>Creative Approach</h4>
-                      <p>{caseStudy.strategySection.creativeApproach}</p>
-                    </div>
-                    <div className="frpos-strategy-item">
-                      <h4>Campaign Implementation</h4>
-                      <p>{caseStudy.strategySection.implementation}</p>
-                    </div>
-                    <div className="frpos-strategy-item">
-                      <h4>Performance Measurement</h4>
-                      <p>{caseStudy.strategySection.measurement}</p>
-                    </div>
-                  </div>
+              <span className="cs-header-tag">Personally Handled Execution</span>
+            </div>
+            <div className="cs-contribution-grid">
+              {caseStudy.contribution.map((item, i) => (
+                <div key={i} className="cs-contribution-card">
+                  <div className="cs-contribution-num">{String(i + 1).padStart(2, "0")}</div>
+                  <h4>{item.title}</h4>
+                  <p>{item.desc}</p>
                 </div>
-              </section>
-            )}
-
-            {/* Ad Creative Design Section */}
-            <section className="artb-evidence-section">
-              <div className="artb-section-header-row">
-                <h3 className="artb-section-heading">
-                  <Palette size={20} className="text-accent" /> Ad Creative Design
-                </h3>
-                <span className="artb-evidence-note">Custom visuals & post designs for paintings</span>
-              </div>
-              <div className="artb-screenshots-gallery frpos-single-gallery">
-                {artbCreatives.map((s, i) => (
-                  <a key={i} href={s.src} target="_blank" rel="noopener noreferrer" className="artb-screenshot-card" aria-label={`Open ${s.label}`}>
-                    <img src={s.src} alt={s.alt} className="artb-screenshot-img" loading="lazy" onError={(e) => { e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }} />
-                    <div className="artb-screenshot-placeholder" style={{display:"none"}}>
-                      <Palette size={28} />
-                      <span>Creative coming soon</span>
-                      <span className="artb-placeholder-filename">{s.label}</span>
-                    </div>
-                    <div className="artb-screenshot-label">{s.label}</div>
-                  </a>
-                ))}
-              </div>
-              <p className="artb-screenshots-note">
-                I personally designed the visual creatives and posts for this campaign. Original creative files can be placed at <code>public/images/artb-ad-creative-1.png</code> and <code>public/images/artb-ad-creative-2.png</code>.
-              </p>
-            </section>
-
-            {/* Screenshots Evidence Gallery */}
-            <section className="artb-evidence-section">
-              <div className="artb-section-header-row">
-                <h3 className="artb-section-heading">
-                  <Camera size={20} className="text-accent" /> Campaign Evidence
-                </h3>
-                <span className="artb-evidence-note">Genuine Meta Ads Manager screenshots</span>
-              </div>
-              <div className="artb-screenshots-gallery">
-                {artbScreenshots.map((s, i) => (
-                  <a key={i} href={s.src} target="_blank" rel="noopener noreferrer" className="artb-screenshot-card" aria-label={`Open ${s.label} screenshot`}>
-                    <img src={s.src} alt={s.alt} className="artb-screenshot-img" loading="lazy" onError={(e) => { e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }} />
-                    <div className="artb-screenshot-placeholder" style={{display:"none"}}>
-                      <Camera size={28} />
-                      <span>Screenshot coming soon</span>
-                      <span className="artb-placeholder-filename">{s.label}</span>
-                    </div>
-                    <div className="artb-screenshot-label">{s.label}</div>
-                  </a>
-                ))}
-              </div>
-              <p className="artb-screenshots-note">
-                Click any screenshot to view full size. Screenshots sourced directly from Meta Ads Manager.
-              </p>
-            </section>
-
-            {/* Detailed Metrics Dashboard */}
-            <section className="artb-metrics-section">
-              <h3 className="artb-section-heading">
-                <BarChart2 size={20} className="text-accent" /> Campaign Performance Dashboard
-              </h3>
-              <p className="artb-metrics-period">Reporting period: {caseStudy.reportingPeriod} &nbsp;·&nbsp; Currency: USD (as displayed in Ads Manager)</p>
-              <div className="artb-metrics-grid">
-                {caseStudy.metricsDetailed && caseStudy.metricsDetailed.map((m, i) => (
-                  <div key={i} className="artb-metric-card">
-                    <div className="artb-metric-value">{m.value}</div>
-                    <div className="artb-metric-label">{m.label}</div>
-                    {m.note && <div className="artb-metric-note">{m.note}</div>}
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Results & Interpretation */}
-            <section className="artb-interpretation-section">
-              <h3 className="artb-section-heading">
-                <TrendingUp size={20} className="text-accent" /> Results & Interpretation
-              </h3>
-              <div className="artb-interpretation-card">
-                <p className="block-text">{caseStudy.interpretation}</p>
-                <div className="artb-disclaimer-box">
-                  <AlertCircle size={16} className="text-accent" />
-                  <p>Messaging conversations reported by Meta Ads Manager are not equivalent to confirmed purchases, painting sales, or revenue. No sales data has been verified for this campaign period.</p>
-                </div>
-              </div>
-            </section>
-
-            {/* Learnings */}
-            <section className="artb-learnings-section">
-              <h3 className="artb-section-heading">
-                <Lightbulb size={20} className="text-accent" /> Learnings & Next Steps
-              </h3>
-              <div className="artb-learnings-card">
-                <p className="block-text">{caseStudy.learnings}</p>
-              </div>
-            </section>
-          </>
+              ))}
+            </div>
+          </section>
         )}
 
-        {/* ================= FR POS LEADGEN — DEDICATED CASE STUDY LAYOUT ================= */}
-        {isFrPosProject && (
-          <>
-            {/* Project Snapshot */}
-            <section className="artb-snapshot-section anim-section-pop">
-              <div className="artb-snapshot-grid">
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Client</span>
-                  <span className="artb-snapshot-value">FR Software Solutions</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">My Role</span>
-                  <span className="artb-snapshot-value">Strategy · Urdu Creative Design · Campaign Setup</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Campaign Objective</span>
-                  <span className="artb-snapshot-value">Leads</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Reporting Period</span>
-                  <span className="artb-snapshot-value">{caseStudy.reportingPeriod}</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Campaign Name</span>
-                  <span className="artb-snapshot-value artb-campaign-name">{caseStudy.campaignName}</span>
-                </div>
-                <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Total Spend</span>
-                  <span className="artb-snapshot-value">Rs 1,240.69 (Daily Budget: Rs 300)</span>
-                </div>
-              </div>
-            </section>
+        {/* ============ 4. STRATEGY & PROBLEM SOLVING ============ */}
+        <section className="cs-unified-section">
+          <div className="cs-section-header">
+            <h3 className="cs-section-title">
+              <TrendingUp size={20} className="text-accent" /> Strategy &amp; Problem Solving
+            </h3>
+            <span className="cs-header-tag">Context &amp; Strategic Approach</span>
+          </div>
 
-            {/* My Contribution */}
-            <section className="artb-contribution-section anim-details-in">
-              <h3 className="artb-section-heading">
-                <Target size={20} className="text-accent" /> My Contribution
-              </h3>
-              <p className="artb-contribution-intro">
-                I developed the marketing strategy, designed the Urdu ad creative, and independently handled the complete Meta Ads campaign setup for FR Software Solutions.
-              </p>
-              <div className="artb-contribution-grid">
-                {caseStudy.contribution && caseStudy.contribution.map((item, i) => (
-                  <div key={i} className="artb-contribution-card">
-                    <div className="artb-contribution-number">{String(i + 1).padStart(2, "0")}</div>
-                    <h4>{item.title}</h4>
-                    <p>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
+          <div className="cs-challenge-solution-grid">
+            <div className="cs-strategy-block challenge-block">
+              <div className="cs-block-badge challenge">THE CHALLENGE</div>
+              <h4>The Business &amp; Marketing Obstacle</h4>
+              <p>{caseStudy.challenge}</p>
+            </div>
+            <div className="cs-strategy-block solution-block">
+              <div className="cs-block-badge solution">THE STRATEGY</div>
+              <h4>Execution &amp; Tactical Workflow</h4>
+              <p>{caseStudy.solution}</p>
+            </div>
+          </div>
 
-            {/* Strategy Section */}
-            {caseStudy.strategySection && (
-              <section className="artb-evidence-section">
-                <h3 className="artb-section-heading">
-                  <TrendingUp size={20} className="text-accent" /> Marketing Strategy & Planning
-                </h3>
-                <div className="artb-interpretation-card">
-                  <div className="frpos-strategy-grid">
-                    <div className="frpos-strategy-item">
-                      <h4>Campaign Context</h4>
-                      <p>{caseStudy.strategySection.context}</p>
-                    </div>
-                    <div className="frpos-strategy-item">
-                      <h4>Marketing Objective</h4>
-                      <p>{caseStudy.strategySection.objective}</p>
-                    </div>
-                    <div className="frpos-strategy-item">
-                      <h4>Creative Approach</h4>
-                      <p>{caseStudy.strategySection.creativeApproach}</p>
-                    </div>
-                    <div className="frpos-strategy-item">
-                      <h4>Campaign Implementation</h4>
-                      <p>{caseStudy.strategySection.implementation}</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            )}
+          {/* 4-Part Detailed Strategy Breakdown if available */}
+          {caseStudy.strategySection && (
+            <div className="cs-strategy-breakdown-grid">
+              <div className="cs-breakdown-item">
+                <span className="cs-breakdown-label">Campaign Context</span>
+                <p>{caseStudy.strategySection.context}</p>
+              </div>
+              <div className="cs-breakdown-item">
+                <span className="cs-breakdown-label">Target Objective</span>
+                <p>{caseStudy.strategySection.objective}</p>
+              </div>
+              <div className="cs-breakdown-item">
+                <span className="cs-breakdown-label">Creative Approach</span>
+                <p>{caseStudy.strategySection.creativeApproach}</p>
+              </div>
+              <div className="cs-breakdown-item">
+                <span className="cs-breakdown-label">Campaign Setup</span>
+                <p>{caseStudy.strategySection.implementation}</p>
+              </div>
+            </div>
+          )}
+        </section>
 
-            {/* Ad Creative Section */}
-            <section className="artb-evidence-section">
-              <div className="artb-section-header-row">
-                <h3 className="artb-section-heading">
-                  <Palette size={20} className="text-accent" /> Ad Creative Design
-                </h3>
-                <span className="artb-evidence-note">Urdu-language ad creative designed for local business owners</span>
-              </div>
-              <div className="artb-screenshots-gallery frpos-single-gallery">
-                {frPosCreatives.map((s, i) => (
-                  <a key={i} href={s.src} target="_blank" rel="noopener noreferrer" className="artb-screenshot-card" aria-label={`Open ${s.label}`}>
-                    <img src={s.src} alt={s.alt} className="artb-screenshot-img" loading="lazy" onError={(e) => { e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }} />
-                    <div className="artb-screenshot-placeholder" style={{display:"none"}}>
-                      <Palette size={28} />
-                      <span>Creative coming soon</span>
-                      <span className="artb-placeholder-filename">{s.label}</span>
-                    </div>
-                    <div className="artb-screenshot-label">{s.label}</div>
-                  </a>
-                ))}
-              </div>
-              <p className="artb-screenshots-note">
-                I personally designed this Urdu-language advertising post for the FR Software Solutions POS & Inventory campaign. To display your original creative file, place it at <code>public/images/fr-urdu-creative.png</code>.
-              </p>
-            </section>
-
-            {/* Campaign Evidence Screenshots */}
-            <section className="artb-evidence-section">
-              <div className="artb-section-header-row">
-                <h3 className="artb-section-heading">
-                  <Camera size={20} className="text-accent" /> Campaign Evidence
-                </h3>
-                <span className="artb-evidence-note">Genuine Meta Ads Manager screenshot</span>
-              </div>
-              <div className="artb-screenshots-gallery frpos-single-gallery">
-                {frPosScreenshots.map((s, i) => (
-                  <a key={i} href={s.src} target="_blank" rel="noopener noreferrer" className="artb-screenshot-card" aria-label={`Open ${s.label} screenshot`}>
-                    <img src={s.src} alt={s.alt} className="artb-screenshot-img" loading="lazy" onError={(e) => { e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }} />
-                    <div className="artb-screenshot-placeholder" style={{display:"none"}}>
-                      <Camera size={28} />
-                      <span>Screenshot coming soon</span>
-                      <span className="artb-placeholder-filename">{s.label}</span>
-                    </div>
-                    <div className="artb-screenshot-label">{s.label}</div>
-                  </a>
-                ))}
-              </div>
-              <p className="artb-screenshots-note">
-                Click screenshot to view full size. To add it, place your Ads Manager screenshot at <code>public/images/fr-pos-meta-ads-performance.png</code>.
-              </p>
-            </section>
-
-            {/* Detailed Metrics Dashboard */}
-            <section className="artb-metrics-section">
-              <h3 className="artb-section-heading">
-                <BarChart2 size={20} className="text-accent" /> Campaign Performance Dashboard
-              </h3>
-              <p className="artb-metrics-period">Reporting period: {caseStudy.reportingPeriod} &nbsp;·&nbsp; Currency: PKR (Pakistani Rupees) as displayed in Ads Manager</p>
-              <div className="artb-metrics-grid">
-                {caseStudy.metricsDetailed && caseStudy.metricsDetailed.map((m, i) => (
-                  <div key={i} className="artb-metric-card">
-                    <div className="artb-metric-value">{m.value}</div>
-                    <div className="artb-metric-label">{m.label}</div>
-                    {m.note && <div className="artb-metric-note">{m.note}</div>}
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Results & Interpretation */}
-            <section className="artb-interpretation-section">
-              <h3 className="artb-section-heading">
-                <TrendingUp size={20} className="text-accent" /> Results & Interpretation
-              </h3>
-              <div className="artb-interpretation-card">
-                <p className="block-text">{caseStudy.interpretation}</p>
-                <div className="artb-disclaimer-box">
-                  <AlertCircle size={16} className="text-accent" />
-                  <p>Messaging conversations reported by Meta Ads Manager are not equivalent to confirmed leads, software demos, purchases, or revenue. No sales or conversion data has been verified for this campaign period.</p>
-                </div>
-              </div>
-            </section>
-
-            {/* Learnings */}
-            <section className="artb-learnings-section">
-              <h3 className="artb-section-heading">
-                <Lightbulb size={20} className="text-accent" /> Learnings & Next Steps
-              </h3>
-              <div className="artb-learnings-card">
-                <p className="block-text">{caseStudy.learnings}</p>
-              </div>
-            </section>
-          </>
-        )}
-
-        {/* ================= TOP VIDEO SHOWCASE SECTION (4 ANIMATED VIDEO REELS) ================= */}
+        {/* ============ 5. VIDEO REELS SHOWCASE (ONLY FOR VIDEO EDITING) ============ */}
         {isVideoProject && (
           <section className="creative-showcase-section anim-section-pop">
             <div className="showcase-header-ribbon">
               <span className="ribbon-tag">
                 <Film size={14} /> LIVE 4-VIDEO SHOWCASE
               </span>
-              <h2 className="showcase-section-title">Video Editing & AI Productions</h2>
+              <h2 className="showcase-section-title">Video Editing &amp; AI Productions</h2>
               <p className="showcase-section-subtitle">
                 Explore real video edits and AI visual creations playing below with live transitions and audio design.
               </p>
             </div>
 
-            {/* Vertical Mobile Frames Deck (4 Videos with Staggered Entrance Animations) */}
             <div className="mobile-story-deck">
-              {/* Card 1: Premiere Pro Edit 1 */}
+              {/* Card 1 */}
               <div className="story-frame-card premiere card-anim-1">
                 <div className="story-frame-speaker"></div>
                 <div className="story-frame-top-bar">
@@ -478,30 +226,19 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                   </span>
                   <span className="story-dot live"></span>
                 </div>
-
                 <div className="story-video-wrapper">
-                  <video
-                    src={videoUrls.edited1}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    controls
-                    preload="auto"
-                    className="story-video-player"
-                  />
+                  <video src={videoUrls.edited1} autoPlay loop muted playsInline controls preload="auto" className="story-video-player" />
                   <div className="video-hover-hint">
-                    <Volume2 size={14} /> Click video controls for sound
+                    <Volume2 size={14} /> Click for sound
                   </div>
                 </div>
-
                 <div className="story-frame-bottom-ribbon">
                   <div className="ribbon-title">Commercial Edit 01</div>
-                  <div className="ribbon-desc">Kinetic Transitions & Cut</div>
+                  <div className="ribbon-desc">Kinetic Transitions &amp; Cut</div>
                 </div>
               </div>
 
-              {/* Card 2: Premiere Pro Edit 2 */}
+              {/* Card 2 */}
               <div className="story-frame-card premiere card-anim-2">
                 <div className="story-frame-speaker"></div>
                 <div className="story-frame-top-bar">
@@ -510,30 +247,19 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                   </span>
                   <span className="story-dot live"></span>
                 </div>
-
                 <div className="story-video-wrapper">
-                  <video
-                    src={videoUrls.edited2}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    controls
-                    preload="auto"
-                    className="story-video-player"
-                  />
+                  <video src={videoUrls.edited2} autoPlay loop muted playsInline controls preload="auto" className="story-video-player" />
                   <div className="video-hover-hint">
-                    <Volume2 size={14} /> Click video controls for sound
+                    <Volume2 size={14} /> Click for sound
                   </div>
                 </div>
-
                 <div className="story-frame-bottom-ribbon">
                   <div className="ribbon-title">Product Showcase 02</div>
-                  <div className="ribbon-desc">Dynamic Pacing & Sound FX</div>
+                  <div className="ribbon-desc">Dynamic Pacing &amp; Sound FX</div>
                 </div>
               </div>
 
-              {/* Card 3: AI Video Generation 1 */}
+              {/* Card 3 */}
               <div className="story-frame-card ai card-anim-3">
                 <div className="story-frame-speaker"></div>
                 <div className="story-frame-top-bar">
@@ -542,30 +268,19 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                   </span>
                   <span className="story-dot live-ai"></span>
                 </div>
-
                 <div className="story-video-wrapper">
-                  <video
-                    src={videoUrls.ai1}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    controls
-                    preload="auto"
-                    className="story-video-player"
-                  />
+                  <video src={videoUrls.ai1} autoPlay loop muted playsInline controls preload="auto" className="story-video-player" />
                   <div className="video-hover-hint">
-                    <Volume2 size={14} /> Click video controls for sound
+                    <Volume2 size={14} /> Click for sound
                   </div>
                 </div>
-
                 <div className="story-frame-bottom-ribbon ai-ribbon">
                   <div className="ribbon-title">AI Visual Story 01</div>
                   <div className="ribbon-desc">AI Video Synthesis</div>
                 </div>
               </div>
 
-              {/* Card 4: AI Video Generation 2 */}
+              {/* Card 4 */}
               <div className="story-frame-card ai card-anim-4">
                 <div className="story-frame-speaker"></div>
                 <div className="story-frame-top-bar">
@@ -574,23 +289,12 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                   </span>
                   <span className="story-dot live-ai"></span>
                 </div>
-
                 <div className="story-video-wrapper">
-                  <video
-                    src={videoUrls.ai2}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    controls
-                    preload="auto"
-                    className="story-video-player"
-                  />
+                  <video src={videoUrls.ai2} autoPlay loop muted playsInline controls preload="auto" className="story-video-player" />
                   <div className="video-hover-hint">
-                    <Volume2 size={14} /> Click video controls for sound
+                    <Volume2 size={14} /> Click for sound
                   </div>
                 </div>
-
                 <div className="story-frame-bottom-ribbon ai-ribbon">
                   <div className="ribbon-title">AI Motion Concept 02</div>
                   <div className="ribbon-desc">Cinematic Generation</div>
@@ -600,117 +304,196 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
           </section>
         )}
 
-        {/* ================= DETAILS SECTION (Neeche ki details) ================= */}
-        <section className="case-details-section anim-details-in">
-          {/* KPI Stat Cards */}
+        {/* ============ 6. VERIFIED PERFORMANCE & RESULTS ============ */}
+        <section className="cs-unified-section">
+          <div className="cs-section-header">
+            <h3 className="cs-section-title">
+              <BarChart2 size={20} className="text-accent" /> Verified Performance &amp; Key Results
+            </h3>
+            <span className="cs-header-tag">100% Genuine Project Data</span>
+          </div>
+
+          {/* Top Summary Stats Cards */}
           {caseStudy.stats && (
-            <div className="case-stats-deck">
+            <div className="cs-stats-row">
               {caseStudy.stats.map((s, idx) => (
-                <div key={idx} className="case-stat-box">
-                  <div className="stat-box-value">{s.value}</div>
-                  <div className="stat-box-label">{s.label}</div>
+                <div key={idx} className="cs-stat-card">
+                  <div className="cs-stat-val">{s.value}</div>
+                  <div className="cs-stat-lbl">{s.label}</div>
                 </div>
               ))}
             </div>
           )}
 
-          {/* Core Case Study Blocks */}
-          <div className="case-blocks-grid">
-            {/* Overview */}
-            <div className="case-detail-block">
-              <h3 className="block-title">
-                <FileText size={18} className="text-accent" /> Project Overview
-              </h3>
-              <p className="block-text">{caseStudy.overview || project.description}</p>
+          {/* Detailed metrics grid if available (Meta Ads projects) */}
+          {caseStudy.metricsDetailed && (
+            <div className="cs-detailed-metrics-grid">
+              {caseStudy.metricsDetailed.map((m, i) => (
+                <div key={i} className="cs-metric-chip">
+                  <div className="cs-metric-val">{m.value}</div>
+                  <div className="cs-metric-lbl">{m.label}</div>
+                  {m.note && <div className="cs-metric-sub">{m.note}</div>}
+                </div>
+              ))}
             </div>
+          )}
 
-            {/* Challenge */}
-            <div className="case-detail-block">
-              <h3 className="block-title">
-                <Target size={18} className="text-accent" /> The Challenge
-              </h3>
-              <p className="block-text">{caseStudy.challenge}</p>
-            </div>
-
-            {/* Solution */}
-            <div className="case-detail-block full-width">
-              <h3 className="block-title">
-                <TrendingUp size={18} className="text-accent" /> Strategy & Creative Workflow
-              </h3>
-              <p className="block-text">{caseStudy.solution}</p>
-            </div>
-          </div>
-
-          {/* Tools & Technologies */}
-          {project.tools && (
-            <div className="case-tools-card">
-              <h4 className="tools-card-title">
-                <Wrench size={16} className="text-accent" /> Tools & Technologies Stack
-              </h4>
-              <div className="tools-pills-row">
-                {project.tools.map((t, i) => (
-                  <span key={i} className="tool-pill-item">
-                    {t}
+          {/* Results Analysis & Trust Note */}
+          {caseStudy.interpretation && (
+            <div className="cs-interpretation-card">
+              <div className="cs-interp-header">
+                <ShieldCheck size={18} className="text-accent" />
+                <h4>Results Analysis &amp; Data Transparency</h4>
+              </div>
+              <p className="cs-interp-text">{caseStudy.interpretation}</p>
+              {isMetaAdsProject && (
+                <div className="cs-trust-disclaimer">
+                  <AlertCircle size={16} className="text-accent" />
+                  <span>
+                    <strong>Client Trust Note:</strong> Messaging conversations reported in Ads Manager reflect direct prospective buyer interactions. They are not claimed as completed purchases or revenue unless verified. All data reflects verified campaign records.
                   </span>
-                ))}
-              </div>
+                </div>
+              )}
             </div>
           )}
+        </section>
 
-          {/* Key Services Breakdown */}
-          {caseStudy.keyServices && (
-            <div className="case-services-container">
-              <h3 className="services-section-title">
-                <ShieldCheck size={20} className="text-accent" /> Key Services & Deliverables
+        {/* ============ 7. CAMPAIGN EVIDENCE & CREATIVE ASSETS ROW ============ */}
+        {!isVideoProject && evidenceItems.length > 0 && (
+          <section className="cs-unified-section">
+            <div className="cs-section-header">
+              <h3 className="cs-section-title">
+                <Camera size={20} className="text-accent" /> Campaign Evidence &amp; Designed Assets
               </h3>
-              <div className="services-cards-grid">
-                {caseStudy.keyServices.map((ks, i) => (
-                  <div key={i} className="service-card-item">
-                    <div className="service-card-header">
-                      <CheckCircle2 size={18} className="text-accent" />
-                      <h4>{ks.title}</h4>
-                    </div>
-                    <p>{ks.desc}</p>
+              <span className="cs-header-tag">Verified Records &amp; Creatives</span>
+            </div>
+
+            <div className="cs-evidence-grid">
+              {evidenceItems.map((item, i) => (
+                <EvidenceItem key={i} item={item} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ============ 8. SERVICES & CONCRETE DELIVERABLES ============ */}
+        {caseStudy.keyServices && (
+          <section className="cs-unified-section">
+            <div className="cs-section-header">
+              <h3 className="cs-section-title">
+                <Layers size={20} className="text-accent" /> Key Services &amp; Deliverables
+              </h3>
+              <span className="cs-header-tag">Concrete Outputs</span>
+            </div>
+            <div className="cs-services-grid">
+              {caseStudy.keyServices.map((ks, i) => (
+                <div key={i} className="cs-service-box">
+                  <div className="cs-service-head">
+                    <CheckCircle2 size={16} className="text-accent" />
+                    <h4>{ks.title}</h4>
                   </div>
-                ))}
-              </div>
+                  <p>{ks.desc}</p>
+                </div>
+              ))}
             </div>
-          )}
+          </section>
+        )}
 
-          {/* Footer Call to Action */}
-          <div className="case-page-cta-card">
-            <div className="cta-left">
-              <h3>
-                {project.category === "Video Editing"
-                  ? "Ready to elevate your video content?"
-                  : "Ready to scale your marketing campaigns?"}
-              </h3>
-              <p>
-                {project.category === "Video Editing"
-                  ? "Let's collaborate on high-converting video edits, social media reels, and AI productions."
-                  : "Let's collaborate on data-driven Meta Ads, custom ad creative design, and result-oriented growth strategies."}
-              </p>
+        {/* ============ 9. TOOLS & TECHNOLOGIES STACK ============ */}
+        {project.tools && (
+          <div className="cs-tools-bar">
+            <div className="cs-tools-label">
+              <Wrench size={16} className="text-accent" />
+              <span>Tools &amp; Stack Used:</span>
             </div>
-            <div className="cta-right">
-              <button
-                type="button"
-                className="btn btn-outline"
-                onClick={onBack}
-              >
-                ← Back to All Projects
-              </button>
-              <button
-                type="button"
-                className="btn btn-primary-glow"
-                onClick={onNavigateContact}
-              >
-                <span>Discuss Your Project</span>
-                <ArrowRight size={16} />
-              </button>
+            <div className="cs-tools-chips">
+              {project.tools.map((t, i) => (
+                <span key={i} className="cs-tool-tag">{t}</span>
+              ))}
             </div>
           </div>
-        </section>
+        )}
+
+        {/* ============ 10. LEARNINGS & NEXT STEPS ============ */}
+        {caseStudy.learnings && (
+          <section className="cs-unified-section">
+            <div className="cs-learnings-box">
+              <div className="cs-learnings-head">
+                <Lightbulb size={18} className="text-accent" />
+                <h4>Key Learnings &amp; Scalability Insights</h4>
+              </div>
+              <p>{caseStudy.learnings}</p>
+            </div>
+          </section>
+        )}
+
+        {/* ============ 11. FOOTER CALL TO ACTION ============ */}
+        <div className="case-page-cta-card">
+          <div className="cta-left">
+            <h3>
+              {project.category === "Video Editing"
+                ? "Ready to elevate your video content?"
+                : "Ready to scale your business campaigns?"}
+            </h3>
+            <p>
+              {project.category === "Video Editing"
+                ? "Let's collaborate on high-converting video edits, social media reels, and AI productions."
+                : "Let's collaborate on data-driven Meta Ads, custom creative design, and result-oriented growth."}
+            </p>
+          </div>
+          <div className="cta-right">
+            <button
+              type="button"
+              className="btn btn-outline"
+              onClick={onBack}
+            >
+              ← Back to All Projects
+            </button>
+            <button
+              type="button"
+              className="btn btn-primary-glow"
+              onClick={onNavigateContact}
+            >
+              <span>Discuss Your Project</span>
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        </div>
       </div>
+    </div>
+  );
+};
+
+// Compact Evidence Item Component
+const EvidenceItem = ({ item }) => {
+  const [imgFailed, setImgFailed] = useState(false);
+
+  return (
+    <div className="cs-evidence-card">
+      {!imgFailed ? (
+        <a href={item.src} target="_blank" rel="noopener noreferrer" className="cs-evidence-link" aria-label={`Open ${item.label}`}>
+          <img
+            src={item.src}
+            alt={item.label}
+            className="cs-evidence-img"
+            loading="lazy"
+            onError={() => setImgFailed(true)}
+          />
+          <div className="cs-evidence-overlay-label">
+            <span>{item.label}</span>
+          </div>
+        </a>
+      ) : (
+        <div className="cs-evidence-pending-box">
+          <div className="cs-pending-icon-row">
+            <Camera size={18} className="text-accent" />
+            <span className="cs-pending-pill">Evidence Record</span>
+          </div>
+          <h4 className="cs-pending-title">{item.label}</h4>
+          <p className="cs-pending-desc">{item.desc}</p>
+          <code className="cs-pending-file">{item.filename}</code>
+        </div>
+      )}
     </div>
   );
 };

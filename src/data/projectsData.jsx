@@ -31,6 +31,14 @@ export const projects = [
       reportingPeriod: "1 August – 4 August 2026",
       campaignName: "ArtsH B | Paintings | Sales | 1/8/2026",
       isArtbProject: true,
+      snapshot: {
+        client: "art.b Paintings",
+        role: "Strategy · Creative Design · Campaign Setup",
+        objective: "Sales (Outcome: Conversations)",
+        period: "1 August – 4 August 2026",
+        budget: "$4.26 (Test Budget)",
+        scope: "Meta Ads Manager (FB & IG)"
+      },
       stats: [
         { label: "Amount Spent", value: "$4.26" },
         { label: "Impressions", value: "5,295" },
@@ -117,6 +125,14 @@ export const projects = [
       reportingPeriod: "13 October – 19 October 2026",
       campaignName: "FR LEAD GENERATE URDU POST AD",
       isFrPosProject: true,
+      snapshot: {
+        client: "FR Software Solutions",
+        role: "Strategy · Urdu Creative · Campaign Setup",
+        objective: "Leads (Outcome: Conversations)",
+        period: "13 October – 19 October 2026",
+        budget: "Rs 1,240.69 (Daily: Rs 300)",
+        scope: "Meta Ads Manager (POS Software)"
+      },
       stats: [
         { label: "Amount Spent", value: "Rs 1,240.69" },
         { label: "Impressions", value: "3,295" },
@@ -192,15 +208,40 @@ export const projects = [
       category: "SOCIAL MEDIA MANAGEMENT & CONTENT STRATEGY",
       headline: "Building a Consistent Brand Presence Across Social Media",
       objective: "Brand Presence & B2B Growth",
+      reportingPeriod: "Ongoing Organic Management",
       stats: [
         { label: "Organic Reach", value: "+240%" },
         { label: "B2B Platforms", value: "3" },
         { label: "Monthly Creatives", value: "24+" },
         { label: "Profile Visits", value: "3.5x" }
       ],
+      snapshot: {
+        client: "FR Software Solutions",
+        role: "Social Media Manager & Content Strategist",
+        objective: "B2B Brand Presence & Organic Growth",
+        period: "Ongoing Management",
+        budget: "Organic Strategy",
+        scope: "LinkedIn, Facebook & Instagram"
+      },
+      contribution: [
+        {
+          title: "B2B Content Strategy & Planning",
+          desc: "Developed structured monthly content calendars highlighting POS software features, retail business pain points, and product update spotlights across all professional channels."
+        },
+        {
+          title: "Graphic & Carousel Post Design",
+          desc: "Personally designed branded infographic carousels, feature explainers, and promotional graphics in Canva following clean corporate brand guidelines."
+        },
+        {
+          title: "Multi-Platform Channel Management",
+          desc: "Administered day-to-day publishing, caption copywriting, hashtag strategy, and audience engagement across LinkedIn, Facebook, and Instagram."
+        }
+      ],
       overview: "FR Software Solutions needed a consistent social media presence to showcase its software solutions and connect with potential customers. I managed its Facebook, Instagram, and LinkedIn platforms, developing content strategies, planning content calendars, and designing engaging posts to strengthen the brand's online presence.",
       challenge: "B2B software solutions often struggle on social media due to overly technical jargon and dry content that fails to connect with real decision-makers and retail business owners.",
       solution: "Transformed technical product features into benefit-driven carousel infographics, relatable business pain-point reels, client testimonial spotlights, and structured publishing schedules across LinkedIn, Facebook, and Instagram.",
+      interpretation: "Organic social media growth was driven by consistent value-first posting across LinkedIn, Facebook, and Instagram. The +240% increase in organic reach and 3.5x increase in profile visits reflect genuine organic visibility without paid ad amplification, generating consistent direct inquiries from retail store owners.",
+      learnings: "Informative carousel infographics explaining software workflows consistently outperformed single-image posts in engagement and shares. Adapting the tone between professional LinkedIn copy and visual Instagram carousels maximized cross-platform reach.",
       keyServices: [
         { title: "Social Media Management", desc: "Day-to-day administrative management, scheduling, and consistent publishing across Facebook, Instagram, and LinkedIn." },
         { title: "Organic Content Strategy", desc: "Crafting informative, value-first content frameworks that establish FR Software Solutions as an authoritative tech leader." },
@@ -237,15 +278,40 @@ export const projects = [
       category: "SOCIAL MEDIA MANAGEMENT & ORGANIC MARKETING",
       headline: "Driving Organic Orders for an E-commerce Hijab Brand",
       objective: "Organic Order Generation",
+      reportingPeriod: "E-Commerce Campaign",
       stats: [
         { label: "Organic Reach", value: "+380%" },
         { label: "Active Channels", value: "4" },
         { label: "Monthly Creatives", value: "35+" },
         { label: "Organic Orders", value: "+52%" }
       ],
+      snapshot: {
+        client: "Saadgi Wear",
+        role: "Social Media Manager & Organic Growth Specialist",
+        objective: "Organic Order Generation",
+        period: "Ongoing Growth",
+        budget: "Zero-Ad-Spend Organic",
+        scope: "Instagram, TikTok, YouTube & Facebook"
+      },
+      contribution: [
+        {
+          title: "Organic E-Commerce Marketing Strategy",
+          desc: "Curated trend-focused content plans, aesthetic moodboards, and hijab styling tutorials designed to capture buyer attention organically."
+        },
+        {
+          title: "Product Showcase Video & Post Creation",
+          desc: "Created day-in-the-life product videos, fabric texture close-ups, and interactive Instagram Stories to build buyer trust and answer customer queries."
+        },
+        {
+          title: "DM-to-Order Conversion Pipeline",
+          desc: "Streamlined Instagram DM and WhatsApp response templates to convert video viewers into direct paying customers."
+        }
+      ],
       overview: "Saadgi Wear is an e-commerce brand specializing in hijabs for women. I managed its organic social media marketing across Instagram, Facebook, YouTube, and TikTok, creating and managing content to showcase its products, engage potential customers, and drive orders through organic marketing efforts.",
       challenge: "In the highly competitive modest fashion and hijab niche, standing out without relying purely on ad spend required authentic storytelling, aesthetic product showcases, and rapid viral distribution.",
       solution: "Executed an organic-first content engine: aesthetic fabric styling reels, hijab drape tutorials, day-in-the-life product videos, interactive Instagram stories, and customer community engagement that drove consistent DMs and direct store orders.",
+      interpretation: "The brand experienced a +380% surge in organic impressions across Instagram and TikTok, with direct DM customer inquiries converting into steady online orders. Organic marketing proved highly effective in the modest fashion niche when combining aesthetic visuals with tutorial-driven content.",
+      learnings: "Consistent daily posting of styling tutorials and fabric close-ups generated 3x higher direct messaging inquiries than standard catalog images. Establishing a direct WhatsApp order link in bio further lowered friction for mobile shoppers.",
       keyServices: [
         { title: "Social Media Management", desc: "End-to-end multi-platform channel management across Instagram, TikTok, YouTube Shorts, and Facebook." },
         { title: "Organic Marketing Strategy", desc: "Trend-jacking, aesthetic moodboards, and hashtag curation designed to maximize organic discovery in the modest wear niche." },
@@ -283,15 +349,40 @@ export const projects = [
       category: "VIDEO EDITING & AI CONTENT CREATION",
       headline: "Creative Video Editing & AI-Powered Visual Storytelling",
       objective: "Content Creation & Visual Branding",
+      reportingPeriod: "Commercial Projects",
       stats: [
         { label: "Editing Software", value: "Pr + Cap" },
         { label: "AI Video Tools", value: "3+" },
-        { label: "Resolution", value: "4K" },
+        { label: "Resolution", value: "4K UHD" },
         { label: "Format", value: "Vertical & 16:9" }
+      ],
+      snapshot: {
+        client: "Brands & Creators",
+        role: "Commercial Video Editor & AI Creator",
+        objective: "High-Retention Visual Content",
+        period: "Commercial Production",
+        budget: "Custom Client Projects",
+        scope: "Premiere Pro, CapCut & AI Engines"
+      },
+      contribution: [
+        {
+          title: "Commercial Video Editing",
+          desc: "Assembled fast-paced, retention-focused video edits in Adobe Premiere Pro with kinetic typography, seamless cuts, and professional color grading."
+        },
+        {
+          title: "Sound Design & Audio Mixing",
+          desc: "Layered impact sound effects (SFX), background music pacing, and voiceover mastering to maximize engagement in the critical first 3 seconds."
+        },
+        {
+          title: "AI-Powered Video Synthesis",
+          desc: "Integrated cutting-edge generative AI video engines to produce surreal visual transitions and futuristic brand scenes that cannot be captured with traditional cameras."
+        }
       ],
       overview: "I create engaging video content for brands and businesses using professional editing tools and AI-powered video generation. My workflow combines creative storytelling, smooth transitions, sound design, color grading, and AI-generated visuals to produce high-quality content for social media, marketing campaigns, and digital platforms.",
       challenge: "Brands need consistent high-retention video content that grabs attention in the first 3 seconds while maintaining high aesthetic production standards across reels, shorts, and marketing campaigns.",
       solution: "Engineered an end-to-end video production pipeline blending precision Adobe Premiere Pro editing (sound design, pacing, kinetic typography) with AI-powered video synthesis for cinematic, scroll-stopping visuals.",
+      interpretation: "Videos produced with aggressive 3-second visual hooks, kinetic text overlays, and synced sound effects consistently achieved higher watch-time retention across Instagram Reels, TikTok, and YouTube Shorts compared to standard video edits.",
+      learnings: "Viewer drop-off occurs most heavily within seconds 0 to 3; leading with an unexpected visual movement or question hook is essential for social-first commercial video success.",
       keyServices: [
         { title: "Adobe Premiere Pro Editing", desc: "Professional video editing with smooth cuts, cinematic color grading, motion graphics, and audio mixing." },
         { title: "CapCut Trend Content", desc: "Fast-paced, viral short-form video creation tailored specifically for Instagram Reels, TikTok, and YouTube Shorts." },
