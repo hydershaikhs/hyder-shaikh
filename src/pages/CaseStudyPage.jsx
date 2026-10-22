@@ -26,6 +26,8 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
     if (project) {
       if (project.id === "art-b-meta-ads") {
         document.title = "art.b Paintings Meta Ads Case Study | Hyder Shaikh";
+      } else if (project.id === "fr-pos-leadgen") {
+        document.title = "FR Software Solutions POS & Inventory Meta Ads Case Study | Hyder Shaikh";
       } else {
         document.title = `${project.title} | Hyder Shaikh Portfolio Case Study`;
       }
@@ -49,6 +51,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
   const { caseStudy } = project;
   const isVideoProject = project.id === "video-editing-production";
   const isArtbProject = project.id === "art-b-meta-ads";
+  const isFrPosProject = project.id === "fr-pos-leadgen";
 
   // Compute safe base URL for both Vercel and GitHub Pages
   const rawBase2 = import.meta.env.BASE_URL || "/";
@@ -58,6 +61,14 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
     { src: `${imgBase}images/artb-campaign-overview.png`, alt: "art.b Paintings — Meta Ads Manager Campaign Overview screenshot showing spend, impressions and reach", label: "Campaign Overview" },
     { src: `${imgBase}images/artb-click-performance.png`, alt: "art.b Paintings — Meta Ads Manager Click Performance screenshot showing CTR, CPC and link clicks", label: "Click Performance" },
     { src: `${imgBase}images/artb-messaging-results.png`, alt: "art.b Paintings — Meta Ads Manager Messaging Results screenshot showing 20 conversations at $0.21 each", label: "Messaging Results" },
+  ];
+
+  const frPosScreenshots = [
+    { src: `${imgBase}images/fr-pos-meta-ads-performance.png`, alt: "FR Software Solutions — Meta Ads Manager Performance screenshot showing 16 conversations, Rs 1,240.69 spend", label: "Campaign Performance" },
+  ];
+
+  const frPosCreatives = [
+    { src: `${imgBase}images/fr-urdu-creative.png`, alt: "FR Software Solutions — Urdu advertising creative designed for the POS & Inventory Lead Generation campaign", label: "Urdu Ad Creative" },
   ];
 
   return (
@@ -183,6 +194,182 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                 <div className="artb-disclaimer-box">
                   <AlertCircle size={16} className="text-accent" />
                   <p>Messaging conversations reported by Meta Ads Manager are not equivalent to confirmed purchases, painting sales, or revenue. No sales data has been verified for this campaign period.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Learnings */}
+            <section className="artb-learnings-section">
+              <h3 className="artb-section-heading">
+                <Lightbulb size={20} className="text-accent" /> Learnings & Next Steps
+              </h3>
+              <div className="artb-learnings-card">
+                <p className="block-text">{caseStudy.learnings}</p>
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* ================= FR POS LEADGEN — DEDICATED CASE STUDY LAYOUT ================= */}
+        {isFrPosProject && (
+          <>
+            {/* Project Snapshot */}
+            <section className="artb-snapshot-section anim-section-pop">
+              <div className="artb-snapshot-grid">
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Client</span>
+                  <span className="artb-snapshot-value">FR Software Solutions</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">My Role</span>
+                  <span className="artb-snapshot-value">Strategy · Urdu Creative Design · Campaign Setup</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Campaign Objective</span>
+                  <span className="artb-snapshot-value">Leads</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Reporting Period</span>
+                  <span className="artb-snapshot-value">{caseStudy.reportingPeriod}</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Campaign Name</span>
+                  <span className="artb-snapshot-value artb-campaign-name">{caseStudy.campaignName}</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Total Spend</span>
+                  <span className="artb-snapshot-value">Rs 1,240.69 (Daily Budget: Rs 300)</span>
+                </div>
+              </div>
+            </section>
+
+            {/* My Contribution */}
+            <section className="artb-contribution-section anim-details-in">
+              <h3 className="artb-section-heading">
+                <Target size={20} className="text-accent" /> My Contribution
+              </h3>
+              <p className="artb-contribution-intro">
+                I developed the marketing strategy, designed the Urdu ad creative, and independently handled the complete Meta Ads campaign setup for FR Software Solutions.
+              </p>
+              <div className="artb-contribution-grid">
+                {caseStudy.contribution && caseStudy.contribution.map((item, i) => (
+                  <div key={i} className="artb-contribution-card">
+                    <div className="artb-contribution-number">{String(i + 1).padStart(2, "0")}</div>
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Strategy Section */}
+            {caseStudy.strategySection && (
+              <section className="artb-evidence-section">
+                <h3 className="artb-section-heading">
+                  <TrendingUp size={20} className="text-accent" /> Marketing Strategy & Planning
+                </h3>
+                <div className="artb-interpretation-card">
+                  <div className="frpos-strategy-grid">
+                    <div className="frpos-strategy-item">
+                      <h4>Campaign Context</h4>
+                      <p>{caseStudy.strategySection.context}</p>
+                    </div>
+                    <div className="frpos-strategy-item">
+                      <h4>Marketing Objective</h4>
+                      <p>{caseStudy.strategySection.objective}</p>
+                    </div>
+                    <div className="frpos-strategy-item">
+                      <h4>Creative Approach</h4>
+                      <p>{caseStudy.strategySection.creativeApproach}</p>
+                    </div>
+                    <div className="frpos-strategy-item">
+                      <h4>Campaign Implementation</h4>
+                      <p>{caseStudy.strategySection.implementation}</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Ad Creative Section */}
+            <section className="artb-evidence-section">
+              <div className="artb-section-header-row">
+                <h3 className="artb-section-heading">
+                  <Palette size={20} className="text-accent" /> Ad Creative Design
+                </h3>
+                <span className="artb-evidence-note">Urdu-language ad creative designed for local business owners</span>
+              </div>
+              <div className="artb-screenshots-gallery frpos-single-gallery">
+                {frPosCreatives.map((s, i) => (
+                  <a key={i} href={s.src} target="_blank" rel="noopener noreferrer" className="artb-screenshot-card" aria-label={`Open ${s.label}`}>
+                    <img src={s.src} alt={s.alt} className="artb-screenshot-img" loading="lazy" onError={(e) => { e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }} />
+                    <div className="artb-screenshot-placeholder" style={{display:"none"}}>
+                      <Palette size={28} />
+                      <span>Creative coming soon</span>
+                      <span className="artb-placeholder-filename">{s.label}</span>
+                    </div>
+                    <div className="artb-screenshot-label">{s.label}</div>
+                  </a>
+                ))}
+              </div>
+              <p className="artb-screenshots-note">
+                I personally designed this Urdu-language advertising post for the FR Software Solutions POS & Inventory campaign. To display your original creative file, place it at <code>public/images/fr-urdu-creative.png</code>.
+              </p>
+            </section>
+
+            {/* Campaign Evidence Screenshots */}
+            <section className="artb-evidence-section">
+              <div className="artb-section-header-row">
+                <h3 className="artb-section-heading">
+                  <Camera size={20} className="text-accent" /> Campaign Evidence
+                </h3>
+                <span className="artb-evidence-note">Genuine Meta Ads Manager screenshot</span>
+              </div>
+              <div className="artb-screenshots-gallery frpos-single-gallery">
+                {frPosScreenshots.map((s, i) => (
+                  <a key={i} href={s.src} target="_blank" rel="noopener noreferrer" className="artb-screenshot-card" aria-label={`Open ${s.label} screenshot`}>
+                    <img src={s.src} alt={s.alt} className="artb-screenshot-img" loading="lazy" onError={(e) => { e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }} />
+                    <div className="artb-screenshot-placeholder" style={{display:"none"}}>
+                      <Camera size={28} />
+                      <span>Screenshot coming soon</span>
+                      <span className="artb-placeholder-filename">{s.label}</span>
+                    </div>
+                    <div className="artb-screenshot-label">{s.label}</div>
+                  </a>
+                ))}
+              </div>
+              <p className="artb-screenshots-note">
+                Click screenshot to view full size. To add it, place your Ads Manager screenshot at <code>public/images/fr-pos-meta-ads-performance.png</code>.
+              </p>
+            </section>
+
+            {/* Detailed Metrics Dashboard */}
+            <section className="artb-metrics-section">
+              <h3 className="artb-section-heading">
+                <BarChart2 size={20} className="text-accent" /> Campaign Performance Dashboard
+              </h3>
+              <p className="artb-metrics-period">Reporting period: {caseStudy.reportingPeriod} &nbsp;·&nbsp; Currency: PKR (Pakistani Rupees) as displayed in Ads Manager</p>
+              <div className="artb-metrics-grid">
+                {caseStudy.metricsDetailed && caseStudy.metricsDetailed.map((m, i) => (
+                  <div key={i} className="artb-metric-card">
+                    <div className="artb-metric-value">{m.value}</div>
+                    <div className="artb-metric-label">{m.label}</div>
+                    {m.note && <div className="artb-metric-note">{m.note}</div>}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Results & Interpretation */}
+            <section className="artb-interpretation-section">
+              <h3 className="artb-section-heading">
+                <TrendingUp size={20} className="text-accent" /> Results & Interpretation
+              </h3>
+              <div className="artb-interpretation-card">
+                <p className="block-text">{caseStudy.interpretation}</p>
+                <div className="artb-disclaimer-box">
+                  <AlertCircle size={16} className="text-accent" />
+                  <p>Messaging conversations reported by Meta Ads Manager are not equivalent to confirmed leads, software demos, purchases, or revenue. No sales or conversion data has been verified for this campaign period.</p>
                 </div>
               </div>
             </section>
@@ -425,8 +612,16 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
           {/* Footer Call to Action */}
           <div className="case-page-cta-card">
             <div className="cta-left">
-              <h3>Ready to elevate your video content?</h3>
-              <p>Let's collaborate on high-converting video edits, social media reels, and AI productions.</p>
+              <h3>
+                {project.category === "Video Editing"
+                  ? "Ready to elevate your video content?"
+                  : "Ready to scale your marketing campaigns?"}
+              </h3>
+              <p>
+                {project.category === "Video Editing"
+                  ? "Let's collaborate on high-converting video edits, social media reels, and AI productions."
+                  : "Let's collaborate on data-driven Meta Ads, custom ad creative design, and result-oriented growth strategies."}
+              </p>
             </div>
             <div className="cta-right">
               <button

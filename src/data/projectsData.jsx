@@ -73,6 +73,84 @@ export const projects = [
     }
   },
   {
+    id: "fr-pos-leadgen",
+    title: "FR Software Solutions — POS & Inventory Lead Generation",
+    category: "Meta Ads",
+    categoryLabel: "DIGITAL MARKETING STRATEGY / META ADS",
+    headline: "Generating Leads for POS & Inventory Management Software via Meta Ads",
+    client: "FR Software Solutions",
+    objective: "Leads",
+    icon: <Target size={24} className="text-accent" />,
+    role: "Marketing Strategy · Urdu Ad Creative Design · Meta Ads Campaign Setup",
+    description: "Developed the marketing strategy, designed a Urdu-language advertising creative, and independently set up and managed a Meta Ads lead generation campaign for FR Software Solutions — promoting their POS & Inventory Management Software to local business owners.",
+    servicesLabel: "Key Services",
+    deliverables: [
+      "Marketing Strategy & Planning",
+      "Urdu Ad Creative Design",
+      "Meta Ads Campaign Setup",
+      "Lead Generation (Messaging Conversations)",
+      "Campaign Performance Monitoring",
+    ],
+    buttonText: "View Case Study",
+    tags: ["Meta Ads", "Lead Generation", "POS Software", "Urdu Creative", "B2B", "Oct 2026"],
+    tools: ["Meta Ads Manager", "Meta Business Suite", "Canva"],
+    caseStudy: {
+      client: "FR Software Solutions",
+      category: "DIGITAL MARKETING STRATEGY / META ADS",
+      headline: "Generating Leads for POS & Inventory Management Software via Meta Ads",
+      objective: "Leads",
+      reportingPeriod: "13 October – 19 October 2026",
+      campaignName: "FR LEAD GENERATE URDU POST AD",
+      isFrPosProject: true,
+      stats: [
+        { label: "Amount Spent", value: "Rs 1,240.69" },
+        { label: "Impressions", value: "3,295" },
+        { label: "Conversations", value: "16" },
+        { label: "Cost/Conversation", value: "Rs 77.54" },
+      ],
+      metricsDetailed: [
+        { label: "Amount Spent", value: "Rs 1,240.69", note: "" },
+        { label: "Daily Budget", value: "Rs 300", note: "Per day budget set in Ads Manager" },
+        { label: "Impressions", value: "3,295", note: "" },
+        { label: "Messaging Conversations", value: "16", note: "Reported by Meta Ads Manager" },
+        { label: "Cost Per Conversation", value: "Rs 77.54", note: "Rs 1,240.69 ÷ 16 conversations" },
+        { label: "Campaign Objective", value: "Leads", note: "" },
+        { label: "Creative Language", value: "Urdu", note: "Ad creative designed in Urdu for local audience" },
+        { label: "Reporting Period", value: "13–19 Oct 2026", note: "7 days documented" },
+      ],
+      overview: "I developed the marketing strategy, designed a Urdu-language advertising creative, and independently completed the Meta Ads campaign setup for FR Software Solutions — a POS & Inventory Management Software brand. The campaign ran from 13 to 19 October 2026 under the name 'FR LEAD GENERATE URDU POST AD', generating 16 reported messaging conversations at a cost of Rs 77.54 per conversation from a total spend of Rs 1,240.69.",
+      contribution: [
+        {
+          title: "Marketing Strategy & Planning",
+          desc: "I developed the campaign strategy — identifying the target audience (local shop owners and small business operators who would benefit from POS and inventory software), setting a realistic lead generation objective, and planning the campaign structure to generate meaningful inquiries within a modest daily budget."
+        },
+        {
+          title: "Urdu Ad Creative Design",
+          desc: "I personally designed the Urdu-language advertising creative used in this campaign. Using Urdu made the ad more accessible and relatable to the local business audience the campaign was targeting."
+        },
+        {
+          title: "Meta Ads Campaign Setup",
+          desc: "I independently handled the complete Meta Ads campaign setup — including campaign objective selection (Leads), audience configuration, daily budget setting (Rs 300/day), creative upload, and campaign launch — using Meta Ads Manager."
+        }
+      ],
+      strategySection: {
+        context: "FR Software Solutions offers POS and Inventory Management Software aimed at local businesses — retail shops, small stores, and enterprises looking to streamline their operations. The challenge was reaching business owners who may not respond to English-language ads but would engage with content in their native language.",
+        objective: "Generate messaging conversations from interested local business owners who might be potential customers for the POS and inventory software.",
+        creativeApproach: "Designed a Urdu-language ad creative to directly address the local business owner audience in their preferred language, making the value proposition immediately clear and relatable.",
+        implementation: "Set up a Lead objective campaign in Meta Ads Manager with a daily budget of Rs 300. The campaign ran for approximately one week (13–19 October 2026), delivering 3,295 impressions and generating 16 messaging conversations.",
+      },
+      interpretation: "The campaign generated 16 reported messaging conversations from a total spend of Rs 1,240.69, at a reported cost of Rs 77.54 per conversation. 3,295 impressions were delivered during the 7-day reporting period (13–19 October 2026). These metrics reflect the performance reported in Meta Ads Manager for this specific campaign. Messaging conversations are not equivalent to confirmed leads, software demos, sales, or revenue. No conversion or sales data has been verified for this campaign period. Two additional campaigns shown in the Ads Manager screenshot (with Rs 0.00 spend) were inactive during this period and are not included in these results.",
+      learnings: "For future campaigns, tracking which conversations resulted in demo requests, software trials, or confirmed software sales would provide a complete picture of business impact. Testing additional creatives — including bilingual (Urdu + English) variants — and extending the campaign duration would allow for more reliable performance comparison. Monitoring cost-per-conversation trends over time would help optimize the daily budget allocation.",
+      keyServices: [
+        { title: "Marketing Strategy & Planning", desc: "Developed the campaign strategy — identifying the local business owner audience, setting lead generation objectives, and planning the campaign structure within a modest daily budget of Rs 300." },
+        { title: "Urdu Ad Creative Design", desc: "Personally designed the Urdu-language advertising post used in the campaign — crafted to communicate the software's value proposition clearly to the local business audience." },
+        { title: "Meta Ads Campaign Setup", desc: "Independently handled the complete campaign setup in Meta Ads Manager: objective selection (Leads), audience configuration, daily budget, creative upload, and launch." },
+        { title: "Lead Generation (Messaging Conversations)", desc: "The campaign was designed to drive messaging conversations from interested business owners, generating 16 reported conversations during the 7-day reporting period." },
+        { title: "Campaign Performance Monitoring", desc: "Monitored campaign delivery and performance metrics during the reporting period as documented in the Ads Manager screenshot." },
+      ]
+    }
+  },
+  {
     id: "fr-software-meta-ads",
     title: "FR Software Solutions — Meta Ads Campaign",
     category: "Meta Ads",

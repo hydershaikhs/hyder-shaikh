@@ -923,3 +923,40 @@
   border-radius: 18px;
   padding: 26px;
 }
+
+/* ================= FR POS LEADGEN — STRATEGY GRID ================= */
+.frpos-strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.frpos-strategy-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 240, 255, 0.12);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+}
+
+.frpos-strategy-item h4 {
+  color: var(--accent, #00f0ff);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.frpos-strategy-item p {
+  color: var(--text-secondary, #94a3b8);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Single-item gallery centering for FR POS */
+.frpos-single-gallery {
+  grid-template-columns: minmax(280px, 520px) !important;
+  justify-content: center;
+}
