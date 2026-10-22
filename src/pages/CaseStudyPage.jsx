@@ -3,7 +3,7 @@ import {
   ArrowLeft, Target, FileText,
   TrendingUp, ShieldCheck, CheckCircle2,
   Wrench, Clapperboard, Sparkles, Film, ArrowRight,
-  Play, Volume2
+  Play, Volume2, BarChart2, Camera, Lightbulb, AlertCircle, Palette
 } from "lucide-react";
 import "./CaseStudyPage.css";
 
@@ -24,7 +24,11 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     if (project) {
-      document.title = `${project.title} | Hyder Shaikh Portfolio Case Study`;
+      if (project.id === "art-b-meta-ads") {
+        document.title = "art.b Paintings Meta Ads Case Study | Hyder Shaikh";
+      } else {
+        document.title = `${project.title} | Hyder Shaikh Portfolio Case Study`;
+      }
     }
     return () => {
       document.title = "Hyder Shaikh | Digital Marketer & Video Editor";
@@ -44,6 +48,17 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
 
   const { caseStudy } = project;
   const isVideoProject = project.id === "video-editing-production";
+  const isArtbProject = project.id === "art-b-meta-ads";
+
+  // Compute safe base URL for both Vercel and GitHub Pages
+  const rawBase2 = import.meta.env.BASE_URL || "/";
+  const imgBase = rawBase2.endsWith("/") ? rawBase2 : `${rawBase2}/`;
+
+  const artbScreenshots = [
+    { src: `${imgBase}images/artb-campaign-overview.png`, alt: "art.b Paintings — Meta Ads Manager Campaign Overview screenshot showing spend, impressions and reach", label: "Campaign Overview" },
+    { src: `${imgBase}images/artb-click-performance.png`, alt: "art.b Paintings — Meta Ads Manager Click Performance screenshot showing CTR, CPC and link clicks", label: "Click Performance" },
+    { src: `${imgBase}images/artb-messaging-results.png`, alt: "art.b Paintings — Meta Ads Manager Messaging Results screenshot showing 20 conversations at $0.21 each", label: "Messaging Results" },
+  ];
 
   return (
     <div className="case-study-page" ref={pageRef} style={{ paddingTop: 'clamp(120px, 16vh, 160px)' }}>
@@ -62,6 +77,127 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
           <h1 className="case-page-main-title">{project.title}</h1>
           <p className="case-page-main-headline">{caseStudy.headline || project.headline}</p>
         </header>
+
+        {/* ================= ART.B — DEDICATED CASE STUDY LAYOUT ================= */}
+        {isArtbProject && (
+          <>
+            {/* Project Snapshot */}
+            <section className="artb-snapshot-section anim-section-pop">
+              <div className="artb-snapshot-grid">
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Client Industry</span>
+                  <span className="artb-snapshot-value">Art & Paintings</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">My Role</span>
+                  <span className="artb-snapshot-value">Ad Creative Designer & Campaign Setup</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Campaign Type</span>
+                  <span className="artb-snapshot-value">Meta Ads — Messaging</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Reporting Period</span>
+                  <span className="artb-snapshot-value">{caseStudy.reportingPeriod}</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Campaign Name</span>
+                  <span className="artb-snapshot-value artb-campaign-name">{caseStudy.campaignName}</span>
+                </div>
+                <div className="artb-snapshot-item">
+                  <span className="artb-snapshot-label">Budget Used</span>
+                  <span className="artb-snapshot-value">$4.26 (test budget)</span>
+                </div>
+              </div>
+            </section>
+
+            {/* My Contribution */}
+            <section className="artb-contribution-section anim-details-in">
+              <h3 className="artb-section-heading">
+                <Palette size={20} className="text-accent" /> My Contribution
+              </h3>
+              <p className="artb-contribution-intro">
+                Designed the ad creatives and independently handled the Meta Ads campaign setup for art.b Paintings.
+              </p>
+              <div className="artb-contribution-grid">
+                {caseStudy.contribution && caseStudy.contribution.map((item, i) => (
+                  <div key={i} className="artb-contribution-card">
+                    <div className="artb-contribution-number">{String(i + 1).padStart(2, "0")}</div>
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Screenshots Evidence Gallery */}
+            <section className="artb-evidence-section">
+              <div className="artb-section-header-row">
+                <h3 className="artb-section-heading">
+                  <Camera size={20} className="text-accent" /> Campaign Evidence
+                </h3>
+                <span className="artb-evidence-note">Genuine Meta Ads Manager screenshots</span>
+              </div>
+              <div className="artb-screenshots-gallery">
+                {artbScreenshots.map((s, i) => (
+                  <a key={i} href={s.src} target="_blank" rel="noopener noreferrer" className="artb-screenshot-card" aria-label={`Open ${s.label} screenshot`}>
+                    <img src={s.src} alt={s.alt} className="artb-screenshot-img" loading="lazy" onError={(e) => { e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }} />
+                    <div className="artb-screenshot-placeholder" style={{display:"none"}}>
+                      <Camera size={28} />
+                      <span>Screenshot coming soon</span>
+                      <span className="artb-placeholder-filename">{s.label}</span>
+                    </div>
+                    <div className="artb-screenshot-label">{s.label}</div>
+                  </a>
+                ))}
+              </div>
+              <p className="artb-screenshots-note">
+                Click any screenshot to view full size. Screenshots sourced directly from Meta Ads Manager.
+              </p>
+            </section>
+
+            {/* Detailed Metrics Dashboard */}
+            <section className="artb-metrics-section">
+              <h3 className="artb-section-heading">
+                <BarChart2 size={20} className="text-accent" /> Campaign Performance Dashboard
+              </h3>
+              <p className="artb-metrics-period">Reporting period: {caseStudy.reportingPeriod} &nbsp;·&nbsp; Currency: USD (as displayed in Ads Manager)</p>
+              <div className="artb-metrics-grid">
+                {caseStudy.metricsDetailed && caseStudy.metricsDetailed.map((m, i) => (
+                  <div key={i} className="artb-metric-card">
+                    <div className="artb-metric-value">{m.value}</div>
+                    <div className="artb-metric-label">{m.label}</div>
+                    {m.note && <div className="artb-metric-note">{m.note}</div>}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Results & Interpretation */}
+            <section className="artb-interpretation-section">
+              <h3 className="artb-section-heading">
+                <TrendingUp size={20} className="text-accent" /> Results & Interpretation
+              </h3>
+              <div className="artb-interpretation-card">
+                <p className="block-text">{caseStudy.interpretation}</p>
+                <div className="artb-disclaimer-box">
+                  <AlertCircle size={16} className="text-accent" />
+                  <p>Messaging conversations reported by Meta Ads Manager are not equivalent to confirmed purchases, painting sales, or revenue. No sales data has been verified for this campaign period.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Learnings */}
+            <section className="artb-learnings-section">
+              <h3 className="artb-section-heading">
+                <Lightbulb size={20} className="text-accent" /> Learnings & Next Steps
+              </h3>
+              <div className="artb-learnings-card">
+                <p className="block-text">{caseStudy.learnings}</p>
+              </div>
+            </section>
+          </>
+        )}
 
         {/* ================= TOP VIDEO SHOWCASE SECTION (4 ANIMATED VIDEO REELS) ================= */}
         {isVideoProject && (
