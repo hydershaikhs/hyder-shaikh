@@ -38,8 +38,8 @@ const Contact = () => {
     const data = new FormData();
     data.append("name", trimmedName);
     data.append("email", trimmedEmail);
-    data.append("_subject", `Portfolio Inquiry - ${trimmedSubject} (${trimmedName})`);
-    data.append("Subject", trimmedSubject);
+    data.append("_subject", `Portfolio Inquiry: ${trimmedSubject} - ${trimmedName}`);
+    data.append("Selected Service", trimmedSubject);
     data.append("message", trimmedMessage);
     data.append("_captcha", "false");
     data.append("_template", "table");
@@ -67,7 +67,7 @@ const Contact = () => {
                 Let us work <span className="contact-heading-accent">together</span>
               </h2>
               <p className="contact-subtext">
-                Open to freelance projects and collaborations. Whether it is Meta Ads, Video Editing, or Social Media Management, tell me what you need and I will get back to you within 24 hours.
+                Open to freelance projects, agency collaborations, and full-time roles. Select the service you need below, and I will get back to you within 24 hours.
               </p>
 
               <div className="contact-social-row">
@@ -94,7 +94,7 @@ const Contact = () => {
                 <div className="contact-success">
                   <div className="contact-success-icon"><CheckCircle2 size={48} /></div>
                   <h3>Message Sent!</h3>
-                  <p>Thank you, <strong>{form.name}</strong>. I will get back to you shortly.</p>
+                  <p>Thank you, <strong>{form.name}</strong>. I will get back to you shortly regarding <strong>{form.subject}</strong>.</p>
                   <button className="contact-submit-btn" onClick={() => { setSent(false); setForm({ name: "", email: "", subject: "", message: "" }); setErrorMsg(""); }}>
                     Send Another Message
                   </button>
@@ -108,14 +108,27 @@ const Contact = () => {
                   <div className="cf-field">
                     <input type="email" name="email" placeholder="you@company.com *" required value={form.email} onChange={handleChange} />
                   </div>
+                  {/* Service Selection Dropdown */}
                   <div className="cf-field">
-                    <input type="text" name="subject" placeholder="Subject *" required value={form.subject} onChange={handleChange} />
+                    <select
+                      name="subject"
+                      required
+                      value={form.subject}
+                      onChange={handleChange}
+                      className={!form.subject ? "cf-select-placeholder" : "cf-select-active"}
+                    >
+                      <option value="" disabled>Select a Service You Need *</option>
+                      <option value="Meta Ads">Meta Ads (Facebook &amp; Instagram Advertising)</option>
+                      <option value="Social Media Management">Social Media Management &amp; Content Strategy</option>
+                      <option value="Video Editing">Video Editing &amp; Reels Production</option>
+                      <option value="Other Services">Other Services / Custom Project Inquiry</option>
+                    </select>
                   </div>
                   <div className="cf-field">
-                    <textarea name="message" rows="5" placeholder="Your message *" required value={form.message} onChange={handleChange} />
+                    <textarea name="message" rows="5" placeholder="Tell me about your project & requirements *" required value={form.message} onChange={handleChange} />
                   </div>
                   <button type="submit" className="contact-submit-btn" disabled={sending}>
-                    {sending ? <span>Sending...</span> : <><span>Send via Email</span><Send size={16} /></>}
+                    {sending ? <span>Sending...</span> : <><span>Send Inquiry</span><Send size={16} /></>}
                   </button>
                 </form>
               )}
