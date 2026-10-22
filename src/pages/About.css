@@ -1,0 +1,289 @@
+/* ================= ABOUT SECTION STYLES ================= */
+.about-section {
+  padding: 80px 0 100px;
+  position: relative;
+}
+
+/* Page hero tweaks */
+.about-hero-center {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.about-hero-center .section-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--accent, #00f0ff);
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.about-hero-center .page-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.about-hero-center .page-subtitle {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted, #94a3b8);
+}
+
+/* ---- MAIN ABOUT CARD (Split Grid: Bio + Pillars) ---- */
+.about-main-card {
+  background: linear-gradient(135deg, rgba(16, 22, 36, 0.8), rgba(10, 14, 24, 0.95));
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  border-radius: 20px;
+  padding: 44px;
+  margin-bottom: 40px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-main-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent, #00f0ff), transparent);
+}
+
+.about-main-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Left Bio Column */
+.about-bio-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-bio-lead {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.about-bio-lead strong {
+  color: var(--accent, #00f0ff);
+  font-weight: 600;
+}
+
+.about-bio-text {
+  font-size: 0.98rem;
+  line-height: 1.75;
+  color: var(--text-muted, #94a3b8);
+}
+
+.about-bio-text strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Right Pillars Grid */
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.about-pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: all 0.3s ease;
+}
+
+.about-pillar-item:hover {
+  background: rgba(0, 240, 255, 0.04);
+  border-color: rgba(0, 240, 255, 0.25);
+  transform: translateX(4px);
+}
+
+.about-pillar-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--accent, #00f0ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-pillar-content h4 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.about-pillar-content p {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-muted, #94a3b8);
+  margin: 0;
+}
+
+/* ---- HIGHLIGHTS BAR ---- */
+.about-highlights-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.about-highlight-box {
+  background: rgba(14, 19, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-highlight-box:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.08);
+}
+
+.about-highlight-val {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent, #00f0ff);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.about-highlight-lbl {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted, #94a3b8);
+  font-weight: 500;
+}
+
+/* ---- 4-CARD CREDENTIALS & VALUES GRID ---- */
+.about-cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.about-info-card {
+  background: linear-gradient(135deg, rgba(16, 22, 34, 0.7), rgba(10, 14, 22, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-info-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.about-info-card.hifz-highlight {
+  border-color: rgba(0, 240, 255, 0.25);
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.04), rgba(12, 16, 26, 0.92));
+}
+
+.about-info-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.about-info-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  color: var(--accent, #00f0ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-info-tag {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent, #00f0ff);
+  font-weight: 600;
+}
+
+.about-info-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.about-info-subtitle {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.about-info-desc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted, #94a3b8);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-main-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 0 80px;
+  }
+  
+  .about-main-card {
+    padding: 26px 20px;
+  }
+  
+  .about-highlights-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

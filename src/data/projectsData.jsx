@@ -166,51 +166,6 @@ export const projects = [
     }
   },
   {
-    id: "fr-software-meta-ads",
-    title: "FR Software Solutions — Meta Ads Campaign",
-    category: "Meta Ads",
-    categoryLabel: "META ADS & LEAD GENERATION",
-    headline: "Generating Leads for POS & Inventory Management Software",
-    client: "FR Software Solutions",
-    objective: "B2B Lead Generation",
-    icon: <Target size={24} className="text-accent" />,
-    role: "Meta Ads Specialist & Lead Strategist",
-    description: "FR Software Solutions needed potential clients for its POS and Inventory Management Software. I set up and managed Meta Ads lead generation campaigns to reach relevant businesses, generate qualified leads, and help convert prospects into clients.",
-    servicesLabel: "Key Services",
-    deliverables: [
-      "Meta Ads Campaign Setup",
-      "Lead Generation Strategy",
-      "Precision Audience Targeting",
-      "Campaign Monitoring & Optimization",
-      "Business Lead Acquisition"
-    ],
-    buttonText: "View Case Study",
-    tags: ["Meta Ads (FB/IG)", "Objective: Lead Gen", "B2B Lead Generation", "POS Software", "Cost Per Lead (CPL)"],
-    tools: ["Meta Ads Manager", "Meta Instant Forms", "CRM Integration", "Canva"],
-    caseStudy: {
-      client: "FR Software Solutions",
-      category: "META ADS & LEAD GENERATION",
-      headline: "Generating Leads for POS & Inventory Management Software",
-      objective: "B2B Lead Generation",
-      stats: [
-        { label: "Qualified Leads", value: "320+" },
-        { label: "Cost Per Lead", value: "-35%" },
-        { label: "Form Completion", value: "28%" },
-        { label: "Lead Conversion", value: "18%+" }
-      ],
-      overview: "FR Software Solutions needed potential clients for its POS and Inventory Management Software. I set up and managed Meta Ads lead generation campaigns to reach relevant businesses, generate qualified leads, and help convert prospects into clients.",
-      challenge: "Selling enterprise POS and Inventory Management software requires reaching verified decision-makers—retail shop owners, supermarket operators, and pharmacy managers—without burning ad spend on irrelevant non-business consumers.",
-      solution: "Implemented high-converting Meta Instant Forms with qualifying multi-choice questions to filter high-intent prospects, laser-focused demographic & business interest targeting, and real-time CRM lead routing for instant sales team follow-up.",
-      keyServices: [
-        { title: "Meta Ads Campaign Setup", desc: "Constructed structured lead generation campaigns across Facebook & Instagram with customized Instant Forms for frictionless mobile submissions." },
-        { title: "Lead Generation Strategy", desc: "Designed pre-qualifying questionnaire flows (business category, store branches, current software) to ensure only warm, viable leads were submitted." },
-        { title: "Audience Targeting", desc: "Targeted retail shop owners, wholesale distributors, pharmacy managers, and ERP software searchers using refined B2B interest clusters." },
-        { title: "Campaign Monitoring & Optimization", desc: "Continuous daily optimization of Cost Per Lead (CPL), form completion rates, CTR, and creative variants to maximize budget efficiency." },
-        { title: "Business Lead Acquisition", desc: "Organized automated lead handoffs and follow-up pipelines enabling the FR Software sales team to quickly convert prospects into paying clients." }
-      ]
-    }
-  },
-  {
     id: "fr-software-social-media",
     title: "FR Software Solutions — Social Media Management",
     category: "Social Media",
