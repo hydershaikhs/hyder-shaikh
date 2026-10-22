@@ -5,28 +5,29 @@ export const projects = [
     id: "art-b-meta-ads",
     title: "art.b Paintings — Meta Ads Campaign",
     category: "Meta Ads",
-    categoryLabel: "META ADS & AD CREATIVE DESIGN",
-    headline: "Ad Creative Design & Campaign Setup for a Painting Brand",
+    categoryLabel: "DIGITAL MARKETING STRATEGY / META ADS",
+    headline: "Marketing Strategy, Ad Creative Design & Meta Ads Campaign Setup for a Painting Brand",
     client: "art.b Paintings",
-    objective: "Messaging Conversations",
+    objective: "Sales",
     icon: <Palette size={24} className="text-accent" />,
-    role: "Ad Creative Designer & Meta Ads Campaign Setup",
-    description: "Designed campaign ad creatives and completed Meta Ads campaign setup for a painting brand, generating 20 reported messaging conversations during the documented reporting period (1–4 August 2026).",
+    role: "Marketing Strategy · Ad Creative Design · Meta Ads Campaign Setup",
+    description: "I developed the marketing approach, designed the advertising creatives and completed the Meta Ads campaign setup for art.b Paintings. The campaign was intended to promote the brand's artwork and encourage potential customers to initiate conversations.",
     servicesLabel: "Key Services",
     deliverables: [
-      "Ad Creative Design",
-      "Meta Ads Campaign Setup",
-      "Campaign Performance Monitoring",
+      "Marketing Strategy & Campaign Planning",
+      "Ad Creative & Post Design",
+      "Meta Ads Campaign Setup (Sales Objective)",
       "Messaging Conversation Generation",
+      "Campaign Performance Monitoring",
     ],
     buttonText: "View Case Study",
-    tags: ["Meta Ads", "Ad Creative Design", "Paintings Brand", "Messaging Campaigns", "Aug 2026"],
+    tags: ["Meta Ads", "Ad Creative Design", "Sales Objective", "Paintings Brand", "Aug 2026"],
     tools: ["Meta Ads Manager", "Meta Business Suite", "Canva"],
     caseStudy: {
       client: "art.b Paintings",
-      category: "META ADS & AD CREATIVE DESIGN",
-      headline: "Ad Creative Design & Campaign Setup for a Painting Brand",
-      objective: "Messaging Conversations",
+      category: "DIGITAL MARKETING STRATEGY / META ADS",
+      headline: "Marketing Strategy, Ad Creative Design & Meta Ads Campaign Setup for a Painting Brand",
+      objective: "Sales (Documented Outcome: Messaging Conversations)",
       reportingPeriod: "1 August – 4 August 2026",
       campaignName: "ArtsH B | Paintings | Sales | 1/8/2026",
       isArtbProject: true,
@@ -38,6 +39,7 @@ export const projects = [
       ],
       metricsDetailed: [
         { label: "Amount Spent", value: "$4.26", note: "" },
+        { label: "Campaign Objective", value: "Sales", note: "Selected in Meta Ads Manager; resulted in messaging conversations" },
         { label: "Impressions", value: "5,295", note: "" },
         { label: "Reach", value: "4,651", note: "" },
         { label: "Frequency", value: "1.14", note: "Average times each person saw the ad" },
@@ -50,24 +52,37 @@ export const projects = [
         { label: "Messaging Conversations", value: "20", note: "Reported by Meta Ads Manager" },
         { label: "Cost Per Conversation", value: "$0.21", note: "$4.26 ÷ 20 conversations" },
       ],
-      overview: "A paid advertising project for art.b Paintings — a painting brand. My role was to design the advertising creatives and independently handle the Meta Ads campaign setup. The campaign ran for four days (1–4 August 2026) under the campaign name 'ArtsH B | Paintings | Sales | 1/8/2026', generating 20 reported messaging conversations at a cost of $0.21 per conversation.",
+      overview: "I developed the marketing approach, designed the advertising creatives and completed the Meta Ads campaign setup for art.b Paintings. The campaign was intended to promote the brand's artwork and encourage potential customers to initiate conversations. Running for four days (1–4 August 2026) under the campaign name 'ArtsH B | Paintings | Sales | 1/8/2026', it generated 20 reported messaging conversations at a cost of $0.21 per conversation within a $4.26 test budget.",
       contribution: [
         {
-          title: "Ad Creative Design",
-          desc: "I personally designed the advertising creatives and posts used in this campaign. The visuals were crafted to showcase the paintings and prompt interested viewers to reach out via messaging."
+          title: "Marketing Strategy & Campaign Planning",
+          desc: "I developed the marketing approach and campaign structure — aligning the campaign with the brand's aesthetic, establishing the intended customer journey from ad impression to direct messaging inquiry, and managing the initial test budget."
+        },
+        {
+          title: "Ad Creative & Post Design",
+          desc: "I personally designed the advertising creatives and posts used in this campaign. The visuals were crafted to showcase the textures and vibrancy of physical paintings in high quality, capturing viewer interest in digital feeds."
         },
         {
           title: "Meta Ads Campaign Setup",
-          desc: "I independently handled the complete Meta Ads campaign setup — including campaign structure, objective selection, audience configuration, creative upload, and launch — using Meta Ads Manager."
+          desc: "I independently handled the complete Meta Ads campaign setup — selecting the Sales campaign objective, configuring targeting and placements, uploading creative assets, and launching the campaign in Meta Ads Manager."
         }
       ],
+      strategySection: {
+        context: "art.b Paintings needed paid advertising to showcase original handmade artwork to potential art enthusiasts and collectors, translating visual interest into direct customer conversations.",
+        objective: "The campaign objective selected in Meta Ads Manager was Sales, with the conversion pathway configured to drive prospective buyers into direct messaging conversations to discuss artwork details, dimensions, and purchase inquiries.",
+        intendedAction: "Prospective buyers seeing the ads were prompted to start a direct messaging conversation with the brand to inquire about availability and pricing.",
+        creativeApproach: "Visual-first ad creatives showcasing the paintings with elegant typography, high-contrast framing, and clear messaging to convey the artwork's authenticity and appeal.",
+        implementation: "Complete campaign setup in Meta Ads Manager under 'ArtsH B | Paintings | Sales | 1/8/2026' with an initial test budget of $4.26 running from 1–4 August 2026.",
+        measurement: "Delivered 5,295 impressions and 4,651 reach at 1.14 frequency, generating 35 link clicks (0.66% CTR) and 20 reported messaging conversations ($0.21 cost per conversation)."
+      },
       challenge: "Promoting original paintings through paid ads requires compelling visuals that convey the quality and aesthetic of physical artwork to a digital audience. The goal was to attract genuinely interested buyers and encourage them to start a conversation.",
-      solution: "Combined custom-designed ad creatives with a targeted Meta Ads campaign setup. The campaign used messaging as the action objective, directing interested viewers to initiate conversations directly with the brand. The four-day run delivered measurable reach and conversation results within a minimal test budget of $4.26.",
-      interpretation: "The campaign generated 20 reported messaging conversations from a spend of $4.26, at a reported cost of $0.21 per conversation. 5,295 impressions were delivered to 4,651 unique users (frequency: 1.14). 35 link clicks were recorded at a 0.66% link CTR. These metrics reflect the performance reported in Meta Ads Manager for this specific four-day period. Messaging conversations are not equivalent to confirmed purchases, sales, or revenue. No sales data has been verified for this campaign period.",
+      solution: "Combined custom-designed ad creatives with a targeted Meta Ads campaign setup using the Sales objective. The campaign directed interested viewers to initiate conversations directly with the brand, delivering 20 conversations within a minimal test budget of $4.26.",
+      interpretation: "The campaign generated 20 reported messaging conversations from a spend of $4.26, at a reported cost of $0.21 per conversation. 5,295 impressions were delivered to 4,651 unique users (frequency: 1.14). 35 link clicks were recorded at a 0.66% link CTR. These metrics reflect the performance reported in Meta Ads Manager for this specific four-day period. While the campaign was created under the Sales objective, messaging conversations reported by Ads Manager are not equivalent to confirmed purchases, sales, or revenue. No sales data has been verified for this campaign period.",
       learnings: "For future campaigns, tracking which conversations resulted in confirmed painting sales, revenue generated, and return on ad spend (ROAS) would provide a complete picture of business impact. Extending the campaign duration and testing additional creatives would allow for more reliable performance data.",
       keyServices: [
+        { title: "Marketing Strategy & Campaign Planning", desc: "Developed the campaign strategy, positioning, and customer inquiry pathway for the art brand within an efficient test budget." },
         { title: "Ad Creative Design", desc: "Personally designed the advertising creatives and post visuals used in the campaign to showcase the paintings and encourage viewer engagement." },
-        { title: "Meta Ads Campaign Setup", desc: "Independently handled the full campaign setup in Meta Ads Manager: campaign structure, objective selection, audience configuration, creative upload, and launch." },
+        { title: "Meta Ads Campaign Setup", desc: "Independently handled the full campaign setup in Meta Ads Manager: campaign structure, Sales objective selection, audience configuration, creative upload, and launch." },
         { title: "Campaign Performance Monitoring", desc: "Monitored campaign delivery and performance metrics during the four-day reporting period as documented in the Ads Manager screenshots." },
       ]
     }

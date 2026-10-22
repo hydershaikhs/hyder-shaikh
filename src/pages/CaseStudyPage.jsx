@@ -63,6 +63,11 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
     { src: `${imgBase}images/artb-messaging-results.png`, alt: "art.b Paintings — Meta Ads Manager Messaging Results screenshot showing 20 conversations at $0.21 each", label: "Messaging Results" },
   ];
 
+  const artbCreatives = [
+    { src: `${imgBase}images/artb-ad-creative-1.png`, alt: "art.b Paintings — Custom advertising creative designed for Meta Ads campaign", label: "Ad Creative 01" },
+    { src: `${imgBase}images/artb-ad-creative-2.png`, alt: "art.b Paintings — Social post creative designed for Meta Ads campaign", label: "Ad Creative 02" },
+  ];
+
   const frPosScreenshots = [
     { src: `${imgBase}images/fr-pos-meta-ads-performance.png`, alt: "FR Software Solutions — Meta Ads Manager Performance screenshot showing 16 conversations, Rs 1,240.69 spend", label: "Campaign Performance" },
   ];
@@ -101,11 +106,11 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                 </div>
                 <div className="artb-snapshot-item">
                   <span className="artb-snapshot-label">My Role</span>
-                  <span className="artb-snapshot-value">Ad Creative Designer & Campaign Setup</span>
+                  <span className="artb-snapshot-value">Strategy · Creative Design · Campaign Setup</span>
                 </div>
                 <div className="artb-snapshot-item">
-                  <span className="artb-snapshot-label">Campaign Type</span>
-                  <span className="artb-snapshot-value">Meta Ads — Messaging</span>
+                  <span className="artb-snapshot-label">Campaign Objective</span>
+                  <span className="artb-snapshot-value">Sales (Outcome: Conversations)</span>
                 </div>
                 <div className="artb-snapshot-item">
                   <span className="artb-snapshot-label">Reporting Period</span>
@@ -128,7 +133,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                 <Palette size={20} className="text-accent" /> My Contribution
               </h3>
               <p className="artb-contribution-intro">
-                Designed the ad creatives and independently handled the Meta Ads campaign setup for art.b Paintings.
+                I developed the marketing approach, designed the advertising creatives, and independently handled the Meta Ads campaign setup for art.b Paintings.
               </p>
               <div className="artb-contribution-grid">
                 {caseStudy.contribution && caseStudy.contribution.map((item, i) => (
@@ -139,6 +144,69 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                   </div>
                 ))}
               </div>
+            </section>
+
+            {/* Marketing Strategy & Planning Section */}
+            {caseStudy.strategySection && (
+              <section className="artb-evidence-section">
+                <h3 className="artb-section-heading">
+                  <TrendingUp size={20} className="text-accent" /> Marketing Strategy & Planning
+                </h3>
+                <div className="artb-interpretation-card">
+                  <div className="frpos-strategy-grid">
+                    <div className="frpos-strategy-item">
+                      <h4>Campaign Context</h4>
+                      <p>{caseStudy.strategySection.context}</p>
+                    </div>
+                    <div className="frpos-strategy-item">
+                      <h4>Marketing Objective</h4>
+                      <p>{caseStudy.strategySection.objective}</p>
+                    </div>
+                    <div className="frpos-strategy-item">
+                      <h4>Intended Customer Action</h4>
+                      <p>{caseStudy.strategySection.intendedAction}</p>
+                    </div>
+                    <div className="frpos-strategy-item">
+                      <h4>Creative Approach</h4>
+                      <p>{caseStudy.strategySection.creativeApproach}</p>
+                    </div>
+                    <div className="frpos-strategy-item">
+                      <h4>Campaign Implementation</h4>
+                      <p>{caseStudy.strategySection.implementation}</p>
+                    </div>
+                    <div className="frpos-strategy-item">
+                      <h4>Performance Measurement</h4>
+                      <p>{caseStudy.strategySection.measurement}</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Ad Creative Design Section */}
+            <section className="artb-evidence-section">
+              <div className="artb-section-header-row">
+                <h3 className="artb-section-heading">
+                  <Palette size={20} className="text-accent" /> Ad Creative Design
+                </h3>
+                <span className="artb-evidence-note">Custom visuals & post designs for paintings</span>
+              </div>
+              <div className="artb-screenshots-gallery frpos-single-gallery">
+                {artbCreatives.map((s, i) => (
+                  <a key={i} href={s.src} target="_blank" rel="noopener noreferrer" className="artb-screenshot-card" aria-label={`Open ${s.label}`}>
+                    <img src={s.src} alt={s.alt} className="artb-screenshot-img" loading="lazy" onError={(e) => { e.target.style.display="none"; e.target.nextSibling.style.display="flex"; }} />
+                    <div className="artb-screenshot-placeholder" style={{display:"none"}}>
+                      <Palette size={28} />
+                      <span>Creative coming soon</span>
+                      <span className="artb-placeholder-filename">{s.label}</span>
+                    </div>
+                    <div className="artb-screenshot-label">{s.label}</div>
+                  </a>
+                ))}
+              </div>
+              <p className="artb-screenshots-note">
+                I personally designed the visual creatives and posts for this campaign. Original creative files can be placed at <code>public/images/artb-ad-creative-1.png</code> and <code>public/images/artb-ad-creative-2.png</code>.
+              </p>
             </section>
 
             {/* Screenshots Evidence Gallery */}
