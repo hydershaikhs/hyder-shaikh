@@ -467,16 +467,16 @@ export const projects = [
       },
       contribution: [
         {
-          title: "Commercial Video Editing",
-          desc: "Assembled fast-paced, retention-focused video edits in Adobe Premiere Pro with kinetic typography, seamless cuts, and professional color grading."
+          title: "Adobe Premiere Pro Editing & Animations",
+          desc: "Personally edited video timelines in Adobe Premiere Pro, creating custom visual animations, smooth transitions, and synchronized kinetic subtitles."
         },
         {
-          title: "Sound Design & Audio Mixing",
-          desc: "Layered impact sound effects (SFX), background music pacing, and voiceover mastering to maximize engagement in the critical first 3 seconds."
+          title: "Sound Design & SFX Layering",
+          desc: "Engineered multi-layer sound effects (SFX), impact risers, and audio mixing that elevate video engagement and hook retention."
         },
         {
-          title: "AI-Powered Video Synthesis",
-          desc: "Integrated cutting-edge generative AI video engines to produce surreal visual transitions and futuristic brand scenes that cannot be captured with traditional cameras."
+          title: "AI Video Generation & CapCut Post-Production",
+          desc: "Produced generative AI video scenes and completed post-production editing, pacing, and styling using CapCut."
         }
       ],
       overview: "I create engaging video content for brands and businesses using professional editing tools and AI-powered video generation. My workflow combines creative storytelling, smooth transitions, sound design, color grading, and AI-generated visuals to produce high-quality content for social media, marketing campaigns, and digital platforms.",
@@ -495,26 +495,25 @@ export const projects = [
           type: "premiere",
           badge: "PREMIERE PRO 01",
           tag: "premiere-badge",
-          src: "videos/edited-first.mp4",
-          title: "Commercial Edit 01",
-          desc: "Kinetic Transitions"
+          src: "videos/ve-premiere-1.mp4",
+          title: "Premiere Pro Video Edit 01",
+          desc: "Sound Design, Subtitles & Custom Animations"
         },
         {
           type: "premiere",
           badge: "PREMIERE PRO 02",
           tag: "premiere-badge",
-          src: "videos/edited-second.mp4",
-          title: "Product Showcase 02",
-          desc: "Pacing & Sound FX"
+          src: "videos/ve-premiere-2.mp4",
+          title: "Premiere Pro Video Edit 02",
+          desc: "Sound FX, Kinetic Typography & Motion Pacing"
         },
-
         {
           type: "ai",
-          badge: "AI PRODUCTION 01",
+          badge: "AI VIDEO · CAPCUT",
           tag: "ai-badge",
-          src: "videos/ai-second.mp4",
-          title: "AI Motion Concept 01",
-          desc: "Cinematic Motion"
+          src: "videos/ve-ai-capcut.mp4",
+          title: "AI Video Generation (CapCut)",
+          desc: "Generative AI Video Synthesis & CapCut Post-Production"
         }
       ]
     }
