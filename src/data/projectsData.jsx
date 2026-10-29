@@ -1,4 +1,4 @@
-import { Megaphone, Clapperboard, Share2, Target, Palette } from "lucide-react";
+import { Megaphone, Clapperboard, Share2, Target, Palette, Sparkles, Video } from "lucide-react";
 
 export const projects = [
   {
@@ -322,6 +322,111 @@ export const projects = [
     }
   },
   {
+    id: "ai-videos-ugc-ads",
+    title: "AI Videos & UGC Ads — Creative Video Production",
+    category: "Video Editing",
+    categoryLabel: "AI VIDEOS & UGC AD PRODUCTION",
+    headline: "High-Converting UGC Advertising & Generative AI Video Storytelling",
+    client: "D2C Brands, E-Commerce & Creators",
+    objective: "Direct-Response Ads & Viral Content",
+    icon: <Sparkles size={24} className="text-accent" />,
+    role: "AI Video Creator & UGC Ad Video Editor",
+    description: "I produce scroll-stopping User-Generated Content (UGC) direct-response ads and cinematic AI-generated videos. Combining psychological hooks, authentic creator pacing, kinetic captions, and generative AI visual synthesis to drive higher retention, click-through rates (CTR), and conversions for modern brands.",
+    servicesLabel: "Tools & Deliverables",
+    deliverables: [
+      "Direct-Response UGC Ad Editing",
+      "Generative AI Video Creation",
+      "Hook Strategy & Retention Pacing",
+      "Sound Design & Dynamic Subtitles",
+      "Multi-Format (9:16 Vertical & 16:9)"
+    ],
+    buttonText: "View Case Study",
+    tags: ["UGC Ads", "AI Videos", "Direct Response", "CapCut & Premiere", "TikTok & Reels"],
+    tools: ["AI Video Engines", "Adobe Premiere Pro", "CapCut", "Sound Design", "Direct-Response Copy"],
+    caseStudy: {
+      client: "D2C Brands, E-Commerce & Creators",
+      category: "AI VIDEOS & UGC AD PRODUCTION",
+      headline: "High-Converting UGC Advertising & Generative AI Video Storytelling",
+      objective: "Direct-Response Ads & Viral Content",
+      reportingPeriod: "Commercial Video Campaigns",
+      videoSectionTitle: "AI Videos & UGC Ads Showcase",
+      videoSectionSubtitle: "Explore real UGC direct-response ads and generative AI video creations playing below.",
+      stats: [
+        { label: "Formats Produced", value: "UGC + AI" },
+        { label: "Video Quality", value: "4K 60fps" },
+        { label: "Aspect Ratio", value: "9:16 Vertical" },
+        { label: "Retention Hook", value: "First 3 Sec" }
+      ],
+      snapshot: {
+        client: "D2C Brands & Creators",
+        role: "AI Video Creator & UGC Video Editor",
+        objective: "High-Converting Direct-Response Ads",
+        period: "Commercial Campaigns",
+        budget: "Direct-Response Production",
+        scope: "TikTok, IG Reels & Meta Video Ads"
+      },
+      contribution: [
+        {
+          title: "Direct-Response UGC Ad Editing",
+          desc: "Structured real-life creator footage with fast-paced cuts, sound effects, on-screen text callouts, and authentic problem-solution frameworks proven to convert on TikTok & Meta."
+        },
+        {
+          title: "Generative AI Video Synthesis",
+          desc: "Engineered cinematic visual concepts using leading AI video engines, creating breathtaking transitions, surreal backgrounds, and futuristic product narratives."
+        },
+        {
+          title: "Retention Hook Optimization",
+          desc: "Crafted high-impact first-3-second visual and audio hooks that prevent users from scrolling away and maximize average watch time."
+        }
+      ],
+      overview: "I produce scroll-stopping User-Generated Content (UGC) direct-response ads and cinematic AI-generated videos. Combining psychological hooks, authentic creator pacing, kinetic captions, and generative AI visual synthesis to drive higher retention, click-through rates (CTR), and conversions for modern brands.",
+      challenge: "In fast-scrolling social feeds, consumers skip traditional corporate commercials within 2 seconds. Brands struggle to capture authentic trust without relatable UGC content, and lack cinematic visual distinction without cutting-edge AI creative production.",
+      solution: "Developed a dual-engine video workflow: 1) High-converting UGC ad structures featuring relatable creator hooks, problem-agitation, native TikTok/Reels subtitles, and direct calls-to-action; 2) Cutting-edge AI generative video sequences creating futuristic, surreal brand narratives that grab instant curiosity.",
+      interpretation: "Combining relatable UGC authenticity with surreal AI visual sequences delivers maximum viewer retention. UGC ads build immediate organic trust and drive clicks, while AI videos stop the scroll with impossible visuals, delivering higher brand recall and lower cost per impression.",
+      learnings: "Authentic, creator-style UGC hooks convert 2-3x better on direct-response paid campaigns than overly polished studio commercials. Pairing UGC with AI transitions provides the perfect blend of trust and high visual production.",
+      keyServices: [
+        { title: "Direct-Response UGC Editing", desc: "Fast-paced TikTok and Reels style editing with native captions, sound effects, and clear conversion calls-to-action." },
+        { title: "Generative AI Video Production", desc: "Producing cinematic, surreal visual concepts and futuristic brand narratives using cutting-edge AI video tools." },
+        { title: "Retention Hook Design", desc: "Engineering high-impact first-3-second visual and auditory hooks that keep viewers watching till the end." },
+        { title: "Audio Mastering & Sound Design", desc: "Mastering trending audio, custom voiceovers, and SFX that give videos commercial punch and energy." }
+      ],
+      videos: [
+        {
+          type: "ugc",
+          badge: "UGC AD 01",
+          tag: "ugc-badge",
+          src: "videos/ugc-ads-video-1.mp4",
+          title: "Direct-Response UGC Ad 01",
+          desc: "Problem-Agitation & Relatable Hook"
+        },
+        {
+          type: "ugc",
+          badge: "UGC AD 02",
+          tag: "ugc-badge",
+          src: "videos/ugc-ads-video-2.mp4",
+          title: "Product Showcase UGC 02",
+          desc: "Benefit-Driven Social Proof"
+        },
+        {
+          type: "ai",
+          badge: "AI VIDEO 01",
+          tag: "ai-badge",
+          src: "videos/ai-video-1.mp4",
+          title: "AI Visual Narrative 01",
+          desc: "Generative AI Video Synthesis"
+        },
+        {
+          type: "ai",
+          badge: "AI VIDEO 02",
+          tag: "ai-badge",
+          src: "videos/ai-video-2.mp4",
+          title: "AI Motion Concept 02",
+          desc: "Cinematic AI Motion & Lighting"
+        }
+      ]
+    }
+  },
+  {
     id: "video-editing-production",
     title: "Video Editing & AI Video Production",
     category: "Video Editing",
@@ -350,6 +455,8 @@ export const projects = [
       headline: "Creative Video Editing & AI-Powered Visual Storytelling",
       objective: "Content Creation & Visual Branding",
       reportingPeriod: "Commercial Projects",
+      videoSectionTitle: "Video Editing & AI Productions",
+      videoSectionSubtitle: "Explore real video edits and AI visual creations playing with live transitions and audio design.",
       stats: [
         { label: "Editing Software", value: "Pr + Cap" },
         { label: "AI Video Tools", value: "3+" },
@@ -388,6 +495,40 @@ export const projects = [
         { title: "CapCut Trend Content", desc: "Fast-paced, viral short-form video creation tailored specifically for Instagram Reels, TikTok, and YouTube Shorts." },
         { title: "AI Video Generation", desc: "Leveraging cutting-edge AI engines to generate surreal visual sequences, product animations, and creative brand stories." },
         { title: "Post-Production & Sound Design", desc: "Sound effects (SFX) layering, music selection, color grading, and export optimization for maximum viewer retention." }
+      ],
+      videos: [
+        {
+          type: "premiere",
+          badge: "PREMIERE PRO 01",
+          tag: "premiere-badge",
+          src: "videos/edited-first.mp4",
+          title: "Commercial Edit 01",
+          desc: "Kinetic Transitions"
+        },
+        {
+          type: "premiere",
+          badge: "PREMIERE PRO 02",
+          tag: "premiere-badge",
+          src: "videos/edited-second.mp4",
+          title: "Product Showcase 02",
+          desc: "Pacing & Sound FX"
+        },
+        {
+          type: "ai",
+          badge: "AI PRODUCTION 01",
+          tag: "ai-badge",
+          src: "videos/ai-first.mp4",
+          title: "AI Visual Story 01",
+          desc: "AI Video Synthesis"
+        },
+        {
+          type: "ai",
+          badge: "AI PRODUCTION 02",
+          tag: "ai-badge",
+          src: "videos/ai-second.mp4",
+          title: "AI Motion Concept 02",
+          desc: "Cinematic Motion"
+        }
       ]
     }
   }

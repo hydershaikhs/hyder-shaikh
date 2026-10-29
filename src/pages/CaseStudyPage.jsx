@@ -27,6 +27,8 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
         document.title = "art.b Paintings Meta Ads Case Study | Hyder Shaikh";
       } else if (project.id === "fr-pos-leadgen") {
         document.title = "FR Software Solutions POS & Inventory Meta Ads Case Study | Hyder Shaikh";
+      } else if (project.id === "ai-videos-ugc-ads") {
+        document.title = "AI Videos & UGC Ads Case Study | Hyder Shaikh";
       } else {
         document.title = `${project.title} | Hyder Shaikh Portfolio Case Study`;
       }
@@ -163,103 +165,50 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
           </div>
         </section>
 
-        {/* ============ 4. VIDEO REELS SHOWCASE (ONLY FOR VIDEO PROJECTS) ============ */}
-        {isVideoProject && (
+        {/* ============ 4. VIDEO REELS SHOWCASE (IF PROJECT HAS VIDEOS) ============ */}
+        {caseStudy.videos && caseStudy.videos.length > 0 && (
           <section className="creative-showcase-section anim-section-pop">
             <div className="showcase-header-ribbon">
               <span className="ribbon-tag">
-                <Film size={14} /> LIVE 4-VIDEO SHOWCASE
+                <Film size={14} /> LIVE {caseStudy.videos.length}-VIDEO SHOWCASE
               </span>
-              <h2 className="showcase-section-title">Video Editing &amp; AI Productions</h2>
+              <h2 className="showcase-section-title">{caseStudy.videoSectionTitle || "Video Production Showcase"}</h2>
               <p className="showcase-section-subtitle">
-                Explore real video edits and AI visual creations playing with live transitions and audio design.
+                {caseStudy.videoSectionSubtitle || "Explore real video edits and visual creations playing with live transitions and audio design."}
               </p>
             </div>
 
             <div className="mobile-story-deck">
-              {/* Card 1 */}
-              <div className="story-frame-card premiere card-anim-1">
-                <div className="story-frame-speaker"></div>
-                <div className="story-frame-top-bar">
-                  <span className="story-source-badge">
-                    <Clapperboard size={12} /> PREMIERE PRO 01
-                  </span>
-                  <span className="story-dot live"></span>
-                </div>
-                <div className="story-video-wrapper">
-                  <video src={videoUrls.edited1} autoPlay loop muted playsInline controls preload="auto" className="story-video-player" />
-                  <div className="video-hover-hint">
-                    <Volume2 size={14} /> Sound
+              {caseStudy.videos.map((vid, idx) => (
+                <div key={idx} className={`story-frame-card ${vid.type || "premiere"} card-anim-${(idx % 4) + 1}`}>
+                  <div className="story-frame-speaker"></div>
+                  <div className="story-frame-top-bar">
+                    <span className={`story-source-badge ${vid.tag || ""}`}>
+                      {vid.type === "ai" ? <Sparkles size={12} /> : vid.type === "ugc" ? <Camera size={12} /> : <Clapperboard size={12} />} {vid.badge}
+                    </span>
+                    <span className={`story-dot ${vid.type === "ai" ? "live-ai" : vid.type === "ugc" ? "live-ugc" : "live"}`}></span>
+                  </div>
+                  <div className="story-video-wrapper">
+                    <video
+                      src={`${baseUrl}${vid.src}`}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      controls
+                      preload="auto"
+                      className="story-video-player"
+                    />
+                    <div className="video-hover-hint">
+                      <Volume2 size={14} /> Sound
+                    </div>
+                  </div>
+                  <div className={`story-frame-bottom-ribbon ${vid.type === "ai" ? "ai-ribbon" : vid.type === "ugc" ? "ugc-ribbon" : ""}`}>
+                    <div className="ribbon-title">{vid.title}</div>
+                    <div className="ribbon-desc">{vid.desc}</div>
                   </div>
                 </div>
-                <div className="story-frame-bottom-ribbon">
-                  <div className="ribbon-title">Commercial Edit 01</div>
-                  <div className="ribbon-desc">Kinetic Transitions</div>
-                </div>
-              </div>
-
-              {/* Card 2 */}
-              <div className="story-frame-card premiere card-anim-2">
-                <div className="story-frame-speaker"></div>
-                <div className="story-frame-top-bar">
-                  <span className="story-source-badge">
-                    <Clapperboard size={12} /> PREMIERE PRO 02
-                  </span>
-                  <span className="story-dot live"></span>
-                </div>
-                <div className="story-video-wrapper">
-                  <video src={videoUrls.edited2} autoPlay loop muted playsInline controls preload="auto" className="story-video-player" />
-                  <div className="video-hover-hint">
-                    <Volume2 size={14} /> Sound
-                  </div>
-                </div>
-                <div className="story-frame-bottom-ribbon">
-                  <div className="ribbon-title">Product Showcase 02</div>
-                  <div className="ribbon-desc">Pacing &amp; Sound FX</div>
-                </div>
-              </div>
-
-              {/* Card 3 */}
-              <div className="story-frame-card ai card-anim-3">
-                <div className="story-frame-speaker"></div>
-                <div className="story-frame-top-bar">
-                  <span className="story-source-badge ai-badge">
-                    <Sparkles size={12} /> AI PRODUCTION 01
-                  </span>
-                  <span className="story-dot live-ai"></span>
-                </div>
-                <div className="story-video-wrapper">
-                  <video src={videoUrls.ai1} autoPlay loop muted playsInline controls preload="auto" className="story-video-player" />
-                  <div className="video-hover-hint">
-                    <Volume2 size={14} /> Sound
-                  </div>
-                </div>
-                <div className="story-frame-bottom-ribbon ai-ribbon">
-                  <div className="ribbon-title">AI Visual Story 01</div>
-                  <div className="ribbon-desc">AI Video Synthesis</div>
-                </div>
-              </div>
-
-              {/* Card 4 */}
-              <div className="story-frame-card ai card-anim-4">
-                <div className="story-frame-speaker"></div>
-                <div className="story-frame-top-bar">
-                  <span className="story-source-badge ai-badge">
-                    <Sparkles size={12} /> AI PRODUCTION 02
-                  </span>
-                  <span className="story-dot live-ai"></span>
-                </div>
-                <div className="story-video-wrapper">
-                  <video src={videoUrls.ai2} autoPlay loop muted playsInline controls preload="auto" className="story-video-player" />
-                  <div className="video-hover-hint">
-                    <Volume2 size={14} /> Sound
-                  </div>
-                </div>
-                <div className="story-frame-bottom-ribbon ai-ribbon">
-                  <div className="ribbon-title">AI Motion Concept 02</div>
-                  <div className="ribbon-desc">Cinematic Motion</div>
-                </div>
-              </div>
+              ))}
             </div>
           </section>
         )}

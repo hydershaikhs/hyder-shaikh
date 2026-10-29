@@ -592,6 +592,10 @@
   border-color: rgba(0, 240, 255, 0.3);
 }
 
+.story-frame-card.ugc {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
 .story-frame-card.ai {
   border-color: rgba(168, 85, 247, 0.35);
 }
@@ -626,6 +630,11 @@
   border-radius: 4px;
 }
 
+.story-source-badge.ugc-badge {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+}
+
 .story-source-badge.ai-badge {
   color: #c084fc;
   background: rgba(192, 132, 252, 0.15);
@@ -636,6 +645,10 @@
   height: 6px;
   border-radius: 50%;
   background: #00f0ff;
+}
+
+.story-dot.live-ugc {
+  background: #34d399;
 }
 
 .story-dot.live-ai {
@@ -678,6 +691,11 @@
   border-radius: 8px;
   padding: 5px 6px;
   text-align: center;
+}
+
+.story-frame-bottom-ribbon.ugc-ribbon {
+  background: rgba(16, 185, 129, 0.06);
+  border-color: rgba(16, 185, 129, 0.2);
 }
 
 .story-frame-bottom-ribbon.ai-ribbon {
