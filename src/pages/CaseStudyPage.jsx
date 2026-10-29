@@ -180,7 +180,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
               </p>
             </div>
 
-            <div className="mobile-story-deck">
+            <div className={`mobile-story-deck deck-count-${caseStudy.videos.length}`}>
               {caseStudy.videos.map((vid, idx) => (
                 <div key={idx} className={`story-frame-card ${vid.type || "premiere"} card-anim-${(idx % 4) + 1}`}>
                   <div className="story-frame-speaker"></div>
