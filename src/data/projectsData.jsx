@@ -327,7 +327,6 @@ export const projects = [
     category: "Video Editing",
     categoryLabel: "AI VIDEOS & UGC AD PRODUCTION",
     headline: "High-Converting UGC Advertising & Generative AI Video Storytelling",
-    client: "D2C Brands, E-Commerce & Creators",
     objective: "Direct-Response Ads & Viral Content",
     icon: <Sparkles size={24} className="text-accent" />,
     role: "AI Video Creator & UGC Ad Video Editor",
@@ -344,8 +343,7 @@ export const projects = [
     tags: ["UGC Ads", "AI Videos", "Direct Response", "CapCut & Premiere", "TikTok & Reels"],
     tools: ["AI Video Engines", "Adobe Premiere Pro", "CapCut", "Sound Design", "Direct-Response Copy"],
     caseStudy: {
-      client: "D2C Brands, E-Commerce & Creators",
-      category: "AI VIDEOS & UGC AD PRODUCTION",
+        category: "AI VIDEOS & UGC AD PRODUCTION",
       headline: "High-Converting UGC Advertising & Generative AI Video Storytelling",
       objective: "Direct-Response Ads & Viral Content",
       reportingPeriod: "Commercial Video Campaigns",
@@ -358,7 +356,6 @@ export const projects = [
         { label: "Retention Hook", value: "First 3 Sec" }
       ],
       snapshot: {
-        client: "D2C Brands & Creators",
         role: "AI Video Creator & UGC Video Editor",
         objective: "High-Converting Direct-Response Ads",
         period: "Commercial Campaigns",
@@ -432,7 +429,6 @@ export const projects = [
     category: "Video Editing",
     categoryLabel: "VIDEO EDITING & AI CONTENT CREATION",
     headline: "Creative Video Editing & AI-Powered Visual Storytelling",
-    client: "Brands & Digital Creators",
     objective: "Content Creation & Visual Branding",
     icon: <Clapperboard size={24} className="text-accent" />,
     role: "Video Editor & AI Content Creator",
@@ -450,8 +446,7 @@ export const projects = [
     tags: ["Adobe Premiere Pro", "CapCut", "AI Video", "Color Grading", "Social Media Content"],
     tools: ["Adobe Premiere Pro", "CapCut", "AI Video Tools", "Sound Design"],
     caseStudy: {
-      client: "Brands & Digital Creators",
-      category: "VIDEO EDITING & AI CONTENT CREATION",
+        category: "VIDEO EDITING & AI CONTENT CREATION",
       headline: "Creative Video Editing & AI-Powered Visual Storytelling",
       objective: "Content Creation & Visual Branding",
       reportingPeriod: "Commercial Projects",
@@ -464,11 +459,10 @@ export const projects = [
         { label: "Format", value: "Vertical & 16:9" }
       ],
       snapshot: {
-        client: "Brands & Creators",
         role: "Commercial Video Editor & AI Creator",
         objective: "High-Retention Visual Content",
         period: "Commercial Production",
-        budget: "Custom Client Projects",
+        budget: "Commercial Video Production",
         scope: "Premiere Pro, CapCut & AI Engines"
       },
       contribution: [
@@ -513,20 +507,13 @@ export const projects = [
           title: "Product Showcase 02",
           desc: "Pacing & Sound FX"
         },
+
         {
           type: "ai",
           badge: "AI PRODUCTION 01",
           tag: "ai-badge",
-          src: "videos/ai-first.mp4",
-          title: "AI Visual Story 01",
-          desc: "AI Video Synthesis"
-        },
-        {
-          type: "ai",
-          badge: "AI PRODUCTION 02",
-          tag: "ai-badge",
           src: "videos/ai-second.mp4",
-          title: "AI Motion Concept 02",
+          title: "AI Motion Concept 01",
           desc: "Cinematic Motion"
         }
       ]

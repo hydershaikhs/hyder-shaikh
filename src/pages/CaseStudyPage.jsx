@@ -110,10 +110,12 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
         {/* ============ 2. COMPACT SNAPSHOT & TOOLS BAR ============ */}
         <section className="cs-compact-snapshot anim-section-pop">
           <div className="cs-snapshot-grid">
-            <div className="cs-snapshot-item">
-              <span className="cs-snapshot-label">Client</span>
-              <span className="cs-snapshot-value">{snapshot.client}</span>
-            </div>
+            {snapshot.client && (
+              <div className="cs-snapshot-item">
+                <span className="cs-snapshot-label">Client</span>
+                <span className="cs-snapshot-value">{snapshot.client}</span>
+              </div>
+            )}
             <div className="cs-snapshot-item">
               <span className="cs-snapshot-label">My Role</span>
               <span className="cs-snapshot-value">{snapshot.role}</span>
