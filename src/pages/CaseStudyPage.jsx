@@ -285,6 +285,10 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                       muted
                       playsInline
                       controls
+                      controlsList="nodownload noplaybackrate"
+                      disablePictureInPicture
+                      onContextMenu={(e) => e.preventDefault()}
+                      draggable={false}
                       preload="auto"
                       className="story-video-player"
                     />
@@ -399,6 +403,8 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                   src={selectedImage.src}
                   alt={selectedImage.label}
                   className="cs-modal-img"
+                  draggable={false}
+                  onContextMenu={(e) => e.preventDefault()}
                 />
               </div>
 
@@ -466,6 +472,8 @@ const EvidenceItem = ({ item, onSelect }) => {
               alt={item.label}
               className="cs-evidence-img"
               loading="lazy"
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
               onError={() => setImgFailed(true)}
             />
             <div className="cs-evidence-zoom-hint">

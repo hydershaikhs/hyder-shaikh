@@ -28,3 +28,26 @@
 .section:not(#home) {
   scroll-margin-top: 80px;
 }
+/* Global Media Protection: Prevent image/video dragging, long-press save, and selection */
+img, video {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow: hidden;
+}
+
+video::-internal-media-controls-download-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  width: calc(100% + 30px);
+}

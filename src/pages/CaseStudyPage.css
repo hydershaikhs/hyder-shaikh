@@ -969,3 +969,15 @@
     transform: scale(1);
   }
 }
+
+/* Media Shielding */
+.cs-modal-image-wrap {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cs-modal-img {
+  pointer-events: auto;
+  -webkit-touch-callout: none;
+}

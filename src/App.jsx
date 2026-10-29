@@ -21,6 +21,51 @@ function App() {
 
   const [activeCaseStudyId, setActiveCaseStudyId] = useState(getProjectIdFromHash);
 
+  // Prevent right-click, dragging, and saving of screenshots & videos
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      // Check if target is an image, video, or inside media/evidence containers
+      if (
+        e.target.tagName === "IMG" ||
+        e.target.tagName === "VIDEO" ||
+        e.target.closest("img") ||
+        e.target.closest("video") ||
+        e.target.closest(".cs-evidence-card") ||
+        e.target.closest(".cs-modal-dialog") ||
+        e.target.closest(".story-frame-card") ||
+        e.target.closest(".hero-image-wrap") ||
+        e.target.closest(".about-img-frame")
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    const handleDragStart = (e) => {
+      if (e.target.tagName === "IMG" || e.target.tagName === "VIDEO") {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    const handleKeyDown = (e) => {
+      // Prevent Ctrl+S / Cmd+S (Save Page)
+      if ((e.ctrlKey || e.metaKey) && (e.key === "s" || e.key === "S")) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("contextmenu", handleContextMenu);
+    window.addEventListener("dragstart", handleDragStart);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("contextmenu", handleContextMenu);
+      window.removeEventListener("dragstart", handleDragStart);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   useEffect(() => {
     const handleHashChange = () => {
       setActiveCaseStudyId(getProjectIdFromHash());
