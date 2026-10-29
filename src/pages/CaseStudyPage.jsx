@@ -127,12 +127,38 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
       },
     ],
     "fr-software-social-media": [
-      { src: `${imgBase}images/fr-social-content-grid.png`, filename: "fr-social-content-grid.png", label: "B2B Carousel & Infographics", desc: "Brand feature explainers published across LinkedIn, Facebook & Instagram" },
-      { src: `${imgBase}images/fr-social-reach-overview.png`, filename: "fr-social-reach-overview.png", label: "Organic Reach Growth", desc: "+240% organic reach increase and 3.5x profile visits growth" },
+      {
+        src: `${imgBase}images/fr-social/fr-social-1.jpg`,
+        filename: "fr-social-1.jpg",
+        label: "Meta Business Suite Content Calendar",
+        desc: "Daily scheduled publishing and multi-format B2B content crossposted across Facebook & Instagram"
+      },
+      {
+        src: `${imgBase}images/fr-social/fr-social-2.jpg`,
+        filename: "fr-social-2.jpg",
+        label: "Organic Interactions & Watch Time Insights",
+        desc: "301 Content interactions (+138.9%), 114 Facebook visits (+67.6%), and 241 3-sec reel views (+731%)"
+      },
     ],
     "saadgi-wear-social-media": [
-      { src: `${imgBase}images/saadgi-social-showcase.png`, filename: "saadgi-social-showcase.png", label: "E-Commerce Styling Reels", desc: "Fabric drape tutorials and customer inquiry stories on Instagram & TikTok" },
-      { src: `${imgBase}images/saadgi-organic-growth.png`, filename: "saadgi-organic-growth.png", label: "Organic DM Inquiries", desc: "+380% organic discovery driving steady direct message orders" },
+      {
+        src: `${imgBase}images/saadgi/saadgi-1.jpg`,
+        filename: "saadgi-1.jpg",
+        label: "Social Channel Video Analytics",
+        desc: "13.1K Views and 3.7K Engaged Views driven across short-form styling videos (7 Sept – 11 Oct 2026)"
+      },
+      {
+        src: `${imgBase}images/saadgi/saadgi-2.jpg`,
+        filename: "saadgi-2.jpg",
+        label: "Meta Business Suite Reels Publishing",
+        desc: "Consistent luxury modest fashion reels published and crossposted across Instagram & Facebook pages"
+      },
+      {
+        src: `${imgBase}images/saadgi/saadgi-3.jpg`,
+        filename: "saadgi-3.jpg",
+        label: "Organic Engagement & Discovery Insights",
+        desc: "237 Content interactions (+330.9%), 208 non-follower discovery (+511.8%), and 454 3-sec views (+42.3%)"
+      },
     ],
   };
 
@@ -323,7 +349,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
               <span className="cs-header-tag">Evidence Records</span>
             </div>
 
-            <div className="cs-evidence-grid">
+            <div className={`cs-evidence-grid evidence-count-${evidenceItems.length}`}>
               {evidenceItems.map((item, i) => (
                 <EvidenceItem key={i} item={item} onSelect={setSelectedImage} />
               ))}

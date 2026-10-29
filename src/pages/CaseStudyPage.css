@@ -347,19 +347,40 @@
 /* ==================== 5. EVIDENCE & CREATIVES ROW (COMPACT) ==================== */
 .cs-evidence-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
+  width: 100%;
+}
+
+.cs-evidence-grid.evidence-count-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cs-evidence-grid.evidence-count-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.cs-evidence-grid.evidence-count-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 @media (max-width: 1050px) {
-  .cs-evidence-grid {
+  .cs-evidence-grid.evidence-count-4,
+  .cs-evidence-grid.evidence-count-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
   }
 }
 
 @media (max-width: 580px) {
-  .cs-evidence-grid {
+  .cs-evidence-grid.evidence-count-4,
+  .cs-evidence-grid.evidence-count-3,
+  .cs-evidence-grid.evidence-count-2 {
     grid-template-columns: 1fr;
+    max-width: 100%;
   }
 }
 
