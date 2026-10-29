@@ -2,12 +2,29 @@ import { useEffect, useRef, useState } from "react";
 import {
   ArrowLeft, Target, TrendingUp, ShieldCheck, CheckCircle2,
   Clapperboard, Sparkles, Film, ArrowRight,
-  Volume2, BarChart2, Camera, Lightbulb, AlertCircle, Wrench, Layers
+  Volume2, BarChart2, Camera, Lightbulb, AlertCircle, Wrench, Layers, X
 } from "lucide-react";
 import "./CaseStudyPage.css";
 
 const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
   const pageRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+    if (selectedImage) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [selectedImage]);
 
   // Compute safe base URL for both Vercel and GitHub Pages
   const rawBase = import.meta.env.BASE_URL || "/";
@@ -308,7 +325,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
 
             <div className="cs-evidence-grid">
               {evidenceItems.map((item, i) => (
-                <EvidenceItem key={i} item={item} />
+                <EvidenceItem key={i} item={item} onSelect={setSelectedImage} />
               ))}
             </div>
           </section>
@@ -335,6 +352,36 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
               ))}
             </div>
           </section>
+        )}
+
+        {/* ============ EVIDENCE LIGHTBOX MODAL POPUP ============ */}
+        {selectedImage && (
+          <div className="cs-modal-backdrop" onClick={() => setSelectedImage(null)}>
+            <div className="cs-modal-dialog" onClick={(e) => e.stopPropagation()}>
+              <button
+                type="button"
+                className="cs-modal-close-btn"
+                onClick={() => setSelectedImage(null)}
+                aria-label="Close Preview"
+                title="Close (Esc)"
+              >
+                <X size={20} />
+              </button>
+              
+              <div className="cs-modal-image-wrap">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.label}
+                  className="cs-modal-img"
+                />
+              </div>
+
+              <div className="cs-modal-info">
+                <h4 className="cs-modal-title">{selectedImage.label}</h4>
+                {selectedImage.desc && <p className="cs-modal-desc">{selectedImage.desc}</p>}
+              </div>
+            </div>
+          </div>
         )}
 
         {/* ============ 8. FOOTER CALL TO ACTION ============ */}
@@ -374,29 +421,36 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
   );
 };
 
-// Compact Evidence Item
-const EvidenceItem = ({ item }) => {
+// Compact Evidence Item with in-page popup trigger
+const EvidenceItem = ({ item, onSelect }) => {
   const [imgFailed, setImgFailed] = useState(false);
 
   return (
     <div className="cs-evidence-card">
       {!imgFailed ? (
-        <a href={item.src} target="_blank" rel="noopener noreferrer" className="cs-evidence-link" aria-label={`Open ${item.label}`}>
-          <img
-            src={item.src}
-            alt={item.label}
-            className="cs-evidence-img"
-            loading="lazy"
-            onError={() => setImgFailed(true)}
-          />
-          <div className="cs-evidence-zoom-hint">
-              <span>View Full Screenshot ↗</span>
+        <button
+          type="button"
+          onClick={() => onSelect && onSelect(item)}
+          className="cs-evidence-btn"
+          aria-label={`Open ${item.label}`}
+        >
+          <div className="cs-evidence-img-container">
+            <img
+              src={item.src}
+              alt={item.label}
+              className="cs-evidence-img"
+              loading="lazy"
+              onError={() => setImgFailed(true)}
+            />
+            <div className="cs-evidence-zoom-hint">
+              <span>View Full ↗</span>
             </div>
+          </div>
           <div className="cs-evidence-overlay-label">
             <span className="cs-evidence-title">{item.label}</span>
             {item.desc && <span className="cs-evidence-sub">{item.desc}</span>}
           </div>
-        </a>
+        </button>
       ) : (
         <div className="cs-evidence-pending-box">
           <div className="cs-pending-icon-row">
