@@ -55,15 +55,59 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
 
   const imgBase = baseUrl;
 
-  // Compact Evidence mapping (max 2-3 items per project)
+  // Genuine Evidence records mapping with high-res Ads Manager screenshots
   const evidenceMap = {
     "art-b-meta-ads": [
-      { src: `${imgBase}images/artb-campaign-overview.png`, filename: "artb-campaign-overview.png", label: "Ads Manager Delivery Record", desc: "$4.26 spend · 5,295 impressions · 4,651 reach · 20 conversations" },
-      { src: `${imgBase}images/artb-ad-creative-1.png`, filename: "artb-ad-creative-1.png", label: "Designed Ad Creative Post", desc: "Custom visual post designed to showcase artwork aesthetic and prompt messages" },
+      {
+        src: `${imgBase}images/artb/artb-screenshot-4.jpg`,
+        filename: "artb-screenshot-4.jpg",
+        label: "Ads Manager Delivery & KPI Performance",
+        desc: "$4.26 spend · 5,295 impressions · 35 link clicks · $0.12 CPC · 20 messaging conversations"
+      },
+      {
+        src: `${imgBase}images/artb/artb-screenshot-1.jpg`,
+        filename: "artb-screenshot-1.jpg",
+        label: "Advantage+ Sales Campaign Setup",
+        desc: "Campaign objective Sales with recommended 100/100 Meta Ads setup score"
+      },
+      {
+        src: `${imgBase}images/artb/artb-screenshot-2.jpg`,
+        filename: "artb-screenshot-2.jpg",
+        label: "Detailed Interest & Demographic Targeting",
+        desc: "Audience targeting across Pakistan for Interior Design, Painting, Modern Art & Home Furnishings"
+      },
+      {
+        src: `${imgBase}images/artb/artb-screenshot-3.jpg`,
+        filename: "artb-screenshot-3.jpg",
+        label: "Messaging Destination & Business Assets",
+        desc: "Direct message conversion destination connected to ArtsH.B Facebook & Instagram profiles"
+      },
     ],
     "fr-pos-leadgen": [
-      { src: `${imgBase}images/fr-pos-meta-ads-performance.png`, filename: "fr-pos-meta-ads-performance.png", label: "Ads Manager Performance", desc: "16 messaging conversations at Rs 77.54 CPL from Rs 1,240.69 spend" },
-      { src: `${imgBase}images/fr-urdu-creative.png`, filename: "fr-urdu-creative.png", label: "Urdu Advertising Creative", desc: "Custom-designed Urdu post targeting retail shop & store owners" },
+      {
+        src: `${imgBase}images/fr/fr-screenshot-4.jpg`,
+        filename: "fr-screenshot-4.jpg",
+        label: "Ads Manager Performance & Active Urdu Ad",
+        desc: "Live campaign delivery showing 5 messaging leads at Rs 57.44 CPL with Rs 300 daily budget"
+      },
+      {
+        src: `${imgBase}images/fr/fr-screenshot-1.jpg`,
+        filename: "fr-screenshot-1.jpg",
+        label: "FR Lead Generation Campaign Setup",
+        desc: "Advantage+ Leads Campaign with CBO budget distribution and 100/100 recommended setup"
+      },
+      {
+        src: `${imgBase}images/fr/fr-screenshot-2.jpg`,
+        filename: "fr-screenshot-2.jpg",
+        label: "Multi-City Geographic Targeting",
+        desc: "Targeted retail hubs across Faisalabad, Hyderabad, Islamabad, and Karachi (+80km)"
+      },
+      {
+        src: `${imgBase}images/fr/fr-screenshot-3.jpg`,
+        filename: "fr-screenshot-3.jpg",
+        label: "B2B Retail & Wholesale Detailed Targeting",
+        desc: "Focused on Small Business Owners, Wholesale Retail & Retail Industry decision-makers"
+      },
     ],
     "fr-software-social-media": [
       { src: `${imgBase}images/fr-social-content-grid.png`, filename: "fr-social-content-grid.png", label: "B2B Carousel & Infographics", desc: "Brand feature explainers published across LinkedIn, Facebook & Instagram" },
@@ -345,8 +389,12 @@ const EvidenceItem = ({ item }) => {
             loading="lazy"
             onError={() => setImgFailed(true)}
           />
+          <div className="cs-evidence-zoom-hint">
+              <span>View Full Screenshot ↗</span>
+            </div>
           <div className="cs-evidence-overlay-label">
-            <span>{item.label}</span>
+            <span className="cs-evidence-title">{item.label}</span>
+            {item.desc && <span className="cs-evidence-sub">{item.desc}</span>}
           </div>
         </a>
       ) : (
