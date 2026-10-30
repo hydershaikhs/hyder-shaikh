@@ -1,4 +1,4 @@
-import { Clapperboard, Camera, Sparkles, BookOpen } from 'lucide-react';
+import { Target, Palette, Film, GraduationCap } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import heroImg from '../assets/hero.png';
 import './About.css';
@@ -12,38 +12,35 @@ const About = () => {
         {/* ============ TOP HEADER ============ */}
         <Reveal>
           <div className="about-top-header">
-            <span className="about-top-pill">ABOUT HYDER</span>
+            <span className="about-top-pill">ABOUT ME</span>
             <h2 className="about-top-title">
-              Short-Form Video Editor &amp; <span className="gradient-text">Creative Ad Maker.</span>
+              Driven by Strategy, Creativity &amp; <span className="gradient-text">Real Results.</span>
             </h2>
             <p className="about-top-subtitle">
-              Helping e-commerce brands, DTC companies, and local businesses turn video into a consistent conversion channel.
+              A hands-on Digital Marketer and Creative Media Buyer focused on turning advertising spend into qualified leads and measurable growth.
             </p>
           </div>
         </Reveal>
 
-        {/* ============ 3-COLUMN MAIN STAGE ============ */}
+        {/* ============ 3-COLUMN MAIN STAGE (CENTER RECTANGLE IMAGE) ============ */}
         <Reveal delay={100}>
           <div className="about-stage-grid">
-            {/* ---- LEFT COLUMN: HONEST FIRST-PERSON BIO ---- */}
+            {/* ---- LEFT COLUMN: AUTHENTIC BIO & ROLE ---- */}
             <div className="about-left-col">
               <span className="about-label-badge">WHO I AM</span>
               <h3 className="about-bio-title">Hyder Shaikh</h3>
               <p className="about-bio-desc">
-                I'm a short-form video editor and ad creative maker based in Pakistan, currently working full-time at <strong>FR Software Solution</strong> (since September 2026) and taking on freelance projects and monthly retainers worldwide.
+                I'm a performance-focused <strong>Digital Marketer</strong> currently working at <strong>FR Software Solution</strong>. I specialize in planning, launching, and managing Meta Ads campaigns that connect businesses with genuine clients.
               </p>
               <p className="about-bio-desc">
-                My work focuses on direct-response video: taking raw footage, product shots, or phone recordings and turning them into fast-paced, high-retention Reels, TikToks, and UGC ads that actually make viewers stop scrolling.
-              </p>
-              <p className="about-bio-desc">
-                <strong>The Bilingual Advantage (English + Urdu):</strong> I write and edit in both languages. This gives me a unique edge for brands targeting domestic Pakistani buyers as well as overseas South Asian diaspora businesses in the UK, USA, and Gulf region.
+                I handle the full advertising lifecycle: from audience targeting and budget allocation in Meta Ads Manager to designing custom bilingual creatives (Urdu &amp; English) and producing high-retention video content.
               </p>
 
-              {/* Current Role Callout */}
+              {/* Genuine Current Role Callout (No fake years!) */}
               <div className="about-role-callout">
-                <span className="about-role-callout-tag">Active Role</span>
-                <h4 className="about-role-callout-title">Video Editor &amp; Marketer @ FR Software Solution</h4>
-                <p className="about-role-callout-sub">Sep 2026 – Present · Managing video editing, UGC creatives &amp; Meta ad delivery</p>
+                <span className="about-role-callout-tag">Current Position</span>
+                <h4 className="about-role-callout-title">Digital Marketer @ FR Software Solution</h4>
+                <p className="about-role-callout-sub">Leading Meta Ads, creative design &amp; multi-channel social growth</p>
               </div>
             </div>
 
@@ -55,61 +52,61 @@ const About = () => {
                   <div className="about-rect-img-wrap">
                     <img
                       src={heroImg}
-                      alt="Hyder Shaikh - Short-Form Video Editor"
+                      alt="Hyder Shaikh — Performance Digital Marketer"
                       className="about-rect-img"
                     />
                   </div>
                 </div>
                 <div className="about-center-badge">
                   <span className="pulse-dot"></span>
-                  <span>Open for Projects &amp; Retainers</span>
+                  <span>Active &amp; Open to Opportunities</span>
                 </div>
               </div>
             </div>
 
-            {/* ---- RIGHT COLUMN: 3 CORE SKILLS + HONEST BACKGROUND BLOCK ---- */}
+            {/* ---- RIGHT COLUMN: 4 CORE EXPERTISE CARDS ---- */}
             <div className="about-right-col">
-              {/* Card 1: Video Editing */}
+              {/* Card 1: Meta Ads */}
               <div className="about-feature-card">
                 <div className="about-feature-icon">
-                  <Clapperboard size={20} />
+                  <Target size={20} />
                 </div>
                 <div className="about-feature-body">
-                  <h4>Short-Form Video Editing</h4>
-                  <p>Adobe Premiere Pro and CapCut timelines engineered for retention: custom SFX, animated kinetic subtitles, and punchy visual hooks.</p>
+                  <h4>Meta Ads Strategy &amp; Setup</h4>
+                  <p>Campaign structuring, audience segmentation, Leads &amp; Sales objectives, and clear Ads Manager performance tracking.</p>
                 </div>
               </div>
 
-              {/* Card 2: UGC Ad Creatives */}
+              {/* Card 2: Ad Creative Design */}
               <div className="about-feature-card">
                 <div className="about-feature-icon">
-                  <Camera size={20} />
+                  <Palette size={20} />
                 </div>
                 <div className="about-feature-body">
-                  <h4>UGC-Style Ad Creatives</h4>
-                  <p>Direct-response video concepts and ad designs tailored for e-commerce, DTC brands, and local retail stores.</p>
+                  <h4>Ad Creative &amp; Post Design</h4>
+                  <p>Custom-designed advertising visuals and bilingual (English &amp; Urdu) copy tailored to capture local and regional buyer intent.</p>
                 </div>
               </div>
 
-              {/* Card 3: Meta Ads Setup */}
+              {/* Card 3: Video Production */}
               <div className="about-feature-card">
                 <div className="about-feature-icon">
-                  <Sparkles size={20} />
+                  <Film size={20} />
                 </div>
                 <div className="about-feature-body">
-                  <h4>Meta Ads Setup (Add-on)</h4>
-                  <p>Advantage+ and messaging campaigns setup in Meta Ads Manager to distribute your video creatives effectively.</p>
+                  <h4>Video Editing &amp; Reels</h4>
+                  <p>Dynamic short-form video content, kinetic transitions, and sound design created in Premiere Pro and CapCut.</p>
                 </div>
               </div>
 
-              {/* Card 4: Background block (Hafiz-e-Quran & SMIT) */}
+              {/* Card 4: Credentials & Discipline */}
               <div className="about-feature-card highlight-card">
                 <div className="about-feature-icon">
-                  <BookOpen size={20} />
+                  <GraduationCap size={20} />
                 </div>
                 <div className="about-feature-body">
-                  <h4>Background &amp; Discipline</h4>
-                  <p><strong>Hafiz-e-Quran</strong> and certified in Digital Marketing from <strong>Saylani Mass IT Training (SMIT)</strong> — bringing strong discipline, honesty, and consistent work ethic to every client collaboration.</p>
+                  <h4>Certification &amp; Dedication</h4>
+                  <p>Certified in Digital Marketing from <strong>Saylani Mass IT Training (SMIT)</strong> and <strong>Hafiz-e-Quran</strong> — bringing deep focus and integrity to every project.</p>
                 </div>
               </div>
             </div>

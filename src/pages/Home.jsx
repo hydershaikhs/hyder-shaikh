@@ -1,115 +1,15 @@
-import { useState, useRef } from 'react';
-import { Film, Volume2, Calendar, CheckCircle2, Clapperboard, Camera, Play, Sparkles } from 'lucide-react';
-import { WhatsAppIcon } from '../components/SocialIcons';
+import { ArrowRight, Target, Search, PenTool, TrendingUp, Users, Zap, Award, Sparkles } from 'lucide-react';
 import './Home.css';
 import heroImg from '../assets/hero.png';
 import Reveal from '../components/Reveal';
 
-const heroReels = [
-  {
-    id: "reel-1",
-    src: "videos/ve-premiere-1.mp4",
-    title: "Short-Form Video Edit",
-    tool: "Premiere Pro",
-    tag: "Hook & Sound Design",
-    desc: "Kinetic subtitles, dynamic cuts & custom sound FX"
-  },
-  {
-    id: "reel-2",
-    src: "videos/ugc-ads-video-1.mp4",
-    title: "Direct-Response UGC Ad",
-    tool: "UGC Ad Creative",
-    tag: "High Conversion",
-    desc: "Scroll-stopping hook built for TikTok & Meta feeds"
-  },
-  {
-    id: "reel-3",
-    src: "videos/ve-ai-capcut.mp4",
-    title: "AI Video & CapCut",
-    tool: "AI + CapCut",
-    tag: "Bilingual Creative",
-    desc: "Generative AI motion & retention-first pacing"
-  }
-];
-
-const HeroReelCard = ({ reel, rawBase }) => {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef(null);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
-      } else {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }
-  };
-
-  const toggleMute = (e) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
-
-  return (
-    <div className="hero-reel-card" onClick={togglePlay}>
-      <div className="hero-reel-speaker" />
-      <div className="hero-reel-top">
-        <span className="hero-reel-badge">{reel.tool}</span>
-        <span className="hero-reel-dot" />
-      </div>
-
-      <div className="hero-reel-video-wrap">
-        <video
-          ref={videoRef}
-          src={`${rawBase}${reel.src}`}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controlsList="nodownload noplaybackrate"
-          disablePictureInPicture
-          draggable={false}
-          onContextMenu={(e) => e.preventDefault()}
-          preload="metadata"
-          className="hero-reel-video"
-        />
-
-        <button
-          type="button"
-          className="hero-reel-mute-btn"
-          onClick={toggleMute}
-          title={isMuted ? "Click for Sound" : "Mute Sound"}
-          aria-label={isMuted ? "Unmute video" : "Mute video"}
-        >
-          <Volume2 size={13} />
-          <span>{isMuted ? "Sound Off" : "Sound On"}</span>
-        </button>
-
-        {!isPlaying && (
-          <div className="hero-reel-play-overlay">
-            <Play size={28} />
-          </div>
-        )}
-      </div>
-
-      <div className="hero-reel-bottom">
-        <div className="hero-reel-title">{reel.title}</div>
-        <div className="hero-reel-desc">{reel.desc}</div>
-      </div>
-    </div>
-  );
-};
-
 const Home = () => {
-  const rawBase = import.meta.env.BASE_URL || "/";
-  const baseUrl = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div id="home" className="home-hero-wrap">
@@ -124,163 +24,155 @@ const Home = () => {
         <div className="container">
           <div className="hero-grid">
             <div className="hero-content">
-              {/* Availability Label */}
               <span className="hero-label">
-                Open for freelance projects &amp; monthly retainers
+                Available For Remote &amp; Full-Time Roles
               </span>
 
-              {/* Specific Problem-Solving Headline */}
               <h1 className="hero-title">
-                Short-Form Video Editor &amp; Ad Creative Maker for{' '}
-                <span className="gradient-text">E-commerce &amp; Local Brands</span>
-                <span className="hero-title-sub-bilingual"> (English + Urdu)</span>
+                I Build <span className="gradient-text">Data-Driven</span> Marketing That Scales Real Growth.
               </h1>
 
-              {/* Clear Value Proposition Subheadline */}
               <p className="hero-description">
-                I craft scroll-stopping Reels, TikToks, and UGC-style ad creatives that hook viewers in the first 3 seconds, keep retention high, and drive viewers to take action.
+                I'm <strong>Hyder Shaikh</strong>, a results-driven Digital Marketer currently working at <strong>FR Software Solution</strong>, with hands-on experience in Meta Ads, Video editing, and Social Media Management.
               </p>
 
-              {/* Conversion-Focused CTAs */}
               <div className="hero-actions">
-                <a
-                  href="https://wa.me/923292061421"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary-glow btn-pill hero-btn-main btn-wa-hero"
+                <a 
+                  href="#projects" 
+                  className="btn btn-primary-glow btn-pill hero-btn-main"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo('projects');
+                  }}
                 >
-                  <WhatsAppIcon size={18} />
-                  <span>WhatsApp Me</span>
+                  View Projects <ArrowRight size={16} />
                 </a>
-                <a
-                  href="https://wa.me/923292061421?text=Hi%20Hyder,%20I%20would%20like%20to%20book%20a%20free%20call%20to%20discuss%20a%20project."
-                  target="_blank"
-                  rel="noreferrer"
+                <a 
+                  href="#contact" 
                   className="btn btn-outline btn-pill hero-btn-sub"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo('contact');
+                  }}
                 >
-                  <Calendar size={16} />
-                  <span>Book a Free Call</span>
+                  Let's Work Together
                 </a>
               </div>
 
-              {/* Primary Focus Tags */}
               <div className="hero-tools">
-                <span className="hero-tools-label">Core Focus:</span>
-                <span className="hero-tool-chip">Short-Form Video Editing</span>
-                <span className="hero-tool-chip">UGC-Style Ad Creatives</span>
-                <span className="hero-tool-chip">Meta Ads (Add-on)</span>
+                <span className="hero-tools-label">Expertise:</span>
+                <span className="hero-tool-chip">Meta Ads &amp; UGC</span>
+                <span className="hero-tool-chip">Social Media Growth</span>
+                <span className="hero-tool-chip">Reels &amp; YouTube Editing</span>
               </div>
             </div>
 
-            {/* Hero Right Visual (Enlarged Original Design) */}
             <div className="hero-visual">
               <div className="hero-ring"></div>
               <div className="hero-portrait-wrap">
                 <div className="hero-portrait">
-                  <img src={heroImg} alt="Hyder Shaikh - Short-Form Video Editor & Ad Creative Maker" />
+                  <img src={heroImg} alt="Hyder Shaikh - Performance Digital Marketer" />
                 </div>
               </div>
               <div className="hero-badge badge-1">
-                <Clapperboard size={18} /> Short-Form Video Editor
+                <Target size={18} /> Meta Ads Specialist
               </div>
               <div className="hero-badge badge-2">
-                <Sparkles size={18} /> English + Urdu Bilingual
+                <Users size={18} /> Social Media Manager
               </div>
               <div className="hero-badge badge-3">
-                <Camera size={18} /> UGC Ad Creative Maker
+                <PenTool size={18} /> Video Editing &amp; Reels
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* ============ HERO VIDEO SHOWCASE EMBED ============ */}
-          <Reveal delay={120}>
-            <div className="hero-reels-showcase-wrap">
-              <div className="hero-reels-header">
-                <span className="hero-reels-tag">
-                  <Film size={14} /> LIVE CREATIVE SHOWCASE
-                </span>
-                <h2 className="hero-reels-title">Real Short-Form Edits &amp; UGC Ads</h2>
-                <p className="hero-reels-subtitle">
-                  Click any reel to play or pause. Audio is muted by default for a seamless browsing experience.
-                </p>
+      {/* ============ QUICK STATS ============ */}
+      <section className="quick-stats">
+        <div className="container">
+          <Reveal>
+            <div className="quick-stats-grid">
+              <div className="quick-stat">
+                <div className="quick-stat-value">FR</div>
+                <div className="quick-stat-label">Software Solution<br />Digital Marketer (Present)</div>
               </div>
-
-              <div className="hero-reels-grid">
-                {heroReels.map((reel) => (
-                  <HeroReelCard key={reel.id} reel={reel} rawBase={baseUrl} />
-                ))}
+              <div className="quick-stat-divider"></div>
+              <div className="quick-stat">
+                <div className="quick-stat-value">Saadgi</div>
+                <div className="quick-stat-label">E-Commerce Brand<br />Social Media &amp; Content</div>
+              </div>
+              <div className="quick-stat-divider"></div>
+              <div className="quick-stat">
+                <div className="quick-stat-value">SMIT</div>
+                <div className="quick-stat-label">Saylani Mass IT<br />Certified Digital Marketer</div>
+              </div>
+              <div className="quick-stat-divider"></div>
+              <div className="quick-stat">
+                <div className="quick-stat-value">ROAS</div>
+                <div className="quick-stat-label">Data-Driven Metrics<br />CPM, CPC, CTR &amp; ROI</div>
               </div>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ============ 3 CORE SERVICES ============ */}
+      {/* ============ WHY WORK WITH ME ============ */}
       <section className="section why-section">
         <div className="container">
-          <div className="services-cleanup-header">
-            <span className="section-tag">FOCUSED CAPABILITIES</span>
-            <h2 className="section-title-center">What I Do Best for Your Brand</h2>
-            <p className="section-subtitle-center">
-              Instead of spreading thin across a dozen generic platforms, I solve one high-impact bottleneck: turning video footage and product concepts into high-converting attention assets.
-            </p>
-          </div>
-
-          <div className="services-three-grid">
-            {/* Service 1: Short-form Video Editing */}
-            <Reveal delay={50}>
-              <div className="service-three-card">
-                <div className="service-three-icon">
-                  <Clapperboard size={24} className="text-accent" />
-                </div>
-                <span className="service-three-pill">PRIMARY OFFER</span>
-                <h3 className="service-three-title">Short-Form Video Editing</h3>
-                <p className="service-three-desc">
-                  High-retention video editing in Adobe Premiere Pro and CapCut for Instagram Reels, TikTok, and YouTube Shorts. Built around proven 3-second hook structures, smooth transitions, kinetic subtitles, and synchronized sound design.
+          <div className="split-grid">
+            <Reveal>
+              <div>
+                <span className="section-tag">THE COMPETITIVE EDGE</span>
+                <h2 className="section-title-left">Why Work<br />With Me?</h2>
+                <p className="text-muted" style={{ fontSize: '1.08rem', marginBottom: '32px', lineHeight: '1.8' }}>
+                  In a crowded digital space, generic posts and poorly targeted ads waste valuable budget. I combine analytical ad metrics with scroll-stopping UGC creatives, strategic content calendars, and high-retention video editing to deliver measurable marketing results.
                 </p>
-                <ul className="service-three-points">
-                  <li><CheckCircle2 size={15} /> First 3-second visual &amp; audio hook engineering</li>
-                  <li><CheckCircle2 size={15} /> Kinetic animated captions &amp; on-screen callouts</li>
-                  <li><CheckCircle2 size={15} /> Layered sound design (SFX, risers, background pacing)</li>
+                <ul className="why-list">
+                  <li className="why-item">
+                    <div className="why-icon-box">
+                      <Target size={22} className="text-accent" />
+                    </div>
+                    <div>
+                      <h4>High-Converting Meta Ads &amp; UGC</h4>
+                      <p>Full-funnel Facebook and Instagram ad campaigns, direct-response UGC creative testing, and continuous optimization of CPM, CPC, CTR, and ROAS.</p>
+                    </div>
+                  </li>
+                  <li className="why-item">
+                    <div className="why-icon-box">
+                      <Users size={22} className="text-accent" />
+                    </div>
+                    <div>
+                      <h4>Multi-Platform Social Media Strategy</h4>
+                      <p>End-to-end management across Facebook, Instagram, LinkedIn, TikTok, YouTube &amp; Pinterest with structured content calendars and branded post designs.</p>
+                    </div>
+                  </li>
+                  <li className="why-item">
+                    <div className="why-icon-box">
+                      <Zap size={22} className="text-accent" />
+                    </div>
+                    <div>
+                      <h4>High-Retention Video Editing</h4>
+                      <p>Dynamic Reels, TikToks, and YouTube video editing with kinetic subtitles, retention hooks, and sound design built to engage and convert.</p>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </Reveal>
 
-            {/* Service 2: UGC-Style Ad Creatives */}
-            <Reveal delay={120}>
-              <div className="service-three-card featured-service-card">
-                <div className="service-three-icon">
-                  <Camera size={24} className="text-accent" />
-                </div>
-                <span className="service-three-pill accent-pill">HIGH CONVERTING</span>
-                <h3 className="service-three-title">UGC-Style Ad Creatives</h3>
-                <p className="service-three-desc">
-                  Authentic, creator-style direct-response video ads for e-commerce and DTC brands. Crafted in both English and Urdu to resonate deeply with domestic audiences and South Asian diaspora consumers in the US, UK, and UAE.
+            <Reveal delay={150}>
+              <div className="quote-card">
+                <div className="quote-mark">"</div>
+                <p className="quote-text">
+                  "Hyder manages multi-platform social media operations, crafts high-converting UGC video creatives, and executes Meta Ads campaigns that drive tangible business reach and sales."
                 </p>
-                <ul className="service-three-points">
-                  <li><CheckCircle2 size={15} /> Problem-agitation-solution direct-response frameworks</li>
-                  <li><CheckCircle2 size={15} /> English and Urdu bilingual scripting &amp; typography</li>
-                  <li><CheckCircle2 size={15} /> Creative testing variations for paid social feeds</li>
-                </ul>
-              </div>
-            </Reveal>
-
-            {/* Service 3: Meta Ads Setup (Add-on) */}
-            <Reveal delay={190}>
-              <div className="service-three-card">
-                <div className="service-three-icon">
-                  <Sparkles size={24} className="text-accent" />
+                <div className="quote-author">
+                  <div className="quote-avatar">FR</div>
+                  <div>
+                    <h5 className="quote-name">FR Software Solutions</h5>
+                    <p className="quote-role">Active Digital Marketer &amp; Content Strategist</p>
+                  </div>
                 </div>
-                <span className="service-three-pill">ADD-ON SERVICE</span>
-                <h3 className="service-three-title">Meta Ads Campaign Setup</h3>
-                <p className="service-three-desc">
-                  An integrated technical add-on to launch your video creatives effectively. Complete campaign configuration in Meta Ads Manager for Leads and Sales objectives with proper pixel events, audience targeting, and delivery tracking.
-                </p>
-                <ul className="service-three-points">
-                  <li><CheckCircle2 size={15} /> Advantage+ and custom campaign structuring</li>
-                  <li><CheckCircle2 size={15} /> Direct WhatsApp / Messaging conversion flows</li>
-                  <li><CheckCircle2 size={15} /> Transparent reporting on spend, impressions &amp; CPL</li>
-                </ul>
               </div>
             </Reveal>
           </div>

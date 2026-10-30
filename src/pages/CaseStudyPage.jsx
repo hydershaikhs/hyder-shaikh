@@ -242,12 +242,12 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
         <section className="cs-unified-section anim-details-in">
           <div className="cs-challenge-solution-grid">
             <div className="cs-strategy-block challenge-block">
-              <div className="cs-block-badge challenge">PROBLEM</div>
+              <div className="cs-block-badge challenge">THE CHALLENGE</div>
               <h4>Business &amp; Market Obstacle</h4>
               <p>{caseStudy.challenge}</p>
             </div>
             <div className="cs-strategy-block solution-block">
-              <div className="cs-block-badge solution">MY APPROACH</div>
+              <div className="cs-block-badge solution">MY STRATEGY</div>
               <h4>Execution &amp; Tactical Approach</h4>
               <p>{caseStudy.solution}</p>
             </div>
@@ -310,7 +310,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
         <section className="cs-unified-section">
           <div className="cs-section-header">
             <h3 className="cs-section-title">
-              <BarChart2 size={18} className="text-accent" /> Results &amp; Final Outcome
+              <BarChart2 size={18} className="text-accent" /> Verified Results &amp; Performance
             </h3>
             <span className="cs-header-tag">Genuine Data</span>
           </div>

@@ -71,7 +71,7 @@ const Contact = () => {
               </p>
 
               <div className="contact-social-row">
-                <a href="https://wa.me/923292061421" target="_blank" rel="noreferrer" className="contact-icon-btn" title="WhatsApp" aria-label="WhatsApp">
+                <a href="https://wa.me/923266739989" target="_blank" rel="noreferrer" className="contact-icon-btn" title="WhatsApp" aria-label="WhatsApp">
                   <WhatsAppIcon size={20} />
                 </a>
                 <a href="https://www.linkedin.com/in/hydershaikhofficial" target="_blank" rel="noreferrer" className="contact-icon-btn" title="LinkedIn" aria-label="LinkedIn">
@@ -118,9 +118,9 @@ const Contact = () => {
                       className={!form.subject ? "cf-select-placeholder" : "cf-select-active"}
                     >
                       <option value="" disabled>Select a Service You Need *</option>
-                      <option value="Short-Form Video Editing">Short-Form Video Editing (Reels / TikTok)</option>
-                      <option value="UGC-Style Ad Creative">UGC-Style Ad Creative Production</option>
                       <option value="Meta Ads">Meta Ads (Facebook &amp; Instagram Advertising)</option>
+                      <option value="Social Media Management">Social Media Management &amp; Content Strategy</option>
+                      <option value="Video Editing">Video Editing &amp; Reels Production</option>
                       <option value="Other Services">Other Services / Custom Project Inquiry</option>
                     </select>
                   </div>
