@@ -249,7 +249,7 @@ const Navbar = () => {
             <FacebookIcon size={18} />
           </a>
           <a
-            href="https://wa.me/923266739989"
+            href="https://wa.me/923292061421"
             target="_blank"
             rel="noreferrer"
             className="mobile-social-icon"

@@ -4,32 +4,32 @@ import Reveal from "../components/Reveal";
 
 const experiences = [
   {
-    role: "Digital Marketer & Media Buyer",
+    role: "Short-Form Video Editor & Digital Marketer",
     company: "FR Software Solution",
     period: "SEP 2026 – PRESENT",
     type: "FULL-TIME",
     isCurrent: true,
-    description: "Managing full-funnel Meta Ads, video production, and organic social growth to drive leads and sales.",
+    description: "Responsible for in-house video editing, UGC ad creative production, and Meta Ads setup to generate qualified B2B software inquiries.",
     highlights: [
-      "Manage Meta Ads (FB & IG) optimized for ROAS, lower CPA, and qualified leads.",
-      "Produce scroll-stopping UGC video and image creatives for direct-response ads.",
-      "Execute monthly multi-channel content strategies across Facebook, Instagram, and LinkedIn."
+      "Edit fast-paced product explainers, feature Reels, and kinetic testimonial clips in Adobe Premiere Pro and CapCut.",
+      "Design and script Urdu and English UGC-style video ads targeting retail and wholesale store owners.",
+      "Configure and monitor Meta Ads campaigns (Leads & Messaging objectives) to test creative performance."
     ],
-    tools: ["Meta Ads Manager", "Meta Pixel", "Canva", "CapCut", "Meta Business Suite"]
+    tools: ["Adobe Premiere Pro", "CapCut", "Meta Ads Manager", "Sound Design", "Canva"]
   },
   {
-    role: "Digital Marketing Intern",
+    role: "Digital Marketing & Video Intern",
     company: "Israin Solutions",
     period: "JULY 2026 – AUGUST 2026",
     type: "INTERNSHIP",
     isCurrent: false,
-    description: "Assisted in paid advertising funnels, audience segmentation, and brand marketing creatives.",
+    description: "Completed an intensive 2-month internship supporting video post-production, creative ad asset design, and ad account delivery.",
     highlights: [
-      "Assisted in setting up Meta Ads, audience testing, and delivery KPI tracking.",
-      "Created short-form Reels and aesthetic graphic post designs for clients.",
-      "Crafted direct-response ad copywriting, hook headlines, and persuasive captions."
+      "Assembled short-form vertical Reels and graphic post assets for client social media accounts.",
+      "Drafted direct-response ad copy, hook headlines, and bilingual video scripts (English + Urdu).",
+      "Assisted senior media buyers in campaign setup, audience segmentation, and performance tracking."
     ],
-    tools: ["Facebook Ads", "Instagram Ads", "Ad Copywriting", "Audience Research", "Canva"]
+    tools: ["CapCut", "Adobe Premiere Pro", "Meta Ads Manager", "Ad Copywriting", "Canva"]
   }
 ];
 
@@ -37,7 +37,7 @@ const Experience = () => {
   return (
     <section id="experience" className="section experience-section">
       <div className="container">
-        {/* Section Header Inspired by Reference */}
+        {/* Section Header */}
         <Reveal>
           <div className="exp-section-header">
             <span className="exp-career-pill">CAREER PATH</span>
@@ -45,29 +45,25 @@ const Experience = () => {
               Work <span className="gradient-text">Experience</span>
             </h2>
             <p className="exp-main-subtitle">
-              My professional journey and track record in performance digital marketing, video production, and brand growth.
+              An honest look at my professional journey in short-form video editing, ad creative production, and performance advertising.
             </p>
           </div>
         </Reveal>
 
         {/* Vertical Timeline Container */}
         <div className="exp-timeline-wrapper">
-          {/* Continuous Left Timeline Line */}
           <div className="exp-timeline-line"></div>
 
           <div className="exp-timeline-list">
             {experiences.map((exp, idx) => (
               <Reveal key={exp.company} delay={idx * 120}>
                 <div className={`exp-timeline-item ${exp.isCurrent ? "item-current" : ""}`}>
-                  {/* Glowing Circular Timeline Node */}
                   <div className="exp-timeline-node" aria-hidden="true">
                     <span className="node-glow-ring"></span>
                     <span className="node-center-dot"></span>
                   </div>
 
-                  {/* Sleek Modern Card */}
                   <div className={`exp-card ${exp.isCurrent ? "exp-card-current" : ""}`}>
-                    {/* Header Row: Role on Left, Date Pill on Right */}
                     <div className="exp-card-header">
                       <h3 className="exp-role-title">{exp.role}</h3>
                       <div className="exp-date-pill">
@@ -76,7 +72,6 @@ const Experience = () => {
                       </div>
                     </div>
 
-                    {/* Company & Type Metadata Row */}
                     <div className="exp-company-meta">
                       <span className="exp-company-name">
                         <Briefcase size={14} className="text-accent" />
@@ -91,13 +86,10 @@ const Experience = () => {
                       )}
                     </div>
 
-                    {/* Subtle Divider */}
                     <div className="exp-card-divider"></div>
 
-                    {/* Description Text */}
                     <p className="exp-description">{exp.description}</p>
 
-                    {/* Highlights List */}
                     <ul className="exp-highlights-list">
                       {exp.highlights.map((item, i) => (
                         <li key={i}>
@@ -107,7 +99,6 @@ const Experience = () => {
                       ))}
                     </ul>
 
-                    {/* Applied Tools Row */}
                     <div className="exp-tools-row">
                       <span className="exp-tools-label">
                         <Wrench size={12} />

@@ -7,6 +7,7 @@ import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import CaseStudyPage from "./pages/CaseStudyPage";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import { projects } from "./data/projectsData";
 import "./App.css";
 
@@ -128,6 +129,7 @@ function App() {
         )}
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
