@@ -67,6 +67,11 @@
 .hero-visual {
   min-width: 0;
   width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
 }
 
 .hero-label {
@@ -208,36 +213,60 @@
   white-space: nowrap;
 }
 
-/* Hero Visual (Right Column) */
-.hero-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/* ============ HERO VISUAL & ENLARGED PORTRAIT ============ */
 .hero-ring {
   position: absolute;
-  width: 380px;
-  height: 380px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   border: 1px dashed rgba(0, 240, 255, 0.25);
-  animation: rotateRing 25s linear infinite;
+  animation: spinSlow 40s linear infinite;
   pointer-events: none;
 }
 
-@keyframes rotateRing {
+.hero-ring::before,
+.hero-ring::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 16px var(--accent);
+}
+
+.hero-ring::before {
+  top: 18px;
+  left: 120px;
+}
+
+.hero-ring::after {
+  bottom: 40px;
+  right: 60px;
+}
+
+@keyframes spinSlow {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
 .hero-portrait-wrap {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
-  padding: 10px;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, transparent 70%);
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.55), rgba(0, 100, 255, 0.25), rgba(0, 240, 255, 0.4));
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.25), inset 0 0 30px rgba(0, 240, 255, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 70px rgba(0, 240, 255, 0.45), inset 0 0 50px rgba(0, 240, 255, 0.25);
+  }
 }
 
 .hero-portrait {
@@ -247,7 +276,7 @@
   overflow: hidden;
   border: 2px solid rgba(0, 240, 255, 0.4);
   background: #090e1a;
-  box-shadow: 0 0 40px rgba(0, 240, 255, 0.2);
+  display: block;
 }
 
 .hero-portrait img {
@@ -261,32 +290,47 @@
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: rgba(9, 14, 26, 0.92);
-  border: 1px solid rgba(0, 240, 255, 0.35);
+  gap: 10px;
+  padding: 10px 18px;
   border-radius: 30px;
-  color: #fff;
-  font-size: 0.78rem;
+  background: rgba(8, 8, 8, 0.92);
+  border: 1px solid var(--border-accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.1);
+  font-size: 0.85rem;
   font-weight: 600;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  color: var(--text-main);
+  animation: floatY 5s ease-in-out infinite;
   z-index: 3;
 }
 
+.hero-badge svg {
+  color: var(--accent);
+}
+
 .hero-badge.badge-1 {
-  top: 10px;
-  left: -20px;
+  top: 46px;
+  left: -10px;
 }
 
 .hero-badge.badge-2 {
-  bottom: 30px;
-  left: -30px;
+  top: 150px;
+  right: -28px;
+  animation-delay: 1.2s;
 }
 
 .hero-badge.badge-3 {
-  right: -25px;
-  top: 45%;
+  bottom: 40px;
+  left: 8px;
+  animation-delay: 2.4s;
+}
+
+@keyframes floatY {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* ============ HERO REELS SHOWCASE EMBED ============ */
@@ -591,47 +635,7 @@
   margin-top: 2px;
 }
 
-/* ============ QUICK STATS ============ */
-.quick-stats {
-  padding: 30px 0;
-  background: rgba(9, 14, 26, 0.8);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.quick-stats-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-  align-items: center;
-  gap: 16px;
-}
-
-.quick-stat {
-  text-align: center;
-  padding: 6px;
-}
-
-.quick-stat-value {
-  font-size: 1.7rem;
-  font-weight: 800;
-  color: var(--accent);
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
-}
-
-.quick-stat-label {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-.quick-stat-divider {
-  width: 1px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* Responsive Breakpoints */
+/* ============ RESPONSIVE BREAKPOINTS ============ */
 @media (max-width: 1050px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -654,37 +658,28 @@
   .services-three-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .quick-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .quick-stat-divider {
-    display: none;
-  }
 }
 
-@media (max-width: 680px) {
-  .hero-section {
-    padding-top: 110px;
-  }
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  .hero-title-sub-bilingual {
-    font-size: 1.4rem;
-    display: block;
+@media (max-width: 768px) {
+  .hero-ring {
+    display: none !important;
   }
   .hero-portrait-wrap {
-    width: 250px;
-    height: 250px;
+    width: 280px !important;
+    height: 280px !important;
+    margin: 0 auto 16px !important;
   }
-  .hero-ring {
-    width: 290px;
-    height: 290px;
-  }
-  .hero-badge {
-    font-size: 0.7rem;
-    padding: 6px 12px;
+  .hero-badge,
+  .hero-badge.badge-1,
+  .hero-badge.badge-2,
+  .hero-badge.badge-3 {
+    position: static !important;
+    margin: 6px auto !important;
+    font-size: 0.8rem !important;
+    padding: 8px 16px !important;
+    display: inline-flex !important;
+    animation: none !important;
+    transform: none !important;
   }
   .hero-reels-grid,
   .services-three-grid {
@@ -693,7 +688,21 @@
   .hero-reels-showcase-wrap {
     padding: 24px 16px;
   }
-  .quick-stats-grid {
-    grid-template-columns: 1fr;
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding-top: 110px;
+  }
+  .hero-title {
+    font-size: 2.1rem;
+  }
+  .hero-title-sub-bilingual {
+    font-size: 1.35rem;
+    display: block;
+  }
+  .hero-portrait-wrap {
+    width: 220px !important;
+    height: 220px !important;
   }
 }

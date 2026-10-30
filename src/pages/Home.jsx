@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { ArrowRight, Film, Sparkles, Volume2, Calendar, Phone, CheckCircle2, Clapperboard, Camera, Play, Pause } from 'lucide-react';
+import { Film, Volume2, Calendar, CheckCircle2, Clapperboard, Camera, Play, Sparkles } from 'lucide-react';
 import { WhatsAppIcon } from '../components/SocialIcons';
 import './Home.css';
 import heroImg from '../assets/hero.png';
@@ -111,13 +111,6 @@ const Home = () => {
   const rawBase = import.meta.env.BASE_URL || "/";
   const baseUrl = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div id="home" className="home-hero-wrap">
       {/* ============ HERO SECTION ============ */}
@@ -131,7 +124,7 @@ const Home = () => {
         <div className="container">
           <div className="hero-grid">
             <div className="hero-content">
-              {/* New Freelance Retainer Availability Label */}
+              {/* Availability Label */}
               <span className="hero-label">
                 Open for freelance projects &amp; monthly retainers
               </span>
@@ -179,7 +172,7 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Hero Right Visual */}
+            {/* Hero Right Visual (Enlarged Original Design) */}
             <div className="hero-visual">
               <div className="hero-ring"></div>
               <div className="hero-portrait-wrap">
@@ -191,15 +184,15 @@ const Home = () => {
                 <Clapperboard size={18} /> Short-Form Video Editor
               </div>
               <div className="hero-badge badge-2">
-                <Camera size={18} /> UGC Ad Creative Maker
+                <Sparkles size={18} /> English + Urdu Bilingual
               </div>
               <div className="hero-badge badge-3">
-                <Sparkles size={18} /> English + Urdu Bilingual
+                <Camera size={18} /> UGC Ad Creative Maker
               </div>
             </div>
           </div>
 
-          {/* ============ HERO VIDEO SHOWCASE EMBED (DIRECTLY BELOW HERO) ============ */}
+          {/* ============ HERO VIDEO SHOWCASE EMBED ============ */}
           <Reveal delay={120}>
             <div className="hero-reels-showcase-wrap">
               <div className="hero-reels-header">
@@ -222,36 +215,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ============ QUICK POSITIONING METRICS ============ */}
-      <section className="quick-stats">
-        <div className="container">
-          <Reveal>
-            <div className="quick-stats-grid">
-              <div className="quick-stat">
-                <div className="quick-stat-value">FR</div>
-                <div className="quick-stat-label">Software Solution<br />Full-Time Marketer &amp; Editor</div>
-              </div>
-              <div className="quick-stat-divider"></div>
-              <div className="quick-stat">
-                <div className="quick-stat-value">9:16</div>
-                <div className="quick-stat-label">Mobile-First Content<br />Reels, TikToks &amp; Shorts</div>
-              </div>
-              <div className="quick-stat-divider"></div>
-              <div className="quick-stat">
-                <div className="quick-stat-value">EN + UR</div>
-                <div className="quick-stat-label">Bilingual Creatives<br />Local &amp; Overseas Diaspora</div>
-              </div>
-              <div className="quick-stat-divider"></div>
-              <div className="quick-stat">
-                <div className="quick-stat-value">Meta</div>
-                <div className="quick-stat-label">Campaign Setup<br />Full-Funnel Ad Creative Integration</div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ============ 3 CORE SERVICES CLEANUP ============ */}
+      {/* ============ 3 CORE SERVICES ============ */}
       <section className="section why-section">
         <div className="container">
           <div className="services-cleanup-header">
