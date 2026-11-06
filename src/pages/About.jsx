@@ -1,4 +1,4 @@
-import { Target, Palette, Film, GraduationCap } from 'lucide-react';
+import { Target, Palette, Film, GraduationCap, Briefcase } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import heroImg from '../assets/hero.png';
 import './About.css';
@@ -36,11 +36,15 @@ const About = () => {
                 I handle the full advertising lifecycle: from audience targeting and budget allocation in Meta Ads Manager to designing custom bilingual creatives (Urdu &amp; English) and producing high-retention video content.
               </p>
 
-              {/* Genuine Current Role Callout (No fake years!) */}
-              <div className="about-role-callout">
-                <span className="about-role-callout-tag">Current Position</span>
-                <h4 className="about-role-callout-title">Digital Marketer @ FR Software Solution</h4>
-                <p className="about-role-callout-sub">Leading Meta Ads, creative design &amp; multi-channel social growth</p>
+              {/* Genuine Current Role */}
+              <div className="about-feature-card about-position-card">
+                <div className="about-feature-icon">
+                  <Briefcase size={20} />
+                </div>
+                <div className="about-feature-body">
+                  <h4>Digital Marketer @ FR Software Solution</h4>
+                  <p>Leading Meta Ads, creative design &amp; multi-channel social growth</p>
+                </div>
               </div>
             </div>
 
@@ -100,7 +104,7 @@ const About = () => {
               </div>
 
               {/* Card 4: Certification (Hafiz removed, SMIT kept) */}
-              <div className="about-feature-card highlight-card">
+              <div className="about-feature-card">
                 <div className="about-feature-icon">
                   <GraduationCap size={20} />
                 </div>
