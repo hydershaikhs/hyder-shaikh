@@ -1,4 +1,4 @@
-import { Target, Palette, Film } from 'lucide-react';
+import { Target, Palette, Film, GraduationCap } from 'lucide-react';
 import Reveal from '../components/Reveal';
 import heroImg from '../assets/hero.png';
 import './About.css';
@@ -64,7 +64,7 @@ const About = () => {
               </div>
             </div>
 
-            {/* ---- RIGHT COLUMN: 3 CORE EXPERTISE CARDS ---- */}
+            {/* ---- RIGHT COLUMN: 4 CORE EXPERTISE & CERTIFICATION CARDS ---- */}
             <div className="about-right-col">
               {/* Card 1: Meta Ads */}
               <div className="about-feature-card">
@@ -96,6 +96,17 @@ const About = () => {
                 <div className="about-feature-body">
                   <h4>Video Editing &amp; Reels</h4>
                   <p>Dynamic short-form video content, kinetic transitions, and sound design created in Premiere Pro and CapCut.</p>
+                </div>
+              </div>
+
+              {/* Card 4: Certification (Hafiz removed, SMIT kept) */}
+              <div className="about-feature-card highlight-card">
+                <div className="about-feature-icon">
+                  <GraduationCap size={20} />
+                </div>
+                <div className="about-feature-body">
+                  <h4>Certification &amp; Professional Training</h4>
+                  <p>Certified in Digital Marketing from <strong>Saylani Mass IT Training (SMIT)</strong> — bringing structured strategy, technical discipline, and data-driven execution to every project.</p>
                 </div>
               </div>
             </div>
