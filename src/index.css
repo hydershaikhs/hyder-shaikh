@@ -89,6 +89,15 @@ button {
 }
 
 /* Typography Utilities */
+.gradient-text {
+  color: var(--brand-primary, #6600ff);
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  display: inline;
+}
+
+/* Typography Utilities */
 .text-accent { color: var(--accent); }
 .text-muted { color: var(--text-muted); }
 .text-center { text-align: center; }
@@ -270,7 +279,7 @@ button {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  background: var(--accent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
