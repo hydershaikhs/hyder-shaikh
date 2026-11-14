@@ -147,6 +147,11 @@
   animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
 }
 
+.hero-description strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
 .hero-actions {
   display: flex;
   align-items: center;
@@ -378,7 +383,11 @@
   font-family: var(--font-heading);
   font-size: 2.6rem;
   font-weight: 800;
-  color: var(--accent);
+  background: linear-gradient(135deg, var(--brand-primary, #6600ff), var(--brand-secondary, #d97706));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
   margin-bottom: 6px;
   line-height: 1.1;
   text-shadow: none;

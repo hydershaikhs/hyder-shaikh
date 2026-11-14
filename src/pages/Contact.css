@@ -36,10 +36,11 @@
 }
 
 .contact-heading-accent {
-  color: var(--accent);
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
+  background: linear-gradient(120deg, var(--brand-primary, #6600ff), var(--brand-secondary, #d97706));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
 }
 
 .contact-subtext {

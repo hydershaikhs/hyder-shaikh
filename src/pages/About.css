@@ -54,6 +54,14 @@
   margin-bottom: 12px;
 }
 
+.about-top-title .gradient-text {
+  background: linear-gradient(120deg, var(--brand-primary, #6600ff), #8b5cf6, var(--brand-secondary, #d97706));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
 .about-top-subtitle {
   font-size: 1rem;
   line-height: 1.65;

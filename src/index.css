@@ -1,16 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Colors - Light Blueprint & Vibrant Purple Theme */
-  --bg-main: #f8fafc;
-  --bg-card: #ffffff;
-  --bg-card-hover: #ffffff;
-  --accent: #6600ff; /* Electric Purple / Violet from reference */
-  --accent-hover: #5200cc;
-  --accent-secondary: #d97706; /* Warm Amber / Orange highlight */
-  --accent-secondary-hover: #b45309;
-  --text-main: #0f172a; /* Deep Charcoal / Slate 900 */
-  --text-muted: #475569; /* Slate 600 */
+  /* ================= 3 CORE BRANDING COLORS ================= */
+  /* Color 1: Primary Brand Accent */
+  --brand-primary: #6600ff; /* Electric Purple / Violet */
+  --brand-primary-hover: #5200cc;
+  --brand-primary-glow: rgba(102, 0, 255, 0.35);
+
+  /* Color 2: Secondary Brand Accent / Warm Highlight */
+  --brand-secondary: #d97706; /* Warm Amber / Terracotta */
+  --brand-secondary-hover: #b45309;
+  --brand-secondary-glow: rgba(217, 119, 6, 0.25);
+
+  /* Color 3: Deep Slate / High-Contrast Foundation */
+  --brand-dark: #0f172a; /* Deep Charcoal / Slate 900 */
+  --brand-muted: #475569; /* Slate 600 */
+  --brand-light: #f8fafc; /* Canvas Light (Slate 50) */
+  --brand-white: #ffffff; /* Crisp Card White */
+
+  /* Mappings */
+  --accent: var(--brand-primary);
+  --accent-hover: var(--brand-primary-hover);
+  --accent-secondary: var(--brand-secondary);
+  --accent-secondary-hover: var(--brand-secondary-hover);
+  --bg-main: var(--brand-light);
+  --bg-card: var(--brand-white);
+  --bg-card-hover: var(--brand-white);
+  --text-main: var(--brand-dark);
+  --text-muted: var(--brand-muted);
   --border-subtle: rgba(15, 23, 42, 0.08);
   --border-accent: rgba(102, 0, 255, 0.28);
   
@@ -298,10 +315,15 @@ button {
 .page-hero .page-title {
   font-size: 3rem;
   margin-bottom: 16px;
+  color: var(--text-main);
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .page-hero p {
   font-size: 1.08rem;
+  color: var(--text-muted);
+  line-height: 1.7;
 }
 
 @media (max-width: 768px) {

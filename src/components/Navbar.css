@@ -49,12 +49,11 @@
   height: 38px;
   object-fit: contain;
   border-radius: 8px;
-  filter: hue-rotate(85deg);
-  transition: none;
+  transition: transform 0.25s ease;
 }
 
 .nav-logo:hover .logo-img {
-  transform: none;
+  transform: scale(1.05);
 }
 
 .logo-accent {
