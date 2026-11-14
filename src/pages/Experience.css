@@ -2,6 +2,7 @@
 .experience-section {
   padding: 60px 0 80px;
   position: relative;
+  background: #f8fafc;
 }
 
 /* Section Header (Inspired by Reference Design) */
@@ -18,27 +19,27 @@
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--accent, #00f0ff);
-  background: rgba(0, 240, 255, 0.08);
-  border: 1px solid rgba(0, 240, 255, 0.28);
+  color: var(--accent, #6600ff);
+  background: rgba(102, 0, 255, 0.08);
+  border: 1px solid rgba(102, 0, 255, 0.25);
   padding: 5px 16px;
   border-radius: 20px;
   margin-bottom: 12px;
-  box-shadow: 0 0 14px rgba(0, 240, 255, 0.12);
+  box-shadow: 0 0 14px rgba(102, 0, 255, 0.12);
 }
 
 .exp-main-title {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #0f172a;
   line-height: 1.2;
   margin-bottom: 10px;
 }
 
 .exp-main-subtitle {
   font-size: 0.96rem;
-  color: var(--text-muted, #94a3b8);
+  color: var(--text-muted, #475569);
   line-height: 1.6;
 }
 
@@ -59,9 +60,9 @@
   width: 2px;
   background: linear-gradient(
     180deg,
-    rgba(0, 240, 255, 0.5) 0%,
-    rgba(0, 240, 255, 0.25) 50%,
-    rgba(255, 255, 255, 0.08) 100%
+    rgba(102, 0, 255, 0.5) 0%,
+    rgba(102, 0, 255, 0.2) 50%,
+    rgba(15, 23, 42, 0.08) 100%
   );
   border-radius: 2px;
 }
@@ -94,9 +95,9 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 2px solid var(--accent, #00f0ff);
-  background: #080c16;
-  box-shadow: 0 0 14px rgba(0, 240, 255, 0.55);
+  border: 2px solid var(--accent, #6600ff);
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(102, 0, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,49 +108,47 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--accent, #00f0ff);
+  background: var(--accent, #6600ff);
 }
 
 .item-current .node-glow-ring {
-  border-color: #00f0ff;
-  box-shadow: 0 0 18px rgba(0, 240, 255, 0.75);
+  border-color: #6600ff;
+  box-shadow: 0 0 16px rgba(102, 0, 255, 0.6);
   animation: nodePulse 2.4s infinite;
 }
 
 @keyframes nodePulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 14px rgba(0, 240, 255, 0.55);
+    box-shadow: 0 0 10px rgba(102, 0, 255, 0.4);
   }
   50% {
     transform: scale(1.15);
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.85);
+    box-shadow: 0 0 16px rgba(102, 0, 255, 0.7);
   }
 }
 
 /* ==================== SLEEK TIMELINE CARD ==================== */
 .exp-card {
-  background: linear-gradient(155deg, rgba(14, 21, 35, 0.88) 0%, rgba(9, 13, 22, 0.98) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 14px;
   padding: 13px 18px;
   position: relative;
   overflow: hidden;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
 }
 
 .exp-card:hover {
-  border-color: rgba(0, 240, 255, 0.38);
+  border-color: rgba(102, 0, 255, 0.35);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 240, 255, 0.09);
+  box-shadow: 0 8px 24px rgba(102, 0, 255, 0.1);
 }
 
 .exp-card-current {
-  border-color: rgba(0, 240, 255, 0.28);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(0, 240, 255, 0.06);
+  border-color: rgba(102, 0, 255, 0.28);
+  box-shadow: 0 4px 18px rgba(102, 0, 255, 0.08);
 }
 
 .exp-card-current::before {
@@ -159,7 +158,7 @@
   left: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(180deg, var(--accent, #00f0ff), transparent);
+  background: linear-gradient(180deg, var(--accent, #6600ff), transparent);
 }
 
 /* Header Row: Role on Left, Date Pill on Right */
@@ -175,7 +174,7 @@
 .exp-role-title {
   font-size: 0.98rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   letter-spacing: -0.01em;
   margin: 0;
 }
@@ -189,9 +188,9 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #ffffff;
-  background: rgba(0, 240, 255, 0.08);
-  border: 1px solid rgba(0, 240, 255, 0.26);
+  color: #0f172a;
+  background: rgba(102, 0, 255, 0.08);
+  border: 1px solid rgba(102, 0, 255, 0.25);
   padding: 3px 10px;
   border-radius: 16px;
   white-space: nowrap;
@@ -212,7 +211,7 @@
   gap: 5px;
   font-size: 0.84rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.95);
+  color: #1e293b;
 }
 
 .exp-type-badge {
@@ -222,9 +221,9 @@
   letter-spacing: 0.05em;
   padding: 2px 7px;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: #475569;
 }
 
 .exp-live-badge {
@@ -237,15 +236,15 @@
   border-radius: 14px;
   background: rgba(34, 197, 94, 0.12);
   border: 1px solid rgba(34, 197, 94, 0.35);
-  color: #4ade80;
+  color: #16a34a;
 }
 
 .live-pulse-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #4ade80;
-  box-shadow: 0 0 5px #4ade80;
+  background: #16a34a;
+  box-shadow: 0 0 5px #16a34a;
   animation: livePulse 2s infinite;
 }
 
@@ -259,14 +258,14 @@
 .exp-card-divider {
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  background: rgba(15, 23, 42, 0.06);
   margin: 4px 0 6px;
 }
 
 /* Description Text */
 .exp-description {
   font-size: 0.81rem;
-  color: rgba(255, 255, 255, 0.76);
+  color: #475569;
   line-height: 1.45;
   margin-bottom: 6px;
 }
@@ -286,7 +285,7 @@
   align-items: flex-start;
   gap: 6px;
   font-size: 0.77rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: #334155;
   line-height: 1.35;
 }
 
@@ -302,13 +301,13 @@
   gap: 5px;
   flex-wrap: wrap;
   padding-top: 6px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .exp-tools-label {
   font-size: 0.71rem;
   font-weight: 600;
-  color: var(--accent, #00f0ff);
+  color: var(--accent, #6600ff);
   display: inline-flex;
   align-items: center;
   gap: 3px;
@@ -323,21 +322,22 @@
 .exp-tool-badge {
   font-size: 0.67rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.82);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #475569;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   padding: 2px 7px;
   border-radius: 10px;
 }
 
 /* ==================== CORE SKILLS MATRIX ==================== */
 .exp-skills-card {
-  background: rgba(14, 21, 35, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 20px;
   padding: 32px 30px;
   max-width: 860px;
   margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .exp-skills-header {
@@ -352,9 +352,9 @@
   font-weight: 700;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--accent, #00f0ff);
-  background: rgba(0, 240, 255, 0.08);
-  border: 1px solid rgba(0, 240, 255, 0.22);
+  color: var(--accent, #6600ff);
+  background: rgba(102, 0, 255, 0.08);
+  border: 1px solid rgba(102, 0, 255, 0.22);
   padding: 4px 12px;
   border-radius: 20px;
   margin-bottom: 10px;
@@ -363,7 +363,7 @@
 .exp-skills-title {
   font-size: 1.35rem;
   font-weight: 800;
-  color: #fff;
+  color: #0f172a;
   margin-bottom: 6px;
 }
 
@@ -377,18 +377,19 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  background: rgba(8, 12, 22, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 12px;
   padding: 10px 14px;
   font-size: 0.84rem;
-  color: #e2e8f0;
+  color: #1e293b;
   line-height: 1.4;
   transition: all 0.2s ease;
 }
 
 .exp-skill-pill:hover {
-  border-color: rgba(0, 240, 255, 0.3);
+  border-color: rgba(102, 0, 255, 0.3);
+  background: #ffffff;
   transform: translateX(3px);
 }
 
@@ -396,7 +397,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent, #00f0ff);
+  background: var(--accent, #6600ff);
   flex-shrink: 0;
 }
 

@@ -1,6 +1,7 @@
 /* ==================== CONTACT SECTION ==================== */
 .contact-section {
   padding: 80px 0 100px;
+  background: #f8fafc;
 }
 
 .contact-layout {
@@ -30,7 +31,7 @@
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.1;
-  color: var(--text-main);
+  color: #0f172a;
   margin-bottom: 20px;
 }
 
@@ -43,7 +44,7 @@
 
 .contact-subtext {
   font-size: 1rem;
-  color: var(--text-muted);
+  color: #475569;
   line-height: 1.75;
   margin-bottom: 40px;
   max-width: 420px;
@@ -62,27 +63,28 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-muted);
+  border: 1.5px solid rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+  color: #475569;
   transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
 .contact-icon-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
-  background: rgba(0, 240, 255, 0.08);
+  background: rgba(102, 0, 255, 0.08);
   transform: translateY(-3px);
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(102, 0, 255, 0.2);
 }
 
 /* RIGHT — FORM */
 .contact-right {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 20px;
   padding: 40px;
-  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
 }
 
 .contact-form {
@@ -92,10 +94,10 @@
 }
 
 .cf-error {
-  color: #ff5252;
+  color: #ef4444;
   font-size: 0.88rem;
-  background: rgba(255, 82, 82, 0.1);
-  border: 1px solid rgba(255, 82, 82, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
   padding: 10px 14px;
   border-radius: 8px;
   text-align: left;
@@ -107,9 +109,9 @@
   width: 100%;
   padding: 14px 18px;
   border-radius: 10px;
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text-main);
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
   font-family: var(--font-body);
   font-size: 0.95rem;
   transition: all 0.25s ease;
@@ -120,7 +122,7 @@
 .cf-field select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300f0ff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236600ff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 18px center;
   background-size: 16px;
@@ -128,30 +130,30 @@
 }
 
 .cf-select-placeholder {
-  color: rgba(255, 255, 255, 0.38) !important;
+  color: #94a3b8 !important;
 }
 
 .cf-select-active {
-  color: #ffffff !important;
+  color: #0f172a !important;
 }
 
 .cf-field select option {
-  background-color: #0c101c;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #0f172a;
   padding: 12px;
 }
 
 .cf-field input::placeholder,
 .cf-field textarea::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: #94a3b8;
 }
 
 .cf-field input:focus,
 .cf-field select:focus,
 .cf-field textarea:focus {
   border-color: var(--accent);
-  background: rgba(0, 240, 255, 0.04);
-  box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.1);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(102, 0, 255, 0.15);
 }
 
 .cf-field textarea {
@@ -169,7 +171,7 @@
   border-radius: 50px;
   border: none;
   background: var(--accent);
-  color: #000;
+  color: #ffffff;
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 700;
@@ -177,11 +179,12 @@
   transition: all 0.25s ease;
   margin-top: 4px;
   width: fit-content;
+  box-shadow: 0 4px 20px rgba(102, 0, 255, 0.35);
 }
 
 .contact-submit-btn:hover {
-  background: #00ccdd;
-  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.35);
+  background: var(--accent-hover);
+  box-shadow: 0 8px 28px rgba(102, 0, 255, 0.5);
   transform: translateY(-2px);
 }
 
@@ -208,7 +211,7 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: rgba(0, 240, 255, 0.1);
+  background: rgba(102, 0, 255, 0.08);
   border: 1px solid var(--accent);
   color: var(--accent);
 }
@@ -216,11 +219,11 @@
 .contact-success h3 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: #0f172a;
 }
 
 .contact-success p {
-  color: var(--text-muted);
+  color: #475569;
   font-size: 0.96rem;
   line-height: 1.6;
 }

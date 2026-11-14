@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Colors */
-  --bg-main: #030303;
-  --bg-card: #0a0a0a;
-  --bg-card-hover: #111111;
-  --accent: #00f0ff; /* Neon Cyan */
-  --accent-hover: #00c3ff;
-  --text-main: #ffffff;
-  --text-muted: #888888;
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-accent: rgba(0, 240, 255, 0.3);
+  /* Colors - Light Blueprint & Vibrant Purple Theme */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  --accent: #6600ff; /* Electric Purple / Violet from reference */
+  --accent-hover: #5200cc;
+  --accent-secondary: #d97706; /* Warm Amber / Orange highlight */
+  --accent-secondary-hover: #b45309;
+  --text-main: #0f172a; /* Deep Charcoal / Slate 900 */
+  --text-muted: #475569; /* Slate 600 */
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-accent: rgba(102, 0, 255, 0.28);
+  
+  /* Hero Blueprint Grid Tokens */
+  --hero-bg-base: #abb8d6;
+  --hero-grid-line: rgba(15, 23, 42, 0.065);
   
   /* Typography */
   --font-body: 'Inter', sans-serif;
@@ -85,23 +91,25 @@ button {
 
 .btn-primary {
   background-color: var(--accent);
-  color: #000;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
   background-color: var(--accent-hover);
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
 .btn-outline {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
   color: var(--text-main);
-  border-color: var(--border-subtle);
+  border-color: rgba(15, 23, 42, 0.15);
 }
 
 .btn-outline:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background-color: rgba(102, 0, 255, 0.05);
 }
 
 .card {
@@ -110,12 +118,13 @@ button {
   border-radius: var(--radius-md);
   padding: 24px;
   transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
 }
 
 .card:hover {
   border-color: var(--border-accent);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 12px 30px rgba(102, 0, 255, 0.12);
 }
 
 /* Scroll Reveal */
@@ -172,10 +181,10 @@ button {
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 45px rgba(0, 240, 255, 0.22), 0 0 90px rgba(0, 240, 255, 0.08);
+    box-shadow: 0 0 45px rgba(102, 0, 255, 0.25), 0 0 90px rgba(102, 0, 255, 0.1);
   }
   50% {
-    box-shadow: 0 0 70px rgba(0, 240, 255, 0.4), 0 0 130px rgba(0, 240, 255, 0.16);
+    box-shadow: 0 0 70px rgba(102, 0, 255, 0.45), 0 0 130px rgba(217, 119, 6, 0.2);
   }
 }
 
@@ -261,7 +270,7 @@ button {
   height: 58px;
   border-radius: 16px;
   color: var(--accent);
-  background: rgba(0, 240, 255, 0.08);
+  background: rgba(102, 0, 255, 0.08);
   border: 1px solid var(--border-accent);
   margin-bottom: 16px;
 }
@@ -329,11 +338,11 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #05070a;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.2);
   border-radius: 4px;
 }
 
@@ -349,16 +358,16 @@ html {
 
 .btn-primary-glow {
   background-color: var(--accent);
-  color: #000;
-  box-shadow: 0 0 24px rgba(0, 240, 255, 0.35);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(102, 0, 255, 0.35);
   border: 1px solid var(--accent);
 }
 
 .btn-primary-glow:hover {
   background-color: var(--accent-hover);
-  box-shadow: 0 0 36px rgba(0, 240, 255, 0.55);
+  box-shadow: 0 6px 28px rgba(102, 0, 255, 0.5);
   transform: translateY(-2px);
-  color: #000;
+  color: #ffffff;
 }
 
 /* ============ ABOUT SECTION STYLES ============ */
@@ -367,14 +376,13 @@ html {
 }
 
 .about-narrative-card {
-  background: linear-gradient(135deg, rgba(16, 20, 30, 0.65), rgba(10, 12, 18, 0.85));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: var(--radius-lg);
   padding: 36px;
   max-width: 900px;
   margin: 0 auto 44px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .about-text-content {
@@ -386,7 +394,7 @@ html {
 .about-p-lead {
   font-size: 1.15rem;
   line-height: 1.85;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--text-main);
 }
 
 .about-p {
@@ -409,13 +417,15 @@ html {
   display: flex;
   gap: 22px;
   align-items: flex-start;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.03), rgba(14, 18, 28, 0.85));
-  border: 1px solid rgba(0, 240, 255, 0.15);
+  background: #ffffff;
+  border: 1px solid rgba(102, 0, 255, 0.18);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(102, 0, 255, 0.05);
 }
 
 .about-hifz-icon {
   flex-shrink: 0;
-  background: rgba(0, 240, 255, 0.1);
+  background: rgba(102, 0, 255, 0.08);
   color: var(--accent);
 }
 
