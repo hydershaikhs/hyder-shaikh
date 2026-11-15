@@ -472,7 +472,8 @@ const EvidenceItem = ({ item, onSelect }) => {
               src={item.src}
               alt={item.label}
               className="cs-evidence-img"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
               onError={() => setImgFailed(true)}

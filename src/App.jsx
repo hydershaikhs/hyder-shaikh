@@ -66,6 +66,30 @@ function App() {
     };
   }, []);
 
+  // Preload all case study evidence images so they display instantly
+  useEffect(() => {
+    const imagesToPreload = [
+      "images/artb/artb-screenshot-1.jpg",
+      "images/artb/artb-screenshot-2.jpg",
+      "images/artb/artb-screenshot-3.jpg",
+      "images/artb/artb-screenshot-4.jpg",
+      "images/fr/fr-screenshot-1.jpg",
+      "images/fr/fr-screenshot-2.jpg",
+      "images/fr/fr-screenshot-3.jpg",
+      "images/fr/fr-screenshot-4.jpg",
+      "images/fr-social/fr-social-1.jpg",
+      "images/fr-social/fr-social-2.jpg",
+      "images/saadgi/saadgi-1.jpg",
+      "images/saadgi/saadgi-2.jpg",
+      "images/saadgi/saadgi-3.jpg"
+    ];
+    const base = import.meta.env.BASE_URL || "/";
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = `${base}${src}`;
+    });
+  }, []);
+
   useEffect(() => {
     const handleHashChange = () => {
       setActiveCaseStudyId(getProjectIdFromHash());

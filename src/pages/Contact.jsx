@@ -77,7 +77,7 @@ const Contact = () => {
                 <a href="https://www.linkedin.com/in/hydershaikhofficial" target="_blank" rel="noreferrer" className="contact-icon-btn" title="LinkedIn" aria-label="LinkedIn">
                   <LinkedInIcon size={20} />
                 </a>
-                <a href="https://www.instagram.com/hafizhydershaikh" target="_blank" rel="noreferrer" className="contact-icon-btn" title="Instagram" aria-label="Instagram">
+                <a href="https://www.instagram.com/hydershaikhofficial" target="_blank" rel="noreferrer" className="contact-icon-btn" title="Instagram" aria-label="Instagram">
                   <InstagramIcon size={20} />
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=61577739728113" target="_blank" rel="noreferrer" className="contact-icon-btn" title="Facebook" aria-label="Facebook">

@@ -231,7 +231,7 @@ const Navbar = () => {
             <LinkedInIcon size={18} />
           </a>
           <a
-            href="https://www.instagram.com/hafizhydershaikh"
+            href="https://www.instagram.com/hydershaikhofficial"
             target="_blank"
             rel="noreferrer"
             className="mobile-social-icon"
