@@ -280,6 +280,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                   <div className="story-video-wrapper">
                     <video
                       src={`${baseUrl}${vid.src}`}
+                      poster={`${baseUrl}videos/posters/${vid.src.replace('videos/', '').replace('.mp4', '.jpg')}`}
                       autoPlay
                       loop
                       muted
@@ -289,7 +290,7 @@ const CaseStudyPage = ({ project, onBack, onNavigateContact }) => {
                       disablePictureInPicture
                       onContextMenu={(e) => e.preventDefault()}
                       draggable={false}
-                      preload="auto"
+                      preload="metadata"
                       className="story-video-player"
                     />
                     <div className="video-hover-hint">

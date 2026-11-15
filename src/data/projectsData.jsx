@@ -456,7 +456,7 @@ export const projects = [
         { label: "Editing Software", value: "Pr + Cap" },
         { label: "AI Video Tools", value: "3+" },
         { label: "Resolution", value: "4K UHD" },
-        { label: "Format", value: "Vertical & 16:9" }
+        { label: "Format", value: "9:16" }
       ],
       snapshot: {
         role: "Commercial Video Editor & AI Creator",
@@ -518,7 +518,7 @@ export const projects = [
         {
           type: "ai",
           badge: "MOTION GRAPHICS",
-          tag: "ai-badge",
+          tag: "premiere-badge",
           src: "videos/claude-motion-graphics.mp4",
           title: "Motion Graphics & Visual Editing",
           desc: "Dynamic Motion Graphics, Visual Flow & Creative Editing With Claude"

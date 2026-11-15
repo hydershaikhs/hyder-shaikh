@@ -720,8 +720,8 @@
 }
 
 .story-source-badge.ai-badge {
-  color: #c084fc;
-  background: rgba(192, 132, 252, 0.15);
+  color: var(--accent, #6600ff);
+  background: rgba(102, 0, 255, 0.12);
 }
 
 .story-dot {
@@ -736,7 +736,7 @@
 }
 
 .story-dot.live-ai {
-  background: #c084fc;
+  background: #6600ff;
 }
 
 .story-video-wrapper {
