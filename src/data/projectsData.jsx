@@ -475,8 +475,8 @@ export const projects = [
           desc: "Engineered multi-layer sound effects (SFX), impact risers, and audio mixing that elevate video engagement and hook retention."
         },
         {
-          title: "AI Video Generation & CapCut Post-Production",
-          desc: "Produced generative AI video scenes and completed post-production editing, pacing, and styling using CapCut."
+          title: "Motion Graphics & Real Estate Commercials",
+          desc: "Produced high-impact real estate commercial edits and dynamic motion graphics with creative transitions and visual storytelling using Claude."
         }
       ],
       overview: "I create engaging video content for brands and businesses using professional editing tools and AI-powered video generation. My workflow combines creative storytelling, smooth transitions, sound design, color grading, and AI-generated visuals to produce high-quality content for social media, marketing campaigns, and digital platforms.",
@@ -508,12 +508,20 @@ export const projects = [
           desc: "Sound FX, Kinetic Typography & Motion Pacing"
         },
         {
+          type: "premiere",
+          badge: "REAL ESTATE",
+          tag: "premiere-badge",
+          src: "videos/real-estate-promo.mp4",
+          title: "Real Estate Commercial Video",
+          desc: "Architectural Property Showcase, Dynamic Cuts & Sound Design"
+        },
+        {
           type: "ai",
-          badge: "AI VIDEO · CAPCUT",
+          badge: "MOTION GRAPHICS",
           tag: "ai-badge",
-          src: "videos/ve-ai-capcut.mp4",
-          title: "AI Video Generation (CapCut)",
-          desc: "Generative AI Video Synthesis & CapCut Post-Production"
+          src: "videos/claude-motion-graphics.mp4",
+          title: "Motion Graphics & Visual Editing",
+          desc: "Dynamic Motion Graphics, Visual Flow & Creative Editing With Claude"
         }
       ]
     }
